@@ -82,7 +82,7 @@ section{position:relative}
 .about-video{position:absolute;inset:0;z-index:1;
   -webkit-mask-image:linear-gradient(transparent 0,#000 14%,#000 84%,transparent 100%);mask-image:linear-gradient(transparent 0,#000 14%,#000 84%,transparent 100%)}
 .about-video video{width:100%;height:100%;object-fit:cover;object-position:18% 30%;filter:brightness(.86) contrast(1.1) saturate(.9)}
-.about-video::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,#050505b3 75%,#050505 100%);pointer-events:none}
+.about-video::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 40%,#050505d9 52%,#050505 64%);pointer-events:none}
 .about h2{font-size:clamp(34px,4.4vw,60px);max-width:16ch}
 .about p{max-width:58ch;color:var(--mute)}
 .about p strong{color:var(--ink);font-weight:600}
@@ -157,6 +157,14 @@ section{position:relative}
 .m-pics figure:hover img{transform:scale(1.03)}
 @media (max-width:760px){.moment{grid-template-columns:1fr;gap:28px;margin-top:56px}.m-pics{gap:12px}.m-pics figure:nth-child(2){transform:translateY(28px)}}
 @media (prefers-reduced-motion:reduce){.m-pics img{transition:none}.m-pics figure:hover img{transform:none}}
+.nav-r{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{background:none;border:0;color:var(--mute);font:700 12px/1 var(--sans);letter-spacing:.06em;padding:8px 10px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#050505}
+.lang button:focus-visible{outline:2px solid var(--wine-hi);outline-offset:2px}
+@media (max-width:420px){.nav-r{gap:8px}.lang button{padding:7px 8px}.nav .btn{padding:9px 12px;font-size:13px}}
+.stats div b span{font-size:inherit;color:inherit}
 .grades{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:64px;padding-top:30px;border-top:1px solid var(--line)}
 @media (max-width:900px){.grades{grid-template-columns:repeat(2,1fr)}}
 .grades b{display:block;font:800 clamp(40px,4.6vw,64px)/1 var(--sans);font-stretch:108%;letter-spacing:-.03em}
@@ -245,6 +253,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}}
 .tile{background:#0a0808;border:1px solid var(--line);border-radius:8px;padding:16px}
 .tile .v{font:800 clamp(22px,2.4vw,30px)/1.05 var(--sans);font-stretch:106%;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+html[lang="de"] .tile .v{font-size:clamp(17px,1.65vw,24px)}
 .tile .l{font-size:13px;color:var(--mute);margin-top:6px}
 .tile.key{border-color:var(--wine);background:linear-gradient(160deg,#2a0c16,#0a0808)}
 .dcf-out .frame+.frame{margin-top:22px}
@@ -328,30 +337,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <nav class="nav" aria-label="Main">
   <a class="mark" href="#top">PG<span class="dot">.</span></a>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#valuation">Live tools</a></li>
-    <li><a href="#experience">Journey</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-i18n="k0">About</a></li>
+    <li><a href="#skills" data-i18n="k1">Skills</a></li>
+    <li><a href="#work" data-i18n="k2">Work</a></li>
+    <li><a href="#valuation" data-i18n="k3">Live tools</a></li>
+    <li><a href="#experience" data-i18n="k4">Journey</a></li>
+    <li><a href="#contact" data-i18n="k5">Contact</a></li>
   </ul>
-  <a class="btn" href="Pranav_Gorige_CV.pdf" download>Download CV</a>
+  <div class="nav-r"><div class="lang" role="group" aria-label="Language / Sprache"><button type="button" data-l="en" lang="en" aria-pressed="true">EN</button><button type="button" data-l="de" lang="de" aria-pressed="false">DE</button></div><a class="btn" href="Pranav_Gorige_CV.pdf" download data-i18n="k6">Download CV</a></div>
 </nav>
 
 <main>
   <section class="dhero" id="top">
     <div class="dh-word" data-w="Finance" aria-hidden="true">Finance</div>
-    <p class="dh-hint" aria-hidden="true"><span class="m">Move your cursor over me</span><span class="t">Tap me to reveal</span></p>
+    <p class="dh-hint" aria-hidden="true"><span class="m" data-i18n="k7">Move your cursor over me</span><span class="t" data-i18n="k8">Tap me to reveal</span></p>
     <div class="dh-stage"><div class="dh-inner"><canvas id="dots" role="img" aria-label="Portrait of Pranav Gorige drawn in red dots. Click to reveal the photo."></canvas></div></div>
     <div class="dh-bar wrap">
       <div class="dh-id">
-        <p class="over">MSc Finance student at EU Business School, Munich</p>
+        <p class="over" data-i18n="k9">MSc Finance student at EU Business School, Munich</p>
         <h1 class="dh-name">Pranav Gorige<span class="dot">.</span></h1>
-        <p class="dh-line">Turning data into decisions.</p>
+        <p class="dh-line" data-i18n="k10">Turning data into decisions.</p>
       </div>
       <div class="dh-actions">
         <button type="button" class="btn" id="revealBtn" aria-pressed="false">Reveal the real me</button>
-        <a class="btn fill" href="#work">Explore my work</a>
+        <a class="btn fill" href="#work" data-i18n="k11">Explore my work</a>
       </div>
     </div>
   </section>
@@ -366,21 +375,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
     <div class="wrap about-grid">
       <div>
-        <p class="tag">About me</p>
-        <h2 class="rv">From ledgers in Hyderabad to finance in Munich<span class="dot">.</span></h2>
-        <p>I'm an <strong>MSc Finance student at EU Business School in Munich</strong>, expected to graduate in September 2027. Before that I completed a Bachelor of Commerce at Osmania University in Hyderabad, a six-month data analytics programme and a <strong>six-month Data Analyst internship</strong>.</p>
-        <p>In my internship I built <strong>Power BI dashboards</strong> to track KPIs, analysed business and financial data in Python and Excel, and made financial reports more accurate by standardising the underlying data. In my Master's I value companies with <strong>DCF, multiples and LBO</strong> models.</p>
-        <p>I work in English every day and I'm learning German. I'm looking for a working student role where I can bring structure and accuracy to a finance or data team.</p>
+        <p class="tag" data-i18n="k12">About me</p>
+        <h2 class="rv" data-i18n="k13">From ledgers in Hyderabad to finance in Munich<span class="dot">.</span></h2>
+        <p data-i18n="k14">I'm an <strong>MSc Finance student at EU Business School in Munich</strong>, expected to graduate in September 2027. Before that I completed a Bachelor of Commerce at Osmania University in Hyderabad, a six-month data analytics programme and a <strong>six-month Data Analyst internship</strong>.</p>
+        <p data-i18n="k15">In my internship I built <strong>Power BI dashboards</strong> to track KPIs, analysed business and financial data in Python and Excel, and made financial reports more accurate by standardising the underlying data. In my Master's I value companies with <strong>DCF, multiples and LBO</strong> models.</p>
+        <p data-i18n="k16">I work in English every day and I'm learning German. I'm looking for a working student role where I can bring structure and accuracy to a finance or data team.</p>
         <dl class="facts">
-          <dt>Based in</dt><dd>Munich, Germany</dd>
-          <dt>Studying</dt><dd>MSc Finance, EU Business School</dd>
-          <dt>Available</dt><dd>Up to 20 hours a week, from now until September 2027</dd>
-          <dt>Languages</dt><dd>English (fluent), German (A2, learning towards B1)</dd>
+          <dt data-i18n="k17">Based in</dt><dd data-i18n="k18">Munich, Germany</dd>
+          <dt data-i18n="k19">Studying</dt><dd>MSc Finance, EU Business School</dd>
+          <dt data-i18n="k20">Available</dt><dd data-i18n="k21">Up to 20 hours a week, from now until September 2027</dd>
+          <dt data-i18n="k22">Languages</dt><dd data-i18n="k23">English (fluent), German (A2, learning towards B1)</dd>
         </dl>
       <div class="stats rv" style="margin-top:36px">
-        <div><b><span data-count="6">6</span> months</b><span>Data analyst internship</span></div>
-        <div><b><span data-count="92">92</span>%</b><span>Top MSc module grade</span></div>
-        <div><b><span data-count="20">20</span> h/week</b><span>Available from now</span></div>
+        <div><b><span data-count="6">6</span><span data-i18n="k24"> months</span></b><span data-i18n="k25">Data analyst internship</span></div>
+        <div><b><span data-count="92">92</span>%</b><span data-i18n="k26">Top MSc module grade</span></div>
+        <div><b><span data-count="20">20</span><span data-i18n="k27"> h/week</span></b><span data-i18n="k28">Available from now</span></div>
       </div>
       </div>
     </div>
@@ -389,14 +398,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="skills" id="skills">
     <img class="figure" src="still_25.webp" alt="" aria-hidden="true">
     <div class="wrap">
-      <p class="tag">Skills</p>
+      <p class="tag" data-i18n="k1">Skills</p>
       <div class="sk-grid">
         <div class="cats" role="tablist" aria-label="Skill areas">
-          <button role="tab" aria-selected="true" aria-controls="sk-panel" data-k="finance">Finance</button>
-          <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="data">Data</button>
+          <button role="tab" aria-selected="true" aria-controls="sk-panel" data-k="finance" data-i18n="k29">Finance</button>
+          <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="data" data-i18n="k30">Data</button>
           <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="reporting">Reporting</button>
           <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="tools">Tools</button>
-          <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="languages">Languages</button>
+          <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="languages" data-i18n="k22">Languages</button>
         </div>
         <div class="panel" id="sk-panel" role="tabpanel" aria-live="polite"></div>
       </div>
@@ -405,43 +414,43 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section class="work" id="work">
     <div class="wrap">
-      <p class="tag">Selected work</p>
-      <h2 class="rv">Projects<span class="dot">.</span></h2>
+      <p class="tag" data-i18n="k31">Selected work</p>
+      <h2 class="rv" data-i18n="k32">Projects<span class="dot">.</span></h2>
       <article class="feature">
         <div class="txt">
-          <div class="kind">MSc coursework, 2025 – 2026</div>
-          <h3>Company valuation and LBO analysis</h3>
-          <p>Valued companies with three methods in Excel: discounted cash flow, trading multiples and a leveraged buy-out model.</p>
-          <p>Compared how a deal could be financed with equity, debt and mezzanine capital. Module grade: 90% in M&amp;A, Buy-Outs &amp; Corporate Restructuring.</p>
-          <div class="chips"><span>Excel</span><span>DCF</span><span>Trading multiples</span><span>LBO</span></div>
+          <div class="kind" data-i18n="k33">MSc coursework, 2025 – 2026</div>
+          <h3 data-i18n="k34">Company valuation and LBO analysis</h3>
+          <p data-i18n="k35">Valued companies with three methods in Excel: discounted cash flow, trading multiples and a leveraged buy-out model.</p>
+          <p data-i18n="k36">Compared how a deal could be financed with equity, debt and mezzanine capital. Module grade: 90% in M&amp;A, Buy-Outs &amp; Corporate Restructuring.</p>
+          <div class="chips"><span>Excel</span><span>DCF</span><span data-i18n="k37">Trading multiples</span><span>LBO</span></div>
         </div>
         <img class="figure" src="still_60.webp" alt="" aria-hidden="true">
       </article>
-      <div class="gal-head"><h3>More work</h3><div class="gal-nav"><button type="button" data-gal="prev" aria-label="Previous project">←</button><button type="button" data-gal="next" aria-label="Next project">→</button></div></div>
+      <div class="gal-head"><h3 data-i18n="k39">More work</h3><div class="gal-nav"><button type="button" data-gal="prev" aria-label="Previous project">←</button><button type="button" data-gal="next" aria-label="Next project">→</button></div></div>
       <div class="gallery" id="gallery">
         <article class="card">
-          <div class="kind">Master's project, Sep 2025 – Sep 2026</div>
-          <h3>Market entry strategy: Tom Ford in Switzerland</h3>
-          <p>Analysed the Swiss luxury market across all six PESTLE dimensions and the competitive landscape, defined target customer segments, and recommended market entry, pricing and positioning.</p>
-          <div class="chips"><span>PESTLE</span><span>Market research</span><span>PowerPoint</span></div>
+          <div class="kind" data-i18n="k40">Master's project, Sep 2025 – Sep 2026</div>
+          <h3 data-i18n="k41">Market entry strategy: Tom Ford in Switzerland</h3>
+          <p data-i18n="k42">Analysed the Swiss luxury market across all six PESTLE dimensions and the competitive landscape, defined target customer segments, and recommended market entry, pricing and positioning.</p>
+          <div class="chips"><span>PESTLE</span><span data-i18n="k38">Market research</span><span>PowerPoint</span></div>
         </article>
         <article class="card">
-          <div class="kind">Internship work, 2024</div>
-          <h3>KPI dashboards and reporting data</h3>
-          <p>Cleaned and standardised raw business data in Python and Excel, then built interactive Power BI dashboards to monitor KPIs and visualise business performance.</p>
+          <div class="kind" data-i18n="k43">Internship work, 2024</div>
+          <h3 data-i18n="k44">KPI dashboards and reporting data</h3>
+          <p data-i18n="k45">Cleaned and standardised raw business data in Python and Excel, then built interactive Power BI dashboards to monitor KPIs and visualise business performance.</p>
           <div class="chips"><span>Power BI</span><span>Python</span><span>Excel</span></div>
         </article>
         <article class="card live">
-          <span class="pill">Live on this site</span>
-          <h3>Interactive DCF valuation model</h3>
-          <p>A working discounted cash flow model with a sensitivity table. Change the assumptions and see the value per share move.</p>
-          <a class="go" href="#valuation">Try the model</a>
+          <span class="pill" data-i18n="k46">Live on this site</span>
+          <h3 data-i18n="k47">Interactive DCF valuation model</h3>
+          <p data-i18n="k48">A working discounted cash flow model with a sensitivity table. Change the assumptions and see the value per share move.</p>
+          <a class="go" href="#valuation" data-i18n="k49">Try the model</a>
         </article>
         <article class="card live">
-          <span class="pill">Live on this site</span>
-          <h3>KPI sales dashboard demo</h3>
-          <p>A Power BI-style dashboard with filters, KPI cards and interactive charts, built on generated sample data.</p>
-          <a class="go" href="#dashboard">Open the dashboard</a>
+          <span class="pill" data-i18n="k46">Live on this site</span>
+          <h3 data-i18n="k50">KPI sales dashboard demo</h3>
+          <p data-i18n="k51">A Power BI-style dashboard with filters, KPI cards and interactive charts, built on generated sample data.</p>
+          <a class="go" href="#dashboard" data-i18n="k52">Open the dashboard</a>
         </article>
       </div>
     </div>
@@ -449,38 +458,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section class="tool" id="valuation">
     <div class="wrap">
-      <p class="tag">Live tool</p>
-      <h2 class="rv">Try my valuation model<span class="dot">.</span></h2>
-      <p class="lead mute">A simplified discounted cash flow (DCF) model, the method I use in my MSc valuation coursework. Move the sliders and the value updates instantly. The company and its figures are an illustrative example, not real data and not investment advice.</p>
+      <p class="tag" data-i18n="k53">Live tool</p>
+      <h2 class="rv" data-i18n="k54">Try my valuation model<span class="dot">.</span></h2>
+      <p class="lead mute" data-i18n="k55">A simplified discounted cash flow (DCF) model, the method I use in my MSc valuation coursework. Move the sliders and the value updates instantly. The company and its figures are an illustrative example, not real data and not investment advice.</p>
       <div class="dcf">
         <form class="frame dcf-in" id="dcfForm" aria-label="DCF assumptions">
-          <h3>Assumptions for an example company</h3>
-          <div class="field"><label for="rev0">Revenue this year <output id="o-rev0"></output></label><input type="range" id="rev0" min="100" max="2000" step="10" value="500"></div>
-          <div class="field"><label for="g1">Revenue growth in year 1 <output id="o-g1"></output></label><input type="range" id="g1" min="-5" max="25" step="0.5" value="8"><div class="hint">Growth fades in a straight line to the terminal growth rate by year 5.</div></div>
-          <div class="field"><label for="margin">EBIT margin <output id="o-margin"></output></label><input type="range" id="margin" min="0" max="40" step="0.5" value="14"></div>
-          <div class="field"><label for="tax">Tax rate <output id="o-tax"></output></label><input type="range" id="tax" min="15" max="40" step="0.5" value="30"></div>
-          <div class="field"><label for="reinv">Net reinvestment, % of revenue <output id="o-reinv"></output></label><input type="range" id="reinv" min="0" max="15" step="0.5" value="4"><div class="hint">Capex minus depreciation, plus the increase in working capital.</div></div>
-          <div class="field"><label for="wacc">WACC (discount rate) <output id="o-wacc"></output></label><input type="range" id="wacc" min="5" max="15" step="0.1" value="8.5"></div>
-          <div class="field"><label for="gT">Terminal growth <output id="o-gT"></output></label><input type="range" id="gT" min="0" max="4" step="0.1" value="2"></div>
-          <div class="field"><label for="debt">Net debt <output id="o-debt"></output></label><input type="range" id="debt" min="-200" max="1000" step="10" value="200"></div>
-          <div class="field"><label for="shares">Shares outstanding <output id="o-shares"></output></label><input type="range" id="shares" min="5" max="200" step="1" value="50"></div>
-          <button type="button" class="btn reset" id="dcfReset">Reset to example</button>
+          <h3 data-i18n="k56">Assumptions for an example company</h3>
+          <div class="field"><label for="rev0"><span data-i18n="k57">Revenue this year</span> <output id="o-rev0"></output></label><input type="range" id="rev0" min="100" max="2000" step="10" value="500"></div>
+          <div class="field"><label for="g1"><span data-i18n="k58">Revenue growth in year 1</span> <output id="o-g1"></output></label><input type="range" id="g1" min="-5" max="25" step="0.5" value="8"><div class="hint" data-i18n="k66">Growth fades in a straight line to the terminal growth rate by year 5.</div></div>
+          <div class="field"><label for="margin"><span data-i18n="k59">EBIT margin</span> <output id="o-margin"></output></label><input type="range" id="margin" min="0" max="40" step="0.5" value="14"></div>
+          <div class="field"><label for="tax"><span data-i18n="k60">Tax rate</span> <output id="o-tax"></output></label><input type="range" id="tax" min="15" max="40" step="0.5" value="30"></div>
+          <div class="field"><label for="reinv"><span data-i18n="k61">Net reinvestment, % of revenue</span> <output id="o-reinv"></output></label><input type="range" id="reinv" min="0" max="15" step="0.5" value="4"><div class="hint" data-i18n="k67">Capex minus depreciation, plus the increase in working capital.</div></div>
+          <div class="field"><label for="wacc"><span data-i18n="k62">WACC (discount rate)</span> <output id="o-wacc"></output></label><input type="range" id="wacc" min="5" max="15" step="0.1" value="8.5"></div>
+          <div class="field"><label for="gT"><span data-i18n="k63">Terminal growth</span> <output id="o-gT"></output></label><input type="range" id="gT" min="0" max="4" step="0.1" value="2"></div>
+          <div class="field"><label for="debt"><span data-i18n="k64">Net debt</span> <output id="o-debt"></output></label><input type="range" id="debt" min="-200" max="1000" step="10" value="200"></div>
+          <div class="field"><label for="shares"><span data-i18n="k65">Shares outstanding</span> <output id="o-shares"></output></label><input type="range" id="shares" min="5" max="200" step="1" value="50"></div>
+          <button type="button" class="btn reset" id="dcfReset" data-i18n="k68">Reset to example</button>
         </form>
         <div class="dcf-out">
           <div class="tiles" aria-live="polite">
-            <div class="tile key"><div class="v" id="t-ps">–</div><div class="l">Value per share</div></div>
-            <div class="tile"><div class="v" id="t-ev">–</div><div class="l">Enterprise value</div></div>
-            <div class="tile"><div class="v" id="t-eq">–</div><div class="l">Equity value</div></div>
-            <div class="tile"><div class="v" id="t-tv">–</div><div class="l">Terminal value share of EV</div></div>
+            <div class="tile key"><div class="v" id="t-ps">–</div><div class="l" data-i18n="k69">Value per share</div></div>
+            <div class="tile"><div class="v" id="t-ev">–</div><div class="l" data-i18n="k70">Enterprise value</div></div>
+            <div class="tile"><div class="v" id="t-eq">–</div><div class="l" data-i18n="k71">Equity value</div></div>
+            <div class="tile"><div class="v" id="t-tv">–</div><div class="l" data-i18n="k72">Terminal value share of EV</div></div>
           </div>
           <div class="frame">
-            <h3>Free cash flow forecast, € million</h3>
+            <h3 data-i18n="k73">Free cash flow forecast, € million</h3>
             <div class="chartbox" id="fcfBox"><svg id="fcfChart" viewBox="0 0 640 260" role="img" aria-label="Bar chart of forecast free cash flow for years 1 to 5"></svg><div class="tip" id="fcfTip"></div></div>
           </div>
           <div class="frame sens">
-            <h3>Sensitivity: value per share (€) for different WACC and terminal growth</h3>
+            <h3 data-i18n="k74">Sensitivity: value per share (€) for different WACC and terminal growth</h3>
             <table id="sensT"></table>
-            <p class="note">The outlined cell is your current case. Rows are terminal growth, columns are WACC.</p>
+            <p class="note" data-i18n="k75">The outlined cell is your current case. Rows are terminal growth, columns are WACC.</p>
           </div>
         </div>
       </div>
@@ -489,78 +498,78 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section class="dash" id="dashboard">
     <div class="wrap">
-      <p class="tag">Live demo</p>
-      <h2 class="rv">KPI dashboard<span class="dot">.</span></h2>
-      <p class="lead mute">An interactive sales dashboard in the style of the Power BI reports I built during my internship. Filter by region and period, and hover over the charts for details. It runs on generated sample data for a fictional online retailer, not on real company data.</p>
+      <p class="tag" data-i18n="k76">Live demo</p>
+      <h2 class="rv" data-i18n="k77">KPI dashboard<span class="dot">.</span></h2>
+      <p class="lead mute" data-i18n="k78">An interactive sales dashboard in the style of the Power BI reports I built during my internship. Filter by region and period, and hover over the charts for details. It runs on generated sample data for a fictional online retailer, not on real company data.</p>
       <div class="frame">
         <div class="filters">
           <div><span class="flabel">Region</span><div class="seg" id="fRegion" role="group" aria-label="Region"></div></div>
-          <div><span class="flabel">Period 2025</span><div class="seg" id="fPeriod" role="group" aria-label="Period"></div></div>
+          <div><span class="flabel" data-i18n="k79">Period 2025</span><div class="seg" id="fPeriod" role="group" aria-label="Period"></div></div>
         </div>
         <div class="kpis" aria-live="polite">
-          <div class="kpi"><div class="l">Revenue</div><div class="v" id="k-rev">–</div><div class="d" id="k-rev-d"></div></div>
-          <div class="kpi"><div class="l">Gross margin</div><div class="v" id="k-gm">–</div><div class="d" id="k-gm-d"></div></div>
-          <div class="kpi"><div class="l">Orders</div><div class="v" id="k-ord">–</div><div class="d" id="k-ord-d"></div></div>
-          <div class="kpi"><div class="l">Average order value</div><div class="v" id="k-aov">–</div><div class="d" id="k-aov-d"></div></div>
+          <div class="kpi"><div class="l" data-i18n="k80">Revenue</div><div class="v" id="k-rev">–</div><div class="d" id="k-rev-d"></div></div>
+          <div class="kpi"><div class="l" data-i18n="k81">Gross margin</div><div class="v" id="k-gm">–</div><div class="d" id="k-gm-d"></div></div>
+          <div class="kpi"><div class="l" data-i18n="k82">Orders</div><div class="v" id="k-ord">–</div><div class="d" id="k-ord-d"></div></div>
+          <div class="kpi"><div class="l" data-i18n="k83">Average order value</div><div class="v" id="k-aov">–</div><div class="d" id="k-aov-d"></div></div>
         </div>
         <div class="dgrid">
           <div>
-            <h3>Monthly revenue vs target</h3>
-            <div class="legend"><span><i></i>Actual 2025</span><span><i class="t"></i>Target</span></div>
+            <h3 data-i18n="k84">Monthly revenue vs target</h3>
+            <div class="legend"><span data-i18n="k85"><i></i>Actual 2025</span><span data-i18n="k86"><i class="t"></i>Target</span></div>
             <div class="chartbox" id="lineBox"><svg id="lineChart" viewBox="0 0 640 300" role="img" aria-label="Line chart of monthly revenue against target"></svg><div class="tip" id="lineTip"></div></div>
           </div>
           <div>
-            <h3>Revenue by category</h3>
+            <h3 data-i18n="k87">Revenue by category</h3>
             <div class="chartbox" id="barBox"><svg id="barChart" viewBox="0 0 400 300" role="img" aria-label="Bar chart of revenue by product category"></svg><div class="tip" id="barTip"></div></div>
           </div>
         </div>
       </div>
       <div class="frame">
-        <h3>Regions</h3>
+        <h3 data-i18n="k88">Regions</h3>
         <table class="rtable" id="regT"></table>
-        <p class="disclaimer">Sample data generated for this demo. Targets are set at 8% above 2024 revenue.</p>
+        <p class="disclaimer" data-i18n="k89">Sample data generated for this demo. Targets are set at 8% above 2024 revenue.</p>
       </div>
     </div>
   </section>
 
   <section class="exp" id="experience">
     <div class="wrap">
-      <p class="tag">Experience &amp; education</p>
-      <h2 class="rv">My journey<span class="dot">.</span></h2>
+      <p class="tag" data-i18n="k90">Experience &amp; education</p>
+      <h2 class="rv" data-i18n="k91">My journey<span class="dot">.</span></h2>
       <div class="exp-grid">
         <div>
-          <h3>Experience</h3>
+          <h3 data-i18n="k92">Experience</h3>
           <div class="item">
-            <div class="when">Mar 2024 – Aug 2024</div>
-            <h4>Data Analyst Intern</h4>
-            <div class="where">K.M.A Arjun Analytics, Hyderabad, India</div>
+            <div class="when" data-i18n="k94">Mar 2024 – Aug 2024</div>
+            <h4 data-i18n="k95">Data Analyst Intern</h4>
+            <div class="where" data-i18n="k96">K.M.A Arjun Analytics, Hyderabad, India</div>
             <ul>
-              <li>Built interactive Power BI dashboards to monitor KPIs and visualise business performance.</li>
-              <li>Analysed business and financial datasets in Python and Excel, delivering ad-hoc analyses that identified trends.</li>
-              <li>Cleaned and transformed raw data and calculated financial ratios to support decisions.</li>
-              <li>Supported financial reports and made reporting more accurate by standardising the data.</li>
+              <li data-i18n="k97">Built interactive Power BI dashboards to monitor KPIs and visualise business performance.</li>
+              <li data-i18n="k98">Analysed business and financial datasets in Python and Excel, delivering ad-hoc analyses that identified trends.</li>
+              <li data-i18n="k99">Cleaned and transformed raw data and calculated financial ratios to support decisions.</li>
+              <li data-i18n="k100">Supported financial reports and made reporting more accurate by standardising the data.</li>
             </ul>
           </div>
           <div class="item">
-            <div class="when">Sep 2023 – Feb 2024</div>
-            <h4>Data Analytics Training Programme</h4>
-            <div class="where">K.M.A Arjun Analytics, Hyderabad, India</div>
-            <ul><li>Six-month programme with certificate: data collection, cleaning and transformation, SQL, Python, Power BI and data visualisation.</li></ul>
+            <div class="when" data-i18n="k101">Sep 2023 – Feb 2024</div>
+            <h4 data-i18n="k102">Data Analytics Training Programme</h4>
+            <div class="where" data-i18n="k96">K.M.A Arjun Analytics, Hyderabad, India</div>
+            <ul><li data-i18n="k103">Six-month programme with certificate: data collection, cleaning and transformation, SQL, Python, Power BI and data visualisation.</li></ul>
           </div>
         </div>
         <div>
-          <h3>Education</h3>
+          <h3 data-i18n="k93">Education</h3>
           <div class="item">
-            <div class="when">2025 – Sep 2027 (expected)</div>
+            <div class="when" data-i18n="k104">2025 – Sep 2027 (expected)</div>
             <h4>MSc Finance</h4>
-            <div class="where">EU Business School, Munich, Germany</div>
-            <ul><li>Started online in January 2025, on campus in Munich since March 2025.</li><li>Modules include M&amp;A, Advanced Corporate Finance, Financial Reporting &amp; Statement Analysis and SAP S/4HANA FICO.</li></ul>
+            <div class="where" data-i18n="k105">EU Business School, Munich, Germany</div>
+            <ul><li data-i18n="k106">Started online in January 2025, on campus in Munich since March 2025.</li><li data-i18n="k107">Modules include M&amp;A, Advanced Corporate Finance, Financial Reporting &amp; Statement Analysis and SAP S/4HANA FICO.</li></ul>
           </div>
           <div class="item">
             <div class="when">2020 – 2023</div>
             <h4>Bachelor of Commerce (B.Com)</h4>
-            <div class="where">Osmania University, Hyderabad, India</div>
-            <ul><li>CGPA 7.5 / 10. Accounting, finance and business economics.</li></ul>
+            <div class="where" data-i18n="k108">Osmania University, Hyderabad, India</div>
+            <ul><li data-i18n="k109">CGPA 7.5 / 10. Accounting, finance and business economics.</li></ul>
           </div>
         </div>
       </div>
@@ -572,9 +581,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div class="moment rv">
         <div>
-          <p class="tag">Off the spreadsheet</p>
-          <h3>Career Day at EU&nbsp;Business&nbsp;School<span class="dot">.</span></h3>
-          <p>Building my network and talking to companies in person.</p>
+          <p class="tag" data-i18n="k110">Off the spreadsheet</p>
+          <h3 data-i18n="k111">Career Day at EU&nbsp;Business&nbsp;School<span class="dot">.</span></h3>
+          <p data-i18n="k112">Building my network and talking to companies in person.</p>
         </div>
         <div class="m-pics">
           <figure><img src="career_1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Pranav Gorige in a checked blazer at the EU Business School Career Day"></figure>
@@ -587,13 +596,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="contact" id="contact">
     <div class="wrap ct-grid">
       <div>
-        <p class="tag">Contact</p>
-        <h2 class="rv">Let's talk<span class="dot">.</span></h2>
-        <p>Looking for a working student in finance, controlling or data in Munich? I can start now, for up to 20 hours a week, until I graduate in September 2027. My student residence permit allows working student jobs.</p>
+        <p class="tag" data-i18n="k5">Contact</p>
+        <h2 class="rv" data-i18n="k113">Let's talk<span class="dot">.</span></h2>
+        <p data-i18n="k114">Looking for a working student in finance, controlling or data in Munich? I can start now, for up to 20 hours a week, until I graduate in September 2027. My student residence permit allows working student jobs.</p>
         <div class="ctas">
-          <a class="btn fill" href="mailto:pranavgorige@gmail.com">Email me</a>
+          <a class="btn fill" href="mailto:pranavgorige@gmail.com" data-i18n="k115">Email me</a>
           <a class="btn" href="https://www.linkedin.com/in/PranavGorige7424311000" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="Pranav_Gorige_CV.pdf" download>Download CV</a>
+          <a class="btn" href="Pranav_Gorige_CV.pdf" download data-i18n="k6">Download CV</a>
         </div>
       </div>
       <div class="ct-video">
@@ -608,6 +617,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <footer><div class="wrap"><span>© 2026 Pranav Gorige</span><span>pranavgorige@gmail.com</span></div></footer>
 
 <script>
+// ================= language: English / German =================
+var LANG='en';
+(function(){var q=(location.search.match(/[?&]lang=(en|de)\b/)||[])[1],v=null;try{v=localStorage.getItem('pg_lang');}catch(e){}LANG=q||(v==='de'?'de':'en');})();
+var DE={"k0": "Über mich", "k1": "Kenntnisse", "k2": "Projekte", "k3": "Live-Tools", "k4": "Werdegang", "k5": "Kontakt", "k6": "CV herunterladen", "k7": "Fahren Sie mit der Maus über mich", "k8": "Tippen Sie auf mich", "k9": "MSc-Finance-Student an der EU Business School, München", "k10": "Aus Daten werden Entscheidungen.", "k11": "Meine Projekte ansehen", "k12": "Über mich", "k13": "Vom Rechnungswesen in Hyderabad zur Finanzwelt in München<span class=\"dot\">.</span>", "k14": "Ich studiere <strong>MSc Finance an der EU Business School in München</strong> und schließe voraussichtlich im September 2027 ab. Davor habe ich einen Bachelor of Commerce an der Osmania University in Hyderabad, ein sechsmonatiges Data-Analytics-Programm und ein <strong>sechsmonatiges Praktikum als Data Analyst</strong> absolviert.", "k15": "Im Praktikum habe ich <strong>Power-BI-Dashboards</strong> zur KPI-Überwachung erstellt, Geschäfts- und Finanzdaten mit Python und Excel analysiert und Finanzberichte durch standardisierte Daten genauer gemacht. Im Master bewerte ich Unternehmen mit <strong>DCF-, Multiplikator- und LBO-Modellen</strong>.", "k16": "Ich arbeite täglich auf Englisch und lerne Deutsch. Ich suche eine Werkstudentenstelle, in der ich Struktur und Genauigkeit in ein Finance- oder Datenteam einbringen kann.", "k17": "Wohnort", "k18": "München, Deutschland", "k19": "Studium", "k20": "Verfügbar", "k21": "Bis zu 20 Stunden pro Woche, ab sofort bis September 2027", "k22": "Sprachen", "k23": "Englisch (fließend), Deutsch (A2, auf dem Weg zu B1)", "k24": " Monate", "k25": "Praktikum als Data Analyst", "k26": "Beste Modulnote im MSc", "k27": " Std./Woche", "k28": "Ab sofort verfügbar", "k29": "Finanzen", "k30": "Daten", "k31": "Ausgewählte Arbeiten", "k32": "Projekte<span class=\"dot\">.</span>", "k33": "MSc-Kursarbeit, 2025 – 2026", "k34": "Unternehmensbewertung und LBO-Analyse", "k35": "Unternehmen mit drei Methoden in Excel bewertet: Discounted Cash Flow, Trading Multiples und ein Leveraged-Buy-out-Modell.", "k36": "Verglichen, wie sich eine Transaktion mit Eigen-, Fremd- und Mezzanine-Kapital finanzieren lässt. Modulnote: 90 % in M&amp;A, Buy-Outs &amp; Corporate Restructuring.", "k37": "Multiplikatoren", "k38": "Marktforschung", "k39": "Weitere Arbeiten", "k40": "Masterprojekt, Sep. 2025 – Sep. 2026", "k41": "Markteintrittsstrategie: Tom Ford in der Schweiz", "k42": "Den Schweizer Luxusmarkt in allen sechs PESTLE-Dimensionen sowie das Wettbewerbsumfeld analysiert, Zielkundensegmente definiert und Markteintritt, Preisgestaltung und Positionierung empfohlen.", "k43": "Praktikum, 2024", "k44": "KPI-Dashboards und Reporting-Daten", "k45": "Rohdaten mit Python und Excel bereinigt und standardisiert, anschließend interaktive Power-BI-Dashboards zur Überwachung von KPIs und zur Visualisierung der Geschäftsentwicklung erstellt.", "k46": "Live auf dieser Seite", "k47": "Interaktives DCF-Bewertungsmodell", "k48": "Ein funktionierendes Discounted-Cash-Flow-Modell mit Sensitivitätstabelle. Ändern Sie die Annahmen und sehen Sie, wie sich der Wert je Aktie verändert.", "k49": "Modell ausprobieren", "k50": "Demo: KPI-Vertriebsdashboard", "k51": "Ein Dashboard im Power-BI-Stil mit Filtern, KPI-Karten und interaktiven Diagrammen, basierend auf generierten Beispieldaten.", "k52": "Dashboard öffnen", "k53": "Live-Tool", "k54": "Testen Sie mein Bewertungsmodell<span class=\"dot\">.</span>", "k55": "Ein vereinfachtes Discounted-Cash-Flow-Modell (DCF), die Methode aus meinen Bewertungskursen im MSc. Bewegen Sie die Regler, und der Wert aktualisiert sich sofort. Das Unternehmen und seine Zahlen sind ein fiktives Beispiel, keine echten Daten und keine Anlageberatung.", "k56": "Annahmen für ein Beispielunternehmen", "k57": "Umsatz dieses Jahr", "k58": "Umsatzwachstum in Jahr 1", "k59": "EBIT-Marge", "k60": "Steuersatz", "k61": "Nettoreinvestition, % vom Umsatz", "k62": "WACC (Diskontierungssatz)", "k63": "Ewiges Wachstum", "k64": "Nettoverschuldung", "k65": "Ausstehende Aktien", "k66": "Das Wachstum sinkt bis Jahr 5 linear auf die ewige Wachstumsrate.", "k67": "Investitionen abzüglich Abschreibungen, zuzüglich der Erhöhung des Working Capital.", "k68": "Auf Beispiel zurücksetzen", "k69": "Wert je Aktie", "k70": "Unternehmenswert (EV)", "k71": "Eigenkapitalwert", "k72": "Anteil Terminal Value am EV", "k73": "Free-Cashflow-Prognose, Mio. €", "k74": "Sensitivität: Wert je Aktie (€) bei unterschiedlichem WACC und ewigem Wachstum", "k75": "Die umrandete Zelle ist Ihr aktueller Fall. Zeilen: ewiges Wachstum, Spalten: WACC.", "k76": "Live-Demo", "k77": "KPI-Dashboard<span class=\"dot\">.</span>", "k78": "Ein interaktives Vertriebsdashboard im Stil der Power-BI-Berichte aus meinem Praktikum. Filtern Sie nach Region und Zeitraum und fahren Sie für Details über die Diagramme. Es basiert auf generierten Beispieldaten eines fiktiven Onlinehändlers, nicht auf echten Unternehmensdaten.", "k79": "Zeitraum 2025", "k80": "Umsatz", "k81": "Bruttomarge", "k82": "Bestellungen", "k83": "Ø Bestellwert", "k84": "Monatsumsatz ggü. Ziel", "k85": "<i></i>Ist 2025", "k86": "<i class=\"t\"></i>Ziel", "k87": "Umsatz nach Kategorie", "k88": "Regionen", "k89": "Für diese Demo generierte Beispieldaten. Die Ziele liegen 8 % über dem Umsatz 2024.", "k90": "Erfahrung &amp; Ausbildung", "k91": "Mein Werdegang<span class=\"dot\">.</span>", "k92": "Berufserfahrung", "k93": "Ausbildung", "k94": "März 2024 – Aug. 2024", "k95": "Praktikant Data Analyst", "k96": "K.M.A Arjun Analytics, Hyderabad, Indien", "k97": "Interaktive Power-BI-Dashboards zur Überwachung von KPIs und zur Visualisierung der Geschäftsentwicklung erstellt.", "k98": "Geschäfts- und Finanzdaten mit Python und Excel analysiert und Ad-hoc-Analysen zur Trenderkennung geliefert.", "k99": "Rohdaten bereinigt und transformiert sowie Finanzkennzahlen als Entscheidungsgrundlage berechnet.", "k100": "Bei Finanzberichten unterstützt und das Reporting durch standardisierte Daten genauer gemacht.", "k101": "Sep. 2023 – Feb. 2024", "k102": "Data-Analytics-Weiterbildung", "k103": "Sechsmonatiges Programm mit Zertifikat: Datenerhebung, -bereinigung und -transformation, SQL, Python, Power BI und Datenvisualisierung.", "k104": "2025 – Sep. 2027 (voraussichtlich)", "k105": "EU Business School, München, Deutschland", "k106": "Online-Start im Januar 2025, seit März 2025 auf dem Campus in München.", "k107": "Module u. a. M&amp;A, Advanced Corporate Finance, Financial Reporting &amp; Statement Analysis und SAP S/4HANA FICO.", "k108": "Osmania University, Hyderabad, Indien", "k109": "CGPA 7,5 / 10. Rechnungswesen, Finanzen und Betriebswirtschaft.", "k110": "Abseits der Tabellen", "k111": "Career Day an der EU&nbsp;Business&nbsp;School<span class=\"dot\">.</span>", "k112": "Netzwerk aufbauen und persönlich mit Unternehmen sprechen.", "k113": "Lassen Sie uns sprechen<span class=\"dot\">.</span>", "k114": "Sie suchen einen Werkstudenten für Finance, Controlling oder Daten in München? Ich kann sofort starten, mit bis zu 20 Stunden pro Woche, bis zu meinem Abschluss im September 2027. Mein Aufenthaltstitel als Student erlaubt Werkstudententätigkeiten.", "k115": "E-Mail schreiben"};
+function TX(en,de){return LANG==='de'?de:en;}
+function nf(v,d){var neg=v<0,t=Math.abs(v).toFixed(d);if(LANG==='de'){var a=t.split('.');a[0]=a[0].replace(/\B(?=(\d{3})+(?!\d))/g,'.');t=a.join(',');}return (neg&&+t.replace(',','.')!==0?'-':'')+t;}
+function money(v,d,u){var U={m:['m','Mio.'],bn:['bn','Mrd.'],k:['k','Tsd.']},n=nf(v,d);return LANG==='de'?n+(u?'\u00a0'+U[u][1]:'')+'\u00a0€':'€'+n+(u?'\u00a0'+U[u][0]:'');}
+function pct(v,d){return nf(v,d)+(LANG==='de'?'\u00a0%':'%');}
+function applyLang(l,save){
+  LANG=l==='de'?'de':'en'; document.documentElement.lang=LANG;
+  [].slice.call(document.querySelectorAll('[data-i18n]')).forEach(function(e){if(e._en==null)e._en=e.innerHTML;var k=e.getAttribute('data-i18n');e.innerHTML=(LANG==='de'&&DE[k]!=null)?DE[k]:e._en;});
+  [].slice.call(document.querySelectorAll('.lang button')).forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===LANG?'true':'false');});
+  if(save){try{localStorage.setItem('pg_lang',LANG);}catch(e){}try{var u=new URL(location.href);if(LANG==='de')u.searchParams.set('lang','de');else u.searchParams.delete('lang');history.replaceState(null,'',u.pathname+u.search+u.hash);}catch(e){}}
+  document.dispatchEvent(new Event('langchange'));
+}
+if(LANG==='de')applyLang('de',false);
+[].slice.call(document.querySelectorAll('.lang button')).forEach(function(b){b.addEventListener('click',function(){if(b.dataset.l!==LANG)applyLang(b.dataset.l,true);});});
 // skills tabs
 (function(){
   var S={
@@ -617,16 +643,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     tools:{t:"Tools",i:[["SAP S/4HANA FICO","Financial accounting and controlling, MSc coursework"],["MS Office","Excel, PowerPoint, Word, Outlook, Teams"],["AI assistants","ChatGPT and Claude for analysis, drafting and automation ideas"]]},
     languages:{t:"Languages",i:[["English","Fluent, my working language"],["German","A2, learning towards B1"]]}
   };
+  var SD={
+    finance:{t:"Finanzen",i:[["Unternehmensbewertung","DCF-, Multiplikator- und LBO-Modelle in Excel"],["Jahresabschlussanalyse","GuV, Bilanz und Kapitalflussrechnung lesen und analysieren"],["Kennzahlen- und KPI-Analyse","Finanzkennzahlen berechnen und Geschäfts-KPIs verfolgen"],["Unterstützung im Finanzreporting","Zahlen für Finanzberichte aufbereiten"],["Marktanalyse","PESTLE- und Wettbewerbsanalyse"]]},
+    data:{t:"Daten",i:[["Python","pandas zur Analyse von Geschäfts- und Finanzdaten"],["SQL","Datenabfragen, gelernt in einem sechsmonatigen Data-Analytics-Programm"],["Datenaufbereitung","Rohdaten bereinigen, transformieren, prüfen und standardisieren"],["Ad-hoc-Analysen","Trends erkennen und in klare Erkenntnisse übersetzen"]]},
+    reporting:{t:"Reporting",i:[["Power BI","Interaktive Dashboards zur KPI-Überwachung"],["Excel","Pivot-Tabellen, Verweisfunktionen und Modelle"],["PowerPoint","Klare Präsentationen von Analysen und Empfehlungen"]]},
+    tools:{t:"Tools",i:[["SAP S/4HANA FICO","Finanzbuchhaltung und Controlling, MSc-Kurs"],["MS Office","Excel, PowerPoint, Word, Outlook, Teams"],["KI-Assistenten","ChatGPT und Claude für Analysen, Entwürfe und Automatisierungsideen"]]},
+    languages:{t:"Sprachen",i:[["Englisch","Fließend, meine Arbeitssprache"],["Deutsch","A2, auf dem Weg zu B1"]]}
+  };
+  var cur='finance';
   var tabs=[].slice.call(document.querySelectorAll('.cats button')), panel=document.getElementById('sk-panel');
   function show(k){
     tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.k===k?'true':'false');b.tabIndex=b.dataset.k===k?0:-1;});
-    var d=S[k]; panel.innerHTML='<h3>'+d.t+'</h3><ul>'+d.i.map(function(x){return '<li><b>'+x[0]+'</b><span>'+x[1]+'</span></li>';}).join('')+'</ul>';
+    cur=k; var d=(LANG==='de'?SD:S)[k]; panel.innerHTML='<h3>'+d.t+'</h3><ul>'+d.i.map(function(x){return '<li><b>'+x[0]+'</b><span>'+x[1]+'</span></li>';}).join('')+'</ul>';
   }
   tabs.forEach(function(b,ix){
     b.addEventListener('click',function(){show(b.dataset.k);});
     b.addEventListener('keydown',function(e){var n=e.key==='ArrowDown'||e.key==='ArrowRight'?1:e.key==='ArrowUp'||e.key==='ArrowLeft'?-1:0;if(n){e.preventDefault();var t=tabs[(ix+n+tabs.length)%tabs.length];t.focus();show(t.dataset.k);}});
   });
   show('finance');
+  document.addEventListener('langchange',function(){show(cur);});
 })();
 // videos: hero plays first; the About and Contact clips load late and only one video plays at a time
 (function(){
@@ -698,7 +733,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 // ================= helpers =================
 function el(tag,attrs,parent){var n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(var k in attrs)n.setAttribute(k,attrs[k]);if(parent)parent.appendChild(n);return n;}
-function fmtM(v){return '€'+(Math.abs(v)>=1000?(v/1000).toFixed(2)+' bn':v.toFixed(0)+' m');}
+function fmtM(v){return Math.abs(v)>=1000?money(v/1000,2,'bn'):money(v,0,'m');}
 function showTip(tip,box,html,x,y){tip.innerHTML=html;tip.style.opacity=1;var bw=box.clientWidth,tw=tip.offsetWidth;var left=Math.min(Math.max(0,x+14),bw-tw);tip.style.left=left+'px';tip.style.top=Math.max(0,y-10)+'px';}
 function hideTip(tip){tip.style.opacity=0;}
 function niceMax(v){if(v<=0)return 1;var p=Math.pow(10,Math.floor(Math.log10(v))),n=v/p;return (n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*p;}
@@ -709,8 +744,8 @@ function niceMax(v){if(v<=0)return 1;var p=Math.pow(10,Math.floor(Math.log10(v))
   var f={}; ids.forEach(function(i){f[i]=document.getElementById(i);});
   if(!f.rev0)return;
   var defaults={}; ids.forEach(function(i){defaults[i]=f[i].value;});
-  var fmt={rev0:function(v){return '€'+v+' m';},g1:pc,margin:pc,tax:pc,reinv:pc,wacc:pc,gT:pc,debt:function(v){return '€'+v+' m';},shares:function(v){return v+' m';}};
-  function pc(v){return (+v).toFixed(1)+'%';}
+  var fmt={rev0:function(v){return money(+v,0,'m');},g1:pc,margin:pc,tax:pc,reinv:pc,wacc:pc,gT:pc,debt:function(v){return money(+v,0,'m');},shares:function(v){return v+TX(' m',' Mio.');}};
+  function pc(v){return pct(+v,1);}
   function model(a,waccOverride,gOverride){
     var w=(waccOverride!=null?waccOverride:a.wacc)/100, gT=(gOverride!=null?gOverride:a.gT)/100;
     if(w<=gT+0.0001)return null;
@@ -731,7 +766,7 @@ function niceMax(v){if(v<=0)return 1;var p=Math.pow(10,Math.floor(Math.log10(v))
     if(mn<0)mn=-niceMax(-mn);
     var sy=function(v){return T+(H-T-B)*(mx-v)/(mx-mn||1);};
     var g=el('g',{class:'grid'},svg), ax=el('g',{class:'axis'},svg);
-    for(var i=0;i<=5;i++){var v=mn+(mx-mn)*i/5,y=sy(v);el('line',{x1:L,x2:W-R,y1:y,y2:y},g);var tx=el('text',{x:L-8,y:y+4,'text-anchor':'end'},ax);tx.textContent=(Math.abs(v)<10&&v%1?v.toFixed(1):v.toFixed(0));}
+    for(var i=0;i<=5;i++){var v=mn+(mx-mn)*i/5,y=sy(v);el('line',{x1:L,x2:W-R,y1:y,y2:y},g);var tx=el('text',{x:L-8,y:y+4,'text-anchor':'end'},ax);tx.textContent=(Math.abs(v)<10&&v%1?nf(v,1):nf(v,0));}
     var bw=(W-L-R)/5, barW=Math.min(64,bw*.5);
     ys.forEach(function(d,ix){
       var cx=L+bw*ix+bw/2, y0=sy(0), y1=sy(d.fcf), top=Math.min(y0,y1), h=Math.max(1,Math.abs(y1-y0));
@@ -739,10 +774,10 @@ function niceMax(v){if(v<=0)return 1;var p=Math.pow(10,Math.floor(Math.log10(v))
       if(d.fcf>=0) path='M'+x+','+(top+h)+' V'+(top+rr)+' Q'+x+','+top+' '+(x+rr)+','+top+' H'+(x+barW-rr)+' Q'+(x+barW)+','+top+' '+(x+barW)+','+(top+rr)+' V'+(top+h)+' Z';
       else path='M'+x+','+top+' V'+(top+h-rr)+' Q'+x+','+(top+h)+' '+(x+rr)+','+(top+h)+' H'+(x+barW-rr)+' Q'+(x+barW)+','+(top+h)+' '+(x+barW)+','+(top+h-rr)+' V'+top+' Z';
       el('path',{d:path,fill:'#c7375e'},svg);
-      var lab=el('text',{x:cx,y:(d.fcf>=0?top-8:top+h+16),'text-anchor':'middle',fill:'#f5f2ee','font-size':'13','font-weight':'600'},svg); lab.textContent=d.fcf.toFixed(1);
-      var xl=el('text',{x:cx,y:H-10,'text-anchor':'middle'},ax); xl.textContent='Year '+d.t;
+      var lab=el('text',{x:cx,y:(d.fcf>=0?top-8:top+h+16),'text-anchor':'middle',fill:'#f5f2ee','font-size':'13','font-weight':'600'},svg); lab.textContent=nf(d.fcf,1);
+      var xl=el('text',{x:cx,y:H-10,'text-anchor':'middle'},ax); xl.textContent=TX('Year ','Jahr ')+d.t;
       var hit=el('rect',{x:L+bw*ix,y:T,width:bw,height:H-T-B,fill:'transparent'},svg);
-      hit.addEventListener('mousemove',function(e){var b=box.getBoundingClientRect();showTip(tip,box,'<b>Year '+d.t+'</b><br><span class="k">Revenue</span> €'+d.rev.toFixed(1)+' m (growth '+(d.g*100).toFixed(1)+'%)<br><span class="k">EBIT</span> €'+d.ebit.toFixed(1)+' m<br><span class="k">NOPAT</span> €'+d.nopat.toFixed(1)+' m<br><span class="k">Net reinvestment</span> −€'+d.re.toFixed(1)+' m<br><span class="k">Free cash flow</span> <b>€'+d.fcf.toFixed(1)+' m</b><br><span class="k">Present value</span> €'+d.pv.toFixed(1)+' m',e.clientX-b.left,e.clientY-b.top);});
+      hit.addEventListener('mousemove',function(e){var b=box.getBoundingClientRect();showTip(tip,box,'<b>'+TX('Year ','Jahr ')+d.t+'</b><br><span class="k">'+TX('Revenue','Umsatz')+'</span> '+money(d.rev,1,'m')+' ('+TX('growth ','Wachstum ')+pct(d.g*100,1)+')<br><span class="k">EBIT</span> '+money(d.ebit,1,'m')+'<br><span class="k">NOPAT</span> '+money(d.nopat,1,'m')+'<br><span class="k">'+TX('Net reinvestment','Nettoreinvestition')+'</span> −'+money(d.re,1,'m')+'<br><span class="k">'+TX('Free cash flow','Free Cashflow')+'</span> <b>'+money(d.fcf,1,'m')+'</b><br><span class="k">'+TX('Present value','Barwert')+'</span> '+money(d.pv,1,'m'),e.clientX-b.left,e.clientY-b.top);});
       hit.addEventListener('mouseleave',function(){hideTip(tip);});
     });
     el('line',{x1:L,x2:W-R,y1:sy(0),y2:sy(0),stroke:'#5a4f50','stroke-width':1},svg);
@@ -751,23 +786,24 @@ function niceMax(v){if(v<=0)return 1;var p=Math.pow(10,Math.floor(Math.log10(v))
     var t=document.getElementById('sensT'), ws=[-1,-.5,0,.5,1].map(function(d){return Math.round((a.wacc+d)*10)/10;}), gs=[1,.5,0,-.5,-1].map(function(d){return Math.max(0,Math.round((a.gT+d)*10)/10);});
     var cells=[],min=Infinity,max=-Infinity;
     gs.forEach(function(g){ws.forEach(function(w){var r=model(a,w,g);var v=r?r.ps:null;cells.push(v);if(v!=null){min=Math.min(min,v);max=Math.max(max,v);}});});
-    var h='<tr><th class="corner">g \\ WACC</th>'+ws.map(function(w){return '<th>'+w.toFixed(1)+'%</th>';}).join('')+'</tr>';
-    gs.forEach(function(g,ri){h+='<tr><th>'+g.toFixed(1)+'%</th>';ws.forEach(function(w,ci){var v=cells[ri*5+ci];var p=(v==null||max===min)?0:(v-min)/(max-min);var bg='rgba(199,55,94,'+(0.08+p*0.55).toFixed(2)+')';h+='<td class="'+(ri===2&&ci===2?'mid':'')+'" style="background:'+(v==null?'#141011':bg)+'">'+(v==null?'n/a':'€'+v.toFixed(2))+'</td>';});h+='</tr>';});
+    var h='<tr><th class="corner">g \\ WACC</th>'+ws.map(function(w){return '<th>'+pct(w,1)+'</th>';}).join('')+'</tr>';
+    gs.forEach(function(g,ri){h+='<tr><th>'+pct(g,1)+'</th>';ws.forEach(function(w,ci){var v=cells[ri*5+ci];var p=(v==null||max===min)?0:(v-min)/(max-min);var bg='rgba(199,55,94,'+(0.08+p*0.55).toFixed(2)+')';h+='<td class="'+(ri===2&&ci===2?'mid':'')+'" style="background:'+(v==null?'#141011':bg)+'">'+(v==null?TX('n/a','k. A.'):money(v,2))+'</td>';});h+='</tr>';});
     t.innerHTML=h;
   }
   function update(){
     var a=read(); ids.forEach(function(i){document.getElementById('o-'+i).textContent=fmt[i](f[i].value);});
     var r=model(a);
-    if(!r){['t-ps','t-ev','t-eq','t-tv'].forEach(function(i){document.getElementById(i).textContent='n/a';});document.getElementById('t-ps').textContent='WACC must exceed growth';return;}
-    document.getElementById('t-ps').textContent='€'+r.ps.toFixed(2);
+    if(!r){['t-ps','t-ev','t-eq','t-tv'].forEach(function(i){document.getElementById(i).textContent=TX('n/a','k. A.');});document.getElementById('t-ps').textContent=TX('WACC must exceed growth','WACC muss über dem Wachstum liegen');return;}
+    document.getElementById('t-ps').textContent=money(r.ps,2);
     document.getElementById('t-ev').textContent=fmtM(r.ev);
     document.getElementById('t-eq').textContent=fmtM(r.eq);
-    document.getElementById('t-tv').textContent=(r.tvShare*100).toFixed(0)+'%';
+    document.getElementById('t-tv').textContent=pct(r.tvShare*100,0);
     drawBars(r); drawSens(a);
   }
   ids.forEach(function(i){f[i].addEventListener('input',update);});
   document.getElementById('dcfReset').addEventListener('click',function(){ids.forEach(function(i){f[i].value=defaults[i];});update();});
   update();
+  document.addEventListener('langchange',update);
   var rz2; window.addEventListener('resize',function(){clearTimeout(rz2);rz2=setTimeout(update,150);});
   window.__dcfModel=model; // for testing
 })();
@@ -785,48 +821,51 @@ function niceMax(v){if(v<=0)return 1;var p=Math.pow(10,Math.floor(Math.log10(v))
     var gm=gmB[c]+(R()-.5)*.03, aov=aovB[c]*(1+(R()-.5)*.1)*(y===2025?1.02:1);
     rows.push({y:y,m:m,r:r,c:c,rev:rev,gp:rev*gm,orders:rev*1000/aov});
   });});});
-  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var monthsEN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], monthsDE=['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+  var NAMES_DE={'All':'Alle','Nordics':'Nordeuropa','France':'Frankreich','Electronics':'Elektronik','Home':'Wohnen','Fashion':'Mode','Sports':'Sport','Full year':'Gesamtjahr'};
+  function nm(x){return LANG==='de'&&NAMES_DE[x]?NAMES_DE[x]:x;}
+  function mon(m){return (LANG==='de'?monthsDE:monthsEN)[m];}
   var periods={'Full year':[0,11],'H1':[0,5],'H2':[6,11],'Q4':[9,11]};
   var state={region:'All',period:'Full year'};
-  function seg(id,opts,key){var c=document.getElementById(id);opts.forEach(function(o){var b=document.createElement('button');b.type='button';b.textContent=o;b.setAttribute('aria-pressed',state[key]===o?'true':'false');b.addEventListener('click',function(){state[key]=o;[].slice.call(c.children).forEach(function(x){x.setAttribute('aria-pressed',x.textContent===o?'true':'false');});render();});c.appendChild(b);});}
+  function seg(id,opts,key){var c=document.getElementById(id);opts.forEach(function(o){var b=document.createElement('button');b.type='button';b.dataset.v=o;b.textContent=nm(o);b.setAttribute('aria-pressed',state[key]===o?'true':'false');b.addEventListener('click',function(){state[key]=o;[].slice.call(c.children).forEach(function(x){x.setAttribute('aria-pressed',x.dataset.v===o?'true':'false');});render();});c.appendChild(b);});}
   seg('fRegion',['All'].concat(regions),'region'); seg('fPeriod',Object.keys(periods),'period');
   function sel(y,extra){var p=periods[state.period];return rows.filter(function(d){return d.y===y&&d.m>=p[0]&&d.m<=p[1]&&(state.region==='All'||d.r===state.region)&&(!extra||extra(d));});}
   function sum(a,k){return a.reduce(function(s,d){return s+d[k];},0);}
-  function eur(k){return k>=1000?'€'+(k/1000).toFixed(2)+' m':'€'+k.toFixed(0)+' k';}
+  function eur(k){return k>=1000?money(k/1000,2,'m'):money(k,0,'k');}
   function arrow(v){return v>=0?'▲':'▼';}
   function render(){
     var cur=sel(2025), prev=sel(2024);
     var rev=sum(cur,'rev'), revP=sum(prev,'rev'), tgt=revP*1.08, gm=sum(cur,'gp')/rev, gmP=sum(prev,'gp')/revP, ord=sum(cur,'orders'), ordP=sum(prev,'orders'), aov=rev*1000/ord, aovP=revP*1000/ordP;
     document.getElementById('k-rev').textContent=eur(rev);
-    var dv=(rev/tgt-1)*100; document.getElementById('k-rev-d').innerHTML='<b>'+arrow(dv)+' '+Math.abs(dv).toFixed(1)+'%</b> vs target';
-    document.getElementById('k-gm').textContent=(gm*100).toFixed(1)+'%';
-    var dg=(gm-gmP)*100; document.getElementById('k-gm-d').innerHTML='<b>'+arrow(dg)+' '+Math.abs(dg).toFixed(1)+' pp</b> vs 2024';
-    document.getElementById('k-ord').textContent=Math.round(ord).toLocaleString('en-US');
-    var dor=(ord/ordP-1)*100; document.getElementById('k-ord-d').innerHTML='<b>'+arrow(dor)+' '+Math.abs(dor).toFixed(1)+'%</b> vs 2024';
-    document.getElementById('k-aov').textContent='€'+aov.toFixed(2);
-    var da=(aov/aovP-1)*100; document.getElementById('k-aov-d').innerHTML='<b>'+arrow(da)+' '+Math.abs(da).toFixed(1)+'%</b> vs 2024';
+    var dv=(rev/tgt-1)*100; document.getElementById('k-rev-d').innerHTML='<b>'+arrow(dv)+' '+pct(Math.abs(dv),1)+'</b> '+TX('vs target','ggü. Ziel');
+    document.getElementById('k-gm').textContent=pct(gm*100,1);
+    var dg=(gm-gmP)*100; document.getElementById('k-gm-d').innerHTML='<b>'+arrow(dg)+' '+nf(Math.abs(dg),1)+TX(' pp',' Pp.')+'</b> '+TX('vs 2024','ggü. 2024');
+    document.getElementById('k-ord').textContent=Math.round(ord).toLocaleString(LANG==='de'?'de-DE':'en-US');
+    var dor=(ord/ordP-1)*100; document.getElementById('k-ord-d').innerHTML='<b>'+arrow(dor)+' '+pct(Math.abs(dor),1)+'</b> '+TX('vs 2024','ggü. 2024');
+    document.getElementById('k-aov').textContent=money(aov,2);
+    var da=(aov/aovP-1)*100; document.getElementById('k-aov-d').innerHTML='<b>'+arrow(da)+' '+pct(Math.abs(da),1)+'</b> '+TX('vs 2024','ggü. 2024');
     drawLine(); drawBar(); drawTable();
   }
   function drawLine(){
     var svg=document.getElementById('lineChart'), box=document.getElementById('lineBox'), tip=document.getElementById('lineTip'); svg.innerHTML='';
     var p=periods[state.period], ms=[]; for(var m=p[0];m<=p[1];m++)ms.push(m);
     var act=ms.map(function(m){return sum(sel(2025,function(d){return d.m===m;}),'rev');}), tg=ms.map(function(m){return sum(sel(2024,function(d){return d.m===m;}),'rev')*1.08;});
-    var W=Math.max(300,Math.round(box.clientWidth||640)),H=W<520?240:300,L=W<520?44:52,Rp=W<520?52:64,T=16,B=30; svg.setAttribute('viewBox','0 0 '+W+' '+H); var mx=niceMax(Math.max.apply(null,act.concat(tg))*1.05), mn=0;
+    var W=Math.max(300,Math.round(box.clientWidth||640)),H=W<520?240:300,L=(W<520?44:52)+(LANG==='de'?14:0),Rp=(W<520?52:64)+(LANG==='de'?4:0),T=16,B=30; svg.setAttribute('viewBox','0 0 '+W+' '+H); var mx=niceMax(Math.max.apply(null,act.concat(tg))*1.05), mn=0;
     var sx=function(i){return ms.length===1?(L+W-Rp)/2:L+(W-L-Rp)*i/(ms.length-1);}, sy=function(v){return T+(H-T-B)*(1-(v-mn)/(mx-mn));};
     var g=el('g',{class:'grid'},svg), ax=el('g',{class:'axis'},svg);
-    for(var i=0;i<=5;i++){var v=mn+(mx-mn)*i/5,y=sy(v);el('line',{x1:L,x2:W-Rp,y1:y,y2:y},g);var t=el('text',{x:L-8,y:y+4,'text-anchor':'end'},ax);t.textContent=v===0?'0':(v>=1000?'€'+(v/1000).toFixed(1)+'m':'€'+v.toFixed(0)+'k');}
-    ms.forEach(function(m,i){if(W<520&&ms.length>6&&i%2)return;var t=el('text',{x:sx(i),y:H-8,'text-anchor':'middle'},ax);t.textContent=months[m];});
+    for(var i=0;i<=5;i++){var v=mn+(mx-mn)*i/5,y=sy(v);el('line',{x1:L,x2:W-Rp,y1:y,y2:y},g);var t=el('text',{x:L-8,y:y+4,'text-anchor':'end'},ax);t.textContent=v===0?'0':(LANG==='de'?(v>=1000?nf(v/1000,1)+' Mio.':nf(v,0)+' Tsd.'):(v>=1000?'€'+(v/1000).toFixed(1)+'m':'€'+v.toFixed(0)+'k'));}
+    ms.forEach(function(m,i){if(W<520&&ms.length>6&&i%2)return;var t=el('text',{x:sx(i),y:H-8,'text-anchor':'middle'},ax);t.textContent=mon(m);});
     function line(vals,attrs){var d=vals.map(function(v,i){return (i?'L':'M')+sx(i).toFixed(1)+','+sy(v).toFixed(1);}).join(' ');el('path',Object.assign({d:d,fill:'none','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},attrs),svg);}
     line(tg,{stroke:'#8c8580','stroke-dasharray':'5 5'}); line(act,{stroke:'#c7375e'});
     var li=ms.length-1;
-    var la=el('text',{x:sx(li)+8,y:sy(act[li])+4,fill:'#f5f2ee','font-size':'12','font-weight':'600'},svg); la.textContent='Actual';
-    var lt=el('text',{x:sx(li)+8,y:sy(tg[li])+(Math.abs(sy(tg[li])-sy(act[li]))<14?(sy(tg[li])>sy(act[li])?16:-8):4),fill:'#8c8580','font-size':'12'},svg); lt.textContent='Target';
+    var la=el('text',{x:sx(li)+8,y:sy(act[li])+4,fill:'#f5f2ee','font-size':'12','font-weight':'600'},svg); la.textContent=TX('Actual','Ist');
+    var lt=el('text',{x:sx(li)+8,y:sy(tg[li])+(Math.abs(sy(tg[li])-sy(act[li]))<14?(sy(tg[li])>sy(act[li])?16:-8):4),fill:'#8c8580','font-size':'12'},svg); lt.textContent=TX('Target','Ziel');
     var cross=el('line',{y1:T,y2:H-B,stroke:'#5a4f50','stroke-width':1,opacity:0},svg), dot=el('circle',{r:5,fill:'#c7375e',stroke:'#0e0b0b','stroke-width':2,opacity:0},svg);
     var hit=el('rect',{x:L,y:T,width:W-L-Rp,height:H-T-B,fill:'transparent'},svg);
     function move(e){var b=svg.getBoundingClientRect(),x=(e.clientX-b.left)*W/b.width;var i=Math.round((x-L)/((W-L-Rp)/Math.max(1,ms.length-1)));i=Math.max(0,Math.min(ms.length-1,i));
       cross.setAttribute('x1',sx(i));cross.setAttribute('x2',sx(i));cross.setAttribute('opacity',1);dot.setAttribute('cx',sx(i));dot.setAttribute('cy',sy(act[i]));dot.setAttribute('opacity',1);
       var diff=(act[i]/tg[i]-1)*100, bb=box.getBoundingClientRect();
-      showTip(tip,box,'<b>'+months[ms[i]]+' 2025</b><br><span class="k">Actual</span> '+eur(act[i])+'<br><span class="k">Target</span> '+eur(tg[i])+'<br><span class="k">vs target</span> '+(diff>=0?'+':'')+diff.toFixed(1)+'%',sx(i)*b.width/W+(b.left-bb.left),sy(act[i])*b.height/H);}
+      showTip(tip,box,'<b>'+mon(ms[i])+' 2025</b><br><span class="k">'+TX('Actual','Ist')+'</span> '+eur(act[i])+'<br><span class="k">'+TX('Target','Ziel')+'</span> '+eur(tg[i])+'<br><span class="k">'+TX('vs target','ggü. Ziel')+'</span> '+(diff>=0?'+':'')+pct(diff,1),sx(i)*b.width/W+(b.left-bb.left),sy(act[i])*b.height/H);}
     hit.addEventListener('mousemove',move); hit.addEventListener('mouseleave',function(){cross.setAttribute('opacity',0);dot.setAttribute('opacity',0);hideTip(tip);});
   }
   function drawBar(){
@@ -836,24 +875,25 @@ function niceMax(v){if(v<=0)return 1;var p=Math.pow(10,Math.floor(Math.log10(v))
     data.forEach(function(d,i){
       var y=T+bh*i+(bh-barH)/2, w=Math.max(2,(W-L-Rp)*d.rev/mx), rr=4;
       el('path',{d:'M'+L+','+y+' H'+(L+w-rr)+' Q'+(L+w)+','+y+' '+(L+w)+','+(y+rr)+' V'+(y+barH-rr)+' Q'+(L+w)+','+(y+barH)+' '+(L+w-rr)+','+(y+barH)+' H'+L+' Z',fill:'#c7375e'},svg);
-      var n=el('text',{x:L-10,y:y+barH/2+4,'text-anchor':'end',fill:'#8c8580','font-size':'13'},svg); n.textContent=d.c;
+      var n=el('text',{x:L-10,y:y+barH/2+4,'text-anchor':'end',fill:'#8c8580','font-size':'13'},svg); n.textContent=nm(d.c);
       var v=el('text',{x:L+w+8,y:y+barH/2+4,fill:'#f5f2ee','font-size':'13','font-weight':'600'},svg); v.textContent=eur(d.rev);
       var hit=el('rect',{x:0,y:T+bh*i,width:W,height:bh,fill:'transparent'},svg);
-      hit.addEventListener('mousemove',function(e){var b=box.getBoundingClientRect();showTip(tip,box,'<b>'+d.c+'</b><br><span class="k">Revenue</span> '+eur(d.rev)+'<br><span class="k">Gross margin</span> '+(d.gm*100).toFixed(1)+'%',e.clientX-b.left,e.clientY-b.top);});
+      hit.addEventListener('mousemove',function(e){var b=box.getBoundingClientRect();showTip(tip,box,'<b>'+nm(d.c)+'</b><br><span class="k">'+TX('Revenue','Umsatz')+'</span> '+eur(d.rev)+'<br><span class="k">'+TX('Gross margin','Bruttomarge')+'</span> '+pct(d.gm*100,1),e.clientX-b.left,e.clientY-b.top);});
       hit.addEventListener('mouseleave',function(){hideTip(tip);});
     });
     el('line',{x1:L,x2:L,y1:T,y2:H-B,stroke:'#5a4f50','stroke-width':1},svg);
   }
   function drawTable(){
-    var p=periods[state.period], h='<tr><th>Region</th><th>Revenue</th><th>vs target</th><th>Gross margin</th></tr>';
+    var p=periods[state.period], h='<tr><th>Region</th><th>'+TX('Revenue','Umsatz')+'</th><th>'+TX('vs target','ggü. Ziel')+'</th><th>'+TX('Gross margin','Bruttomarge')+'</th></tr>';
     regions.forEach(function(r){
       var c=rows.filter(function(d){return d.y===2025&&d.r===r&&d.m>=p[0]&&d.m<=p[1];}), pr=rows.filter(function(d){return d.y===2024&&d.r===r&&d.m>=p[0]&&d.m<=p[1];});
       var rv=sum(c,'rev'), t=sum(pr,'rev')*1.08, dv=(rv/t-1)*100;
-      h+='<tr class="'+(state.region==='All'||state.region===r?'sel':'')+'"><td>'+r+'</td><td>'+eur(rv)+'</td><td>'+(dv>=0?'▲ ':'▼ ')+Math.abs(dv).toFixed(1)+'%</td><td>'+(sum(c,'gp')/rv*100).toFixed(1)+'%</td></tr>';
+      h+='<tr class="'+(state.region==='All'||state.region===r?'sel':'')+'"><td>'+nm(r)+'</td><td>'+eur(rv)+'</td><td>'+(dv>=0?'▲ ':'▼ ')+pct(Math.abs(dv),1)+'</td><td>'+pct(sum(c,'gp')/rv*100,1)+'</td></tr>';
     });
     document.getElementById('regT').innerHTML=h;
   }
   render();
+  document.addEventListener('langchange',function(){[].slice.call(document.querySelectorAll('#fRegion button,#fPeriod button')).forEach(function(b){b.textContent=nm(b.dataset.v);});render();});
   var rz; window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(render,150);});
 })();
 
@@ -918,7 +958,9 @@ function niceMax(v){if(v<=0)return 1;var p=Math.pow(10,Math.floor(Math.log10(v))
     if(busy&&visible){requestAnimationFrame(frame);}else running=false;
   }
   function kick(){if(!running&&W){running=true;requestAnimationFrame(frame);}}
-  function toggle(){target=target?0:1; if(btn){btn.setAttribute('aria-pressed',target?'true':'false');btn.textContent=target?'Back to the dots':'Reveal the real me';} kick();}
+  function setBtn(){if(btn){btn.setAttribute('aria-pressed',target?'true':'false');btn.textContent=target?TX('Back to the dots','Zurück zu den Punkten'):TX('Reveal the real me','Das echte Ich zeigen');}}
+  function toggle(){target=target?0:1; setBtn(); kick();}
+  setBtn(); document.addEventListener('langchange',setBtn);
   img.onload=function(){build(); kick();};
   stage.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;mouse.on=true;kick();});
   stage.addEventListener('pointerleave',function(){mouse.on=false;kick();});
