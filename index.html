@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranav Gorige – Finance &amp; Data</title>
+<meta name="description" content="Pranav Gorige – MSc Finance student in Munich. Valuation, Power BI dashboards, Excel, Python and SQL. Open to working student roles.">
+<meta property="og:title" content="Pranav Gorige – Finance &amp; Data">
+<meta property="og:description" content="MSc Finance student in Munich. Turning data into decisions.">
+<meta property="og:image" content="https://pranavgorige-ops.github.io/hero-poster.jpg">
+<meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://pranavgorige-ops.github.io/">
+<meta property="og:url" content="https://pranavgorige-ops.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050505'/%3E%3Ctext x='29' y='44' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' text-anchor='middle' fill='%23f5f2ee'%3EPG%3C/text%3E%3Ccircle cx='54' cy='41' r='4' fill='%23c7375e'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Archivo';src:url(archivo.woff2) format('woff2-variations'),url(archivo.woff2) format('woff2');font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:url(instrument-serif-italic.woff2) format('woff2');font-style:italic;font-weight:400;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:url(instrument-serif.woff2) format('woff2');font-style:normal;font-weight:400;font-display:swap}
+:root{
+  --bg:#050505; --panel:#0e0b0b; --line:#211b1c;
+  --ink:#f5f2ee; --mute:#8c8580; --wine:#7a1734; --wine-hi:#c7375e;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif; --serif:"Instrument Serif",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--wine-hi);outline-offset:4px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+@media (max-width:600px){.wrap{padding:0 20px}}
+.dot{color:var(--wine-hi)}
+h2{font:800 clamp(40px,6vw,84px)/.95 var(--sans);font-stretch:108%;letter-spacing:-.035em;margin:0 0 28px}
+.tag{font:italic 400 22px/1.2 var(--serif);color:var(--wine-hi);margin:0 0 14px}
+.mute{color:var(--mute)}
+.btn{display:inline-flex;align-items:center;font:600 15px/1 var(--sans);text-decoration:none;padding:15px 22px;border-radius:999px;border:1px solid #3a3132;color:var(--ink);background:transparent;cursor:pointer}
+.btn:hover{border-color:var(--ink)}
+.btn.fill{background:var(--wine);border-color:var(--wine)}
+.btn.fill:hover{background:#8f1d3f;border-color:#8f1d3f}
+section{position:relative}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 32px;
+  background:linear-gradient(#050505 0%,#050505e6 60%,#05050500 100%)}
+.nav .mark{font:800 18px/1 var(--sans);text-decoration:none;letter-spacing:-.02em}
+.nav ul{display:flex;gap:28px;margin:0;padding:0;list-style:none}
+.nav ul a{font-size:15px;text-decoration:none;color:var(--mute)}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:10px 16px;font-size:14px}
+@media (max-width:900px){.nav ul{display:none}}
+@media (max-width:600px){.nav{padding:14px 20px}}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-video{position:absolute;top:0;right:0;bottom:0;width:58%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%,#000 94%,transparent 100%),linear-gradient(#000 74%,transparent 100%);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(90deg,transparent 0,#000 30%,#000 94%,transparent 100%),linear-gradient(#000 74%,transparent 100%);mask-composite:intersect}
+.hero-video video{width:100%;height:100%;object-fit:cover;object-position:50% 0;filter:brightness(.82) contrast(1.12) saturate(.9)}
+.hero-video::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 45% 60% at 58% 35%,transparent 40%,#7a173433 100%);mix-blend-mode:screen;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:110px;padding-bottom:60px}
+.hero .over{font-size:15px;color:var(--mute);margin:0 0 22px}
+.hero .over b{color:var(--ink);font-weight:600}
+.name{font:800 clamp(60px,9.6vw,150px)/.86 var(--sans);font-stretch:108%;letter-spacing:-.045em;margin:0;text-transform:uppercase}
+.name > span{display:block}
+.hero .line{font:italic 400 clamp(26px,3vw,40px)/1.15 var(--serif);margin:24px 0 16px}
+.hero .intro{max-width:40ch;color:var(--mute);margin:0 0 30px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:flex;gap:44px;flex-wrap:wrap;margin-top:54px}
+.stats div b{display:block;font:800 30px/1 var(--sans);font-stretch:108%;letter-spacing:-.02em}
+.stats div span{font-size:14px;color:var(--mute)}
+@media (max-width:900px){
+  .hero{display:block;min-height:auto}
+  .hero-video{position:relative;width:100%;height:62vh;min-height:420px;
+    -webkit-mask-image:linear-gradient(#000 70%,transparent 100%);mask-image:linear-gradient(#000 70%,transparent 100%)}
+  .hero .wrap{padding-top:0;margin-top:-90px}
+  .stats{gap:28px;margin-top:40px}
+}
+
+/* about */
+.about{min-height:100vh;display:flex;align-items:center;padding:14vh 0 12vh;border-top:1px solid var(--line);overflow:hidden}
+.about-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr}
+.about-grid > div:last-child{margin-left:auto;max-width:560px}
+.about-video{position:absolute;inset:0;z-index:1;
+  -webkit-mask-image:linear-gradient(transparent 0,#000 14%,#000 84%,transparent 100%);mask-image:linear-gradient(transparent 0,#000 14%,#000 84%,transparent 100%)}
+.about-video video{width:100%;height:100%;object-fit:cover;object-position:18% 30%;filter:brightness(.86) contrast(1.1) saturate(.9)}
+.about-video::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,#050505b3 75%,#050505 100%);pointer-events:none}
+.about h2{font-size:clamp(34px,4.4vw,60px);max-width:16ch}
+.about p{max-width:58ch;color:var(--mute)}
+.about p strong{color:var(--ink);font-weight:600}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin:30px 0 0;padding-top:24px;border-top:1px solid var(--line);font-size:15px}
+.facts dt{color:var(--mute)}.facts dd{margin:0}
+@media (max-width:900px){.about{display:block;min-height:auto;padding-top:0}.about-video{position:relative;inset:auto;aspect-ratio:4/5;max-height:70vh;width:100%;
+  -webkit-mask-image:linear-gradient(#000 70%,transparent 100%);mask-image:linear-gradient(#000 70%,transparent 100%)}.about-video video{object-position:10% 30%}.about-video::after{display:none}.about-grid > div:last-child{margin-left:0;max-width:none;margin-top:-40px}}
+
+/* skills */
+.skills{padding:16vh 0 14vh;border-top:1px solid var(--line);overflow:hidden}
+.skills .figure{position:absolute;right:-2%;bottom:0;height:82%;opacity:.16;filter:grayscale(1);pointer-events:none;
+  -webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
+.sk-grid{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+.cats{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.cats button{all:unset;cursor:pointer;font:800 clamp(44px,6.4vw,96px)/1 var(--sans);font-stretch:108%;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.2px #4a4142;transition:color .25s,-webkit-text-stroke-color .25s}
+.cats button:hover{-webkit-text-stroke-color:var(--ink)}
+.cats button[aria-selected="true"]{color:var(--ink);-webkit-text-stroke-color:var(--ink)}
+.cats button[aria-selected="true"]::after{content:".";color:var(--wine-hi)}
+.cats button:focus-visible{outline:2px solid var(--wine-hi);outline-offset:6px}
+.panel{background:#0e0b0bd9;border:1px solid var(--line);border-radius:6px;padding:30px;backdrop-filter:blur(2px);margin-top:14px}
+.panel h3{font:italic 400 26px/1.2 var(--serif);color:var(--wine-hi);margin:0 0 16px}
+.panel ul{margin:0;padding:0;list-style:none}
+.panel li{padding:13px 0;border-top:1px solid var(--line)}
+.panel li:first-child{border-top:0}
+.panel li b{display:block;font-weight:600}
+.panel li span{font-size:15px;color:var(--mute)}
+@media (max-width:900px){
+  .sk-grid{grid-template-columns:1fr;gap:20px}
+  .cats{flex-direction:row;flex-wrap:wrap;gap:6px 18px}
+  .cats button{font-size:clamp(30px,8vw,48px)}
+  .skills .figure{height:46%;opacity:.12}
+}
+
+/* work */
+.work{padding:16vh 0 14vh;border-top:1px solid var(--line)}
+.feature{position:relative;display:grid;grid-template-columns:1.3fr .7fr;min-height:420px;background:linear-gradient(120deg,#5c1027,#7a1734 55%,#3a0a18);border-radius:8px;overflow:hidden;margin-bottom:22px}
+.feature .txt{padding:44px}
+.feature .kind{font-size:14px;color:#f5f2eecc;margin-bottom:16px}
+.feature h3{font:800 clamp(32px,4vw,56px)/1 var(--sans);font-stretch:108%;letter-spacing:-.03em;margin:0 0 18px}
+.feature p{max-width:46ch;color:#f5f2eed9;margin:0 0 14px}
+.feature .figure{align-self:end;justify-self:center;height:100%;max-height:440px;
+  -webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);filter:drop-shadow(0 10px 30px #0008)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid #f5f2ee55}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:34px}
+.card .kind{font-size:14px;color:var(--mute);margin-bottom:14px}
+.card h3{font:800 clamp(24px,2.6vw,34px)/1.05 var(--sans);font-stretch:106%;letter-spacing:-.025em;margin:0 0 14px}
+.card p{color:var(--mute);margin:0 0 10px}
+.card .chips span{border-color:#3a3132}
+@media (max-width:900px){.feature{grid-template-columns:1fr}.feature .txt{padding:30px}.feature .figure{height:300px}.cards{grid-template-columns:1fr}}
+
+/* experience */
+.exp{padding:16vh 0 14vh;border-top:1px solid var(--line)}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+@media (max-width:900px){.exp-grid{grid-template-columns:1fr;gap:40px}}
+.exp h3{font:italic 400 26px/1.2 var(--serif);color:var(--wine-hi);margin:0 0 8px}
+.item{padding:22px 0;border-top:1px solid var(--line)}
+.item .when{font-size:14px;color:var(--mute)}
+.item h4{font:700 20px/1.3 var(--sans);font-stretch:104%;margin:4px 0 2px}
+.item .where{font-size:15px;color:var(--mute);margin-bottom:10px}
+.item ul{margin:0;padding-left:18px;color:var(--mute)}
+.item li{margin-bottom:6px}
+.item li::marker{color:var(--wine-hi)}
+.grades{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:64px;padding-top:30px;border-top:1px solid var(--line)}
+@media (max-width:900px){.grades{grid-template-columns:repeat(2,1fr)}}
+.grades b{display:block;font:800 clamp(40px,4.6vw,64px)/1 var(--sans);font-stretch:108%;letter-spacing:-.03em}
+.grades b small{font-size:.5em;color:var(--wine-hi)}
+.grades span{font-size:14px;color:var(--mute)}
+
+/* contact */
+.contact{padding:16vh 0 10vh;border-top:1px solid var(--line);overflow:hidden}
+.ct-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.contact h2{font-size:clamp(56px,9vw,140px)}
+.contact p{max-width:48ch;color:var(--mute)}
+.contact .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.ct-video{aspect-ratio:4/5;overflow:hidden;
+  -webkit-mask-image:radial-gradient(ellipse 58% 62% at 50% 44%,#000 54%,transparent 100%);mask-image:radial-gradient(ellipse 58% 62% at 50% 44%,#000 54%,transparent 100%)}
+.ct-video video{width:100%;height:100%;object-fit:cover;object-position:50% 8%;filter:brightness(.84) contrast(1.1) saturate(.9)}
+@media (max-width:900px){.ct-grid{grid-template-columns:1fr}.ct-video{order:-1;aspect-ratio:1/1}}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* one quiet reveal for headings */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.hero .rv{transition-delay:.15s}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.cats button{transition:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="mark" href="#top">PG<span class="dot">.</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn" href="Pranav_Gorige_CV.pdf" download>Download CV</a>
+</nav>
+
+<main>
+  <section class="hero" id="top">
+    <div class="hero-video">
+      <video id="v-hero" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" aria-label="Short video of Pranav Gorige">
+        <source src="hero.webm" type="video/webm"><source src="hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="wrap">
+      <p class="over rv"><b>MSc Finance student</b> at EU Business School, Munich</p>
+      <h1 class="name rv"><span>Pranav</span><span>Gorige<span class="dot">.</span></span></h1>
+      <p class="line rv">Turning data into decisions.</p>
+      <p class="intro rv">I turn raw business data into clear reports, Power BI dashboards and company valuations. Open to working student roles in finance, controlling and data.</p>
+      <div class="ctas rv">
+        <a class="btn fill" href="#work">Explore my work</a>
+        <a class="btn" href="#about">About me</a>
+      </div>
+      <div class="stats rv">
+        <div><b>6 months</b><span>Data analyst internship</span></div>
+        <div><b>92%</b><span>Top MSc module grade</span></div>
+        <div><b>20 h/week</b><span>Available from now</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-video">
+      <video class="lazyv" muted loop playsinline preload="none" poster="about-poster.jpg" aria-label="Short video of Pranav Gorige">
+        <source src="about.webm" type="video/webm"><source src="about.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="wrap about-grid">
+      <div>
+        <p class="tag">About me</p>
+        <h2 class="rv">From ledgers in Hyderabad to finance in Munich<span class="dot">.</span></h2>
+        <p>I'm an <strong>MSc Finance student at EU Business School in Munich</strong>, expected to graduate in September 2027. Before that I completed a Bachelor of Commerce at Osmania University in Hyderabad, a six-month data analytics programme and a <strong>six-month Data Analyst internship</strong>.</p>
+        <p>In my internship I built <strong>Power BI dashboards</strong> to track KPIs, analysed business and financial data in Python and Excel, and made financial reports more accurate by standardising the underlying data. In my Master's I value companies with <strong>DCF, multiples and LBO</strong> models.</p>
+        <p>I work in English every day and I'm learning German. I'm looking for a working student role where I can bring structure and accuracy to a finance or data team.</p>
+        <dl class="facts">
+          <dt>Based in</dt><dd>Munich, Germany</dd>
+          <dt>Studying</dt><dd>MSc Finance, EU Business School</dd>
+          <dt>Available</dt><dd>Up to 20 hours a week, from now until September 2027</dd>
+          <dt>Languages</dt><dd>English (fluent), German (A2, learning towards B1)</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <img class="figure" src="still_25.webp" alt="" aria-hidden="true">
+    <div class="wrap">
+      <p class="tag">Skills</p>
+      <div class="sk-grid">
+        <div class="cats" role="tablist" aria-label="Skill areas">
+          <button role="tab" aria-selected="true" aria-controls="sk-panel" data-k="finance">Finance</button>
+          <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="data">Data</button>
+          <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="reporting">Reporting</button>
+          <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="tools">Tools</button>
+          <button role="tab" aria-selected="false" aria-controls="sk-panel" data-k="languages">Languages</button>
+        </div>
+        <div class="panel" id="sk-panel" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <p class="tag">Selected work</p>
+      <h2 class="rv">Projects<span class="dot">.</span></h2>
+      <article class="feature">
+        <div class="txt">
+          <div class="kind">MSc coursework, 2025 – 2026</div>
+          <h3>Company valuation and LBO analysis</h3>
+          <p>Valued companies with three methods in Excel: discounted cash flow, trading multiples and a leveraged buy-out model.</p>
+          <p>Compared how a deal could be financed with equity, debt and mezzanine capital. Module grade: 90% in M&amp;A, Buy-Outs &amp; Corporate Restructuring.</p>
+          <div class="chips"><span>Excel</span><span>DCF</span><span>Trading multiples</span><span>LBO</span></div>
+        </div>
+        <img class="figure" src="still_60.webp" alt="" aria-hidden="true">
+      </article>
+      <div class="cards">
+        <article class="card">
+          <div class="kind">Master's project, Sep 2025 – Sep 2026</div>
+          <h3>Market entry strategy: Tom Ford in Switzerland</h3>
+          <p>Analysed the Swiss luxury market across all six PESTLE dimensions and the competitive landscape, defined target customer segments, and recommended market entry, pricing and positioning.</p>
+          <div class="chips"><span>PESTLE</span><span>Market research</span><span>PowerPoint</span></div>
+        </article>
+        <article class="card">
+          <div class="kind">Internship work, 2024</div>
+          <h3>KPI dashboards and reporting data</h3>
+          <p>Cleaned and standardised raw business data in Python and Excel, then built interactive Power BI dashboards to monitor KPIs and visualise business performance.</p>
+          <div class="chips"><span>Power BI</span><span>Python</span><span>Excel</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="exp" id="experience">
+    <div class="wrap">
+      <p class="tag">Experience &amp; education</p>
+      <h2 class="rv">My journey<span class="dot">.</span></h2>
+      <div class="exp-grid">
+        <div>
+          <h3>Experience</h3>
+          <div class="item">
+            <div class="when">Mar 2024 – Aug 2024</div>
+            <h4>Data Analyst Intern</h4>
+            <div class="where">K.M.A Arjun Analytics, Hyderabad, India</div>
+            <ul>
+              <li>Built interactive Power BI dashboards to monitor KPIs and visualise business performance.</li>
+              <li>Analysed business and financial datasets in Python and Excel, delivering ad-hoc analyses that identified trends.</li>
+              <li>Cleaned and transformed raw data and calculated financial ratios to support decisions.</li>
+              <li>Supported financial reports and made reporting more accurate by standardising the data.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <div class="when">Sep 2023 – Feb 2024</div>
+            <h4>Data Analytics Training Programme</h4>
+            <div class="where">K.M.A Arjun Analytics, Hyderabad, India</div>
+            <ul><li>Six-month programme with certificate: data collection, cleaning and transformation, SQL, Python, Power BI and data visualisation.</li></ul>
+          </div>
+        </div>
+        <div>
+          <h3>Education</h3>
+          <div class="item">
+            <div class="when">2025 – Sep 2027 (expected)</div>
+            <h4>MSc Finance</h4>
+            <div class="where">EU Business School, Munich, Germany</div>
+            <ul><li>Started online in January 2025, on campus in Munich since March 2025.</li><li>Modules include M&amp;A, Advanced Corporate Finance, Financial Reporting &amp; Statement Analysis and SAP S/4HANA FICO.</li></ul>
+          </div>
+          <div class="item">
+            <div class="when">2020 – 2023</div>
+            <h4>Bachelor of Commerce (B.Com)</h4>
+            <div class="where">Osmania University, Hyderabad, India</div>
+            <ul><li>CGPA 7.5 / 10. Accounting, finance and business economics.</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="grades">
+        <div><b>92<small>%</small></b><span>New Product Development for Growth</span></div>
+        <div><b>90<small>%</small></b><span>M&amp;A, Buy-Outs &amp; Corporate Restructuring</span></div>
+        <div><b>90<small>%</small></b><span>Building Successful Teams</span></div>
+        <div><b>83<small>%</small></b><span>Advanced Corporate Finance</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap ct-grid">
+      <div>
+        <p class="tag">Contact</p>
+        <h2 class="rv">Let's talk<span class="dot">.</span></h2>
+        <p>Looking for a working student in finance, controlling or data in Munich? I can start now, for up to 20 hours a week, until I graduate in September 2027. My student residence permit allows working student jobs.</p>
+        <div class="ctas">
+          <a class="btn fill" href="mailto:pranavgorige@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/PranavGorige7424311000" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="Pranav_Gorige_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <div class="ct-video">
+        <video class="lazyv" muted loop playsinline preload="none" poster="hero-poster.jpg" aria-label="Short video of Pranav Gorige">
+          <source src="hero.webm" type="video/webm"><source src="hero.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Pranav Gorige</span><span>pranavgorige@gmail.com</span></div></footer>
+
+<script>
+// skills tabs
+(function(){
+  var S={
+    finance:{t:"Finance",i:[["Company valuation","DCF, trading multiples and LBO models in Excel"],["Financial statement analysis","Reading and analysing income statements, balance sheets and cash flows"],["Ratio and KPI analysis","Calculating financial ratios and tracking business KPIs"],["Financial reporting support","Preparing figures for financial reports"],["Market research","PESTLE and competitor analysis"]]},
+    data:{t:"Data",i:[["Python","pandas for analysing business and financial datasets"],["SQL","Querying data, learned in a six-month data analytics programme"],["Data preparation","Cleaning, transforming, validating and standardising raw data"],["Ad-hoc analyses","Finding trends and turning them into clear insights"]]},
+    reporting:{t:"Reporting",i:[["Power BI","Interactive dashboards to monitor KPIs"],["Excel","Pivot tables, lookups and models"],["PowerPoint","Clear presentations of analyses and recommendations"]]},
+    tools:{t:"Tools",i:[["SAP S/4HANA FICO","Financial accounting and controlling, MSc coursework"],["MS Office","Excel, PowerPoint, Word, Outlook, Teams"],["AI assistants","ChatGPT and Claude for analysis, drafting and automation ideas"]]},
+    languages:{t:"Languages",i:[["English","Fluent, my working language"],["German","A2, learning towards B1"]]}
+  };
+  var tabs=[].slice.call(document.querySelectorAll('.cats button')), panel=document.getElementById('sk-panel');
+  function show(k){
+    tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.k===k?'true':'false');b.tabIndex=b.dataset.k===k?0:-1;});
+    var d=S[k]; panel.innerHTML='<h3>'+d.t+'</h3><ul>'+d.i.map(function(x){return '<li><b>'+x[0]+'</b><span>'+x[1]+'</span></li>';}).join('')+'</ul>';
+  }
+  tabs.forEach(function(b,ix){
+    b.addEventListener('click',function(){show(b.dataset.k);});
+    b.addEventListener('keydown',function(e){var n=e.key==='ArrowDown'||e.key==='ArrowRight'?1:e.key==='ArrowUp'||e.key==='ArrowLeft'?-1:0;if(n){e.preventDefault();var t=tabs[(ix+n+tabs.length)%tabs.length];t.focus();show(t.dataset.k);}});
+  });
+  show('finance');
+})();
+// videos: hero plays first; the About and Contact clips load late and only one video plays at a time
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero=document.getElementById('v-hero'), all=[hero].concat([].slice.call(document.querySelectorAll('.lazyv')));
+  if(reduce){hero.removeAttribute('autoplay');hero.pause();return;}
+  if(!('IntersectionObserver' in window))return;
+  var vis=new Map();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){vis.set(e.target,e.intersectionRatio);});
+    var best=null,r=0; vis.forEach(function(v,k){if(v>r){r=v;best=k;}});
+    all.forEach(function(v){
+      if(v===best&&r>0.3){if(v.preload==='none'){v.preload='auto';v.load();}v.play().catch(function(){});}
+      else v.pause();
+    });
+  },{threshold:[0,.3,.6,.9]});
+  all.forEach(function(v){io.observe(v);});
+})();
+// headings reveal once
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -10% 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>
