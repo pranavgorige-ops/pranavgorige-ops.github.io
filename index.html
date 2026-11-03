@@ -147,11 +147,22 @@ section{position:relative}
 .item ul{margin:0;padding-left:18px;color:var(--mute)}
 .item li{margin-bottom:6px}
 .item li::marker{color:var(--wine-hi)}
+.moment{display:grid;grid-template-columns:.9fr 1.3fr;gap:48px;align-items:center;margin-top:72px;padding-top:44px;border-top:1px solid var(--line)}
+.moment h3{font:800 clamp(28px,3vw,42px)/1.02 var(--sans);font-stretch:106%;letter-spacing:-.03em;margin:0 0 14px;color:var(--ink)}
+.moment p{color:var(--mute);margin:0;max-width:34ch}
+.m-pics{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.m-pics figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#111;aspect-ratio:4/5}
+.m-pics figure:nth-child(2){transform:translateY(42px)}
+.m-pics img{display:block;width:100%;height:100%;object-fit:cover;filter:brightness(.93);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.m-pics figure:hover img{transform:scale(1.03)}
+@media (max-width:760px){.moment{grid-template-columns:1fr;gap:28px;margin-top:56px}.m-pics{gap:12px}.m-pics figure:nth-child(2){transform:translateY(28px)}}
+@media (prefers-reduced-motion:reduce){.m-pics img{transition:none}.m-pics figure:hover img{transform:none}}
 .grades{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:64px;padding-top:30px;border-top:1px solid var(--line)}
 @media (max-width:900px){.grades{grid-template-columns:repeat(2,1fr)}}
 .grades b{display:block;font:800 clamp(40px,4.6vw,64px)/1 var(--sans);font-stretch:108%;letter-spacing:-.03em}
 .grades b small{font-size:.5em;color:var(--wine-hi)}
 .grades span{font-size:14px;color:var(--mute)}
+.grades b span{font-size:inherit;color:inherit}
 
 /* contact */
 .contact{padding:16vh 0 10vh;border-top:1px solid var(--line);overflow:hidden}
@@ -558,6 +569,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div><b><span data-count="90">90</span><small>%</small></b><span>M&amp;A, Buy-Outs &amp; Corporate Restructuring</span></div>
         <div><b><span data-count="90">90</span><small>%</small></b><span>Building Successful Teams</span></div>
         <div><b><span data-count="83">83</span><small>%</small></b><span>Advanced Corporate Finance</span></div>
+      </div>
+      <div class="moment rv">
+        <div>
+          <p class="tag">Off the spreadsheet</p>
+          <h3>Career Day at EU&nbsp;Business&nbsp;School<span class="dot">.</span></h3>
+          <p>Building my network and talking to companies in person.</p>
+        </div>
+        <div class="m-pics">
+          <figure><img src="career_1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Pranav Gorige in a checked blazer at the EU Business School Career Day"></figure>
+          <figure><img src="career_2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Pranav Gorige at the EU Business School Career Day, looking to the side"></figure>
+        </div>
       </div>
     </div>
   </section>
