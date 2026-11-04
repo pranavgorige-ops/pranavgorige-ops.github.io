@@ -208,6 +208,36 @@ dialog::backdrop{background:rgba(10,15,12,.55)}
 .pitem .cat{font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
 .src-list{display:grid;gap:8px;margin-top:12px;font-size:14px}
 .src-list a{word-break:break-word}
+
+/* cash flow */
+.chart{width:100%;height:auto;display:block;margin-top:8px}
+.chart text{font:600 11px var(--sans);fill:var(--mute)}
+.chart .grid line{stroke:var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mute);margin-top:6px}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px;background:var(--acc)}
+.legend i.b{background:var(--gold)}
+.legend i.c{background:repeating-linear-gradient(90deg,var(--mute) 0 5px,transparent 5px 9px)}
+.ctbl{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;margin-top:10px}
+.ctbl th,.ctbl td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.ctbl th:first-child,.ctbl td:first-child{text-align:left}
+.ctbl td.neg{color:var(--bad);font-weight:700}
+.tipbox{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:8px 10px;border-radius:8px;opacity:0;transition:opacity .15s;white-space:nowrap;z-index:3}
+.chartWrap{position:relative}
+/* case study */
+.story{max-width:860px}
+.story h3{font-size:22px;margin:34px 0 8px}
+.story p,.story li{font-size:17px;color:var(--mute)}
+.story p b,.story li b{color:var(--ink)}
+.stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 6px}
+@media (max-width:700px){.stats4{grid-template-columns:1fr 1fr}}
+.stats4 div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.stats4 b{display:block;font:800 30px/1 var(--sans);font-stretch:106%;letter-spacing:-.02em;color:var(--ink)}
+.stats4 span{font-size:13px;color:var(--mute)}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--ink);overflow-x:auto;white-space:nowrap}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.author{display:flex;gap:16px;align-items:center;margin-top:34px;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.author img{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none}
+.author p{margin:2px 0 0;font-size:15px}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13px;color:var(--mute)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
 .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,120px);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:999px;font-weight:700;font-size:14px;transition:transform .3s;z-index:50}
@@ -223,10 +253,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-betw
     <nav class="main" aria-label="Main">
       <button data-go="compare">Compare</button>
       <button data-go="check">Quick check</button>
-      <button data-go="cost">Cost calculator</button>
+      <button data-go="cost">Costs</button>
+      <button data-go="cash">Cash flow</button>
       <button data-go="work">Working student</button>
       <button data-go="steps">First steps</button>
       <button data-go="letters">Letters</button>
+      <button data-go="story">Case study</button>
       <button data-go="method">Sources</button>
       <button data-go="plan" class="plan-btn">My plan<span class="n" id="planN">0</span></button>
     </nav>
@@ -277,7 +309,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-betw
       <div class="card" data-go="work" role="button" tabindex="0"><div class="ico">⏱</div><h3>Working student calculator</h3><p class="muted small">Net pay, pension contribution, estimated income tax, the 20-hour rule and the 140-day limit for non-EU students.</p></div>
       <div class="card" data-go="steps" role="button" tabindex="0"><div class="ico">✓</div><h3>First steps checklist</h3><p class="muted small">What to do before your visa, in week 1 and in your first months, with your progress saved.</p></div>
       <div class="card" data-go="letters" role="button" tabindex="0"><div class="ico">✉</div><h3>Letter explainer</h3><p class="muted small">Common German letters from insurers and offices explained in plain English, with what to do next.</p></div>
-      <div class="card" data-go="plan" role="button" tabindex="0"><div class="ico">★</div><h3>My plan and reminders</h3><p class="muted small">Save your picks, see your total, and download calendar reminders for deadlines.</p></div>
+      <div class="card" data-go="cash" role="button" tabindex="0"><div class="ico">↗</div><h3>Cash-flow planner</h3><p class="muted small">Month by month: when does your money run out, and how many hours of work close the gap?</p></div>
     </div>
     <div class="why card">
       <h3>Why this exists</h3>
@@ -287,7 +319,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-betw
         <li>Paid ads are sometimes placed above the real results.</li>
         <li>Some portals cover less than half of the offers on the market, and you can't see that.</li>
       </ol>
-      <p class="muted" style="margin:12px 0 0">Erstjahr earns nothing from any provider. It shows how every score is calculated, says exactly which providers it covers, and links each price to its source. <button class="btn sm ghost" data-go="method" style="margin-left:4px">Read the method</button></p>
+      <p class="muted" style="margin:12px 0 0">Erstjahr earns nothing from any provider. It shows how every score is calculated, says exactly which providers it covers, and links each price to its source. <button class="btn sm ghost" data-go="story" style="margin-left:4px">Read the case study</button> <button class="btn sm ghost" data-go="method">Sources</button></p>
     </div>
   </div>
 </section>
@@ -358,6 +390,100 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-betw
         </div>
         <div class="note" id="gapNote" style="margin-top:14px"></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASH FLOW -->
+<section class="view" id="v-cash">
+  <div class="wrap">
+    <p class="kicker">Cash-flow planner</p>
+    <h2>When does your money run out<em>?</em></h2>
+    <p class="lead">A month-by-month forecast like the ones finance teams build: blocked account payouts and job income in, your costs out. Compare the plan with and without a job.</p>
+    <div class="calc">
+      <div class="card form" id="cfForm">
+        <div class="two">
+          <label class="f"><span>Start month</span><input type="month" id="cf-start"></label>
+          <label class="f"><span>Months to plan</span><select id="cf-n"><option value="12">12</option><option value="18" selected>18</option><option value="24">24</option></select></label>
+        </div>
+        <div class="two">
+          <label class="f"><span>Blocked account balance</span><input type="number" id="cf-ba" min="0" step="100"><small>2026 student visa: €11,904</small></label>
+          <label class="f"><span>Payout per month</span><input type="number" id="cf-pay" min="0" step="1" value="992"><small>€992 in 2026</small></label>
+        </div>
+        <label class="f"><span>Own savings on your current account</span><input type="number" id="cf-sav" min="0" step="100" value="3500"><small>your estimate (must cover the deposit)</small></label>
+        <label class="f"><span>Monthly costs</span><input type="number" id="cf-cost" min="0" step="10"><small id="cf-costSrc">from the cost calculator</small></label>
+        <label class="f"><span>One-time costs in month 1</span><input type="number" id="cf-once" min="0" step="10"><small>deposit, set-up fees (from the cost calculator)</small></label>
+        <div class="two">
+          <label class="f"><span>Job: € per hour</span><input type="number" id="cf-wage" min="0" step="0.5" value="15"></label>
+          <label class="f"><span>Job starts in month</span><input type="number" id="cf-jobm" min="1" max="24" value="3"><small>job search takes time</small></label>
+        </div>
+        <label class="f"><span>Job hours per week: <b id="cf-hv">12</b></span><input type="range" id="cf-hours" min="0" max="20" step="1" value="12"></label>
+        <div class="two">
+          <label class="f"><span>Extra expense (e.g. trip home)</span><input type="number" id="cf-extra" min="0" step="50" value="0"></label>
+          <label class="f"><span>…in month</span><input type="number" id="cf-extram" min="1" max="24" value="8"></label>
+        </div>
+      </div>
+      <div>
+        <div class="kpis">
+          <div class="kpi key"><div class="l">Money runs out</div><div class="v" id="cf-run">–</div></div>
+          <div class="kpi"><div class="l">Lowest balance</div><div class="v" id="cf-low">–</div></div>
+          <div class="kpi"><div class="l">Hours / week to break even</div><div class="v" id="cf-be">–</div></div>
+        </div>
+        <div class="card" style="margin-top:14px">
+          <h3>Current account balance, end of each month</h3>
+          <div class="legend"><span><i></i>With your job</span><span><i class="c"></i>Without a job</span><span><i class="b"></i>Left in blocked account</span></div>
+          <div class="chartWrap" id="cfBox"><svg class="chart" id="cfChart" role="img" aria-label="Line chart of your account balance per month, with and without a job"></svg><div class="tipbox" id="cfTip"></div></div>
+          <p class="small muted" style="margin:8px 0 0">Job income is after the 9.3% pension contribution; income tax is left out because it is usually low for working students (see Working student). Costs from your cost calculator; amounts marked as estimates are yours.</p>
+        </div>
+        <div class="note" id="cfNote" style="margin-top:14px"></div>
+        <details class="card" style="margin-top:14px"><summary style="cursor:pointer;font-weight:800">Show the month-by-month table</summary><div style="overflow-x:auto"><table class="ctbl" id="cfTbl"></table></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="view" id="v-story">
+  <div class="wrap">
+    <div class="story">
+      <p class="kicker">Case study</p>
+      <h2>How I built Erstjahr<em>.</em></h2>
+      <p class="lead">A neutral, English-first comparison site for the money decisions international students face in their first year in Germany.</p>
+      <div class="stats4" id="storyStats"></div>
+
+      <h3>1 · The problem</h3>
+      <p>Moving to Munich for my MSc showed me the problem: international students have to choose a blocked account, health insurance, liability insurance and a bank account within weeks, mostly in German. The big comparison portals help Germans, but they have known weaknesses. Germany's competition authority (Bundeskartellamt) found that rankings can be influenced by commissions, that paid ads can sit above the real results, and that some portals cover less than half of the market without saying so.</p>
+
+      <h3>2 · The idea</h3>
+      <p>India's Policybazaar showed how powerful one comparison platform can be. I adapted the idea for a different market and user: <b>international students in Germany</b>, in English, with <b>no commission</b>, and with every price linked to its source and date.</p>
+
+      <h3>3 · Data</h3>
+      <p>I used official sources first: provider pages, the Rundfunkbeitrag site, Deutsche Rentenversicherung and the income tax law. Where providers don't publish prices openly, I used dated independent comparisons and said so. Public health insurance prices are not copied from a table but <b>calculated from the legal formula</b>:</p>
+      <div class="formula">€855 × (10.22% + extra contribution) + care insurance (3.6%, or 4.2% if childless and 23+)</div>
+      <p>Example: TK (2.69%) → €855 × 12.91% + €35.91 = <b>€146.29 / month</b>. All data is in an Excel file with the formulas included. <a href="erstjahr-data.xlsx" download>Download the data (Excel)</a></p>
+
+      <h3>4 · A transparent scoring model</h3>
+      <p>Each factor (price, deductible, refund policy, English support…) is scaled so the best option gets 10 and the worst gets 0. The score is a weighted average, and <b>the user sets the weights</b> with sliders. Products that aren't available to the user, such as AOK Bayern outside Bavaria or plans outside their age band, are shown but not ranked.</p>
+
+      <h3>5 · From prices to decisions</h3>
+      <ul>
+        <li><b>First-year cost:</b> sourced prices and the user's own estimates kept visibly separate, compared with the €992 monthly blocked account payout.</li>
+        <li><b>Cash-flow planner:</b> a month-by-month forecast with and without a job, showing when money runs out and how many hours of work close the gap. It's the same logic as a company cash-flow forecast.</li>
+        <li><b>Working student calculator:</b> pension contribution and an income tax estimate using the 2026 tax formula (§ 32a EStG), plus the 20-hour rule and the 140-day limit for non-EU students.</li>
+      </ul>
+
+      <h3>6 · How it was built</h3>
+      <p>HTML, CSS and JavaScript in a single page that also works offline, with answers saved only in the user's browser. I built it with AI-assisted coding (Claude). I set the scope and features and decided on the neutral scoring approach, and every figure links to its source so it can be checked.</p>
+      <div class="pills"><span class="chip">Market research</span><span class="chip">Data collection</span><span class="chip">Scoring model</span><span class="chip">Cash-flow forecasting</span><span class="chip">German tax &amp; social security</span><span class="chip">AI-assisted coding</span></div>
+
+      <h3>7 · What's next</h3>
+      <ul>
+        <li>A German version, and testing with classmates at my university.</li>
+        <li>Tracking price changes over time, for example the new extra contributions every January.</li>
+        <li>A tax refund estimator for working students, and a comparison of university cities.</li>
+      </ul>
+      <div class="author"><img src="author.webp" width="72" height="72" alt="Pranav Gorige"><div><b>Built by Pranav Gorige</b><p>MSc Finance student at EU Business School, Munich. Looking for a working student role in finance, controlling or data.</p><p class="small"><a href="https://pranavgorige-ops.github.io/portfolio.html">Portfolio</a> · <a href="https://www.linkedin.com/in/PranavGorige7424311000" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:pranavgorige@gmail.com">Email</a></p></div></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px"><button class="btn fill" data-go="compare">Try the comparison</button><button class="btn" data-go="cash">Open the cash-flow planner</button><a class="btn" href="https://pranavgorige-ops.github.io/portfolio.html">About me (portfolio)</a></div>
     </div>
   </div>
 </section>
@@ -461,7 +587,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-betw
         </ul>
         <div class="note warn"><b>Information, not advice.</b> Prices and rules change. Always confirm with the provider or the authority before you sign anything. All prices were last checked on <b>04.11.2026</b>.</div>
       </div>
-      <div class="card"><h3>Sources</h3><div class="src-list" id="srcList"></div></div>
+      <div class="card"><h3>Sources</h3><p style="margin:6px 0 0"><a class="btn sm fill" href="erstjahr-data.xlsx" download>Download all data (Excel)</a></p><div class="src-list" id="srcList"></div></div>
     </div>
   </div>
 </section>
@@ -547,14 +673,14 @@ var RBB=18.36, MINWAGE=13.90, MINIJOB=603, RV_EMP=9.3;
 
 /* ================= state ================= */
 var KEY='erstjahr_v1';
-var DEF={profile:{age:25,kids:0,cit:'nonEU',prog:'degree',city:'muc',flat:2,inc:0},plan:{},weights:{},checks:{},cost:{},work:{},dates:{},hsub:'public'};
+var DEF={profile:{age:25,kids:0,cit:'nonEU',prog:'degree',city:'muc',flat:2,inc:0},plan:{},weights:{},checks:{},cost:{},work:{},dates:{},cf:{},hsub:'public'};
 var S=load();
 function merge(s){s=s&&typeof s==='object'?s:{};var o=JSON.parse(JSON.stringify(DEF));for(var k in s){if(!Object.prototype.hasOwnProperty.call(DEF,k))continue;if(s[k]&&typeof s[k]==='object'&&!Array.isArray(s[k]))o[k]=Object.assign(o[k]||{},s[k]);else o[k]=s[k];}return o;}
 function load(){var s=null;try{s=JSON.parse(localStorage.getItem(KEY));}catch(e){}return merge(s);}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 function P(){return S.profile;}
 function $(id){return document.getElementById(id);}
-function eur(v,d){if(v==null||isNaN(v))return '–';d=d==null?(Math.abs(v)%1?2:0):d;return '€'+Number(v).toLocaleString('en-GB',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function eur(v,d){if(v==null||isNaN(v))return '–';d=d==null?(Math.abs(v)%1?2:0):d;var t=Math.abs(Number(v)).toLocaleString('en-GB',{minimumFractionDigits:d,maximumFractionDigits:d});return (v<0&&Number(t.replace(/,/g,''))!==0?'−€':'€')+t;}
 function toast(t){var e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove('on');},2200);}
 
 /* ================= prices that depend on the profile ================= */
@@ -917,6 +1043,81 @@ function renderMethod(){
   $('coverage').innerHTML=['blocked','health','liability','bank'].map(coverageLine).join('<br>');
 }
 
+
+/* ================= cash-flow planner ================= */
+function ymLabel(y,m){return new Date(y,m,1).toLocaleString('en-GB',{month:'short',year:'2-digit'}).replace(' ',' ’');}
+function cfSetup(){
+  var c=S.cf||{}, r=costCalc(), now=new Date();
+  $('cf-start').value=c.start||(now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0'));
+  if(c.n)$('cf-n').value=c.n;
+  $('cf-ba').value=c.ba!=null?c.ba:(P().cit==='nonEU'?REQ_YEAR:0);
+  ['pay','sav','wage','jobm','hours','extra','extram'].forEach(function(k){if(c[k]!=null)$('cf-'+k).value=c[k];});
+  $('cf-cost').value=c.costOwn?c.cost:Math.round(r.monthly);
+  $('cf-once').value=c.onceOwn?c.once:Math.round(r.once);
+  $('cf-costSrc').textContent=c.costOwn?'your own figure':'from the cost calculator ('+eur(r.monthly,0)+')';
+}
+function cfRun(job){
+  var v=function(id){return +$(id).value||0;}, n=+$('cf-n').value, st=($('cf-start').value||'2026-11').split('-');
+  var y=+st[0], m=+st[1]-1, ba=v('cf-ba'), pay=v('cf-pay'), cash=v('cf-sav'), cost=v('cf-cost'), once=v('cf-once');
+  var net=v('cf-wage')*v('cf-hours')*52/12*(1-RV_EMP/100), jm=Math.max(1,v('cf-jobm')), ex=v('cf-extra'), exm=v('cf-extram');
+  var rows=[];
+  for(var i=0;i<n;i++){
+    var p=Math.min(pay,ba); ba-=p;
+    var inc=(job&&i+1>=jm)?net:0, out=cost+(i===0?once:0)+(i+1===exm?ex:0);
+    cash+=p+inc-out;
+    rows.push({lab:ymLabel(y,m+i),pay:p,inc:inc,out:out,cash:cash,ba:ba});
+  }
+  return rows;
+}
+function cfCalc(){
+  $('cf-hv').textContent=$('cf-hours').value;
+  var A=cfRun(true), B=cfRun(false), wage=+$('cf-wage').value||0, cost=+$('cf-cost').value||0, pay=+$('cf-pay').value||0;
+  var firstNeg=A.filter(function(r){return r.cash<0;})[0], low=A.reduce(function(a,r){return r.cash<a.cash?r:a;},A[0]);
+  $('cf-run').textContent=firstNeg?firstNeg.lab:'Not in plan';
+  $('cf-run').style.color=firstNeg?'var(--bad)':'';
+  $('cf-low').textContent=eur(low.cash,0);
+  var perHour=wage*(1-RV_EMP/100)*52/12, beAfter=perHour?cost/perHour:0, beDuring=perHour?Math.max(0,cost-pay)/perHour:0;
+  $('cf-be').textContent=perHour?Math.ceil(beDuring)+' h':'–';
+  var bNeg=B.filter(function(r){return r.cash<0;})[0];
+  $('cfNote').className='note'+(firstNeg?' bad':(bNeg?' warn':''));
+  $('cfNote').innerHTML=(bNeg?'<b>Without a job</b>, your money runs out in <b>'+bNeg.lab+'</b>. ':'<b>Without a job</b>, your money lasts the whole plan. ')+
+    (firstNeg?'<b>With your job plan</b> it still runs out in <b>'+firstNeg.lab+'</b>: add hours, start earlier or cut costs.':'<b>With your job plan</b> you stay positive; your lowest balance is '+eur(low.cash,0)+' in '+low.lab+'.')+
+    ' While the payouts run, you need about <b>'+Math.ceil(beDuring)+' hours a week</b> at '+eur(wage,2)+' to break even; after the blocked account is empty, about <b>'+Math.ceil(beAfter)+' hours</b>'+(beAfter>20?' (more than the 20-hour working student limit during the semester)':'')+'.';
+  // chart
+  var svg=$('cfChart'), box=$('cfBox'), W=Math.max(320,Math.round(box.clientWidth||640)), H=W<560?240:300, L=W<560?48:58, R=12, T=14, Bm=28;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H); svg.innerHTML='';
+  var vals=A.map(function(r){return r.cash;}).concat(B.map(function(r){return r.cash;})).concat(A.map(function(r){return r.ba;}));
+  var mx=Math.max.apply(null,vals.concat([0])), mn=Math.min.apply(null,vals.concat([0]));
+  var span=mx-mn||1, step=Math.pow(10,Math.floor(Math.log10(span/4))); step=[1,2,2.5,5,10].map(function(k){return k*step;}).filter(function(s){return span/s<=6;})[0]||step*10;
+  mx=Math.ceil(mx/step)*step; mn=Math.floor(mn/step)*step;
+  var n=A.length, sx=function(i){return L+(W-L-R)*(n===1?0.5:i/(n-1));}, sy=function(v){return T+(H-T-Bm)*(mx-v)/(mx-mn||1);};
+  var NS='http://www.w3.org/2000/svg', mk=function(t,a,par){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);(par||svg).appendChild(e);return e;};
+  var g=mk('g',{'class':'grid'});
+  for(var v=mn;v<=mx+1e-6;v+=step){var yy=sy(v);mk('line',{x1:L,x2:W-R,y1:yy,y2:yy},g);var tx=mk('text',{x:L-8,y:yy+4,'text-anchor':'end'});tx.textContent=(Math.abs(v)>=1000?(v/1000).toFixed(Math.abs(v)%1000?1:0)+'k':v.toFixed(0)).replace('.0k','k');}
+  if(mn<0)mk('line',{x1:L,x2:W-R,y1:sy(0),y2:sy(0),stroke:'var(--bad)','stroke-width':1.2,'stroke-dasharray':'3 3'});
+  A.forEach(function(r,i){if(W<560&&n>12&&i%3)return;if(W>=560&&n>12&&i%2)return;var t=mk('text',{x:sx(i),y:H-8,'text-anchor':'middle'});t.textContent=r.lab;});
+  function line(rows,key,attrs){mk('path',Object.assign({d:rows.map(function(r,i){return (i?'L':'M')+sx(i).toFixed(1)+','+sy(r[key]).toFixed(1);}).join(' '),fill:'none','stroke-width':2.5,'stroke-linejoin':'round','stroke-linecap':'round'},attrs));}
+  line(A,'ba',{stroke:'var(--gold)'}); line(B,'cash',{stroke:'var(--mute)','stroke-dasharray':'6 5'}); line(A,'cash',{stroke:'var(--acc)'});
+  A.forEach(function(r,i){if(r.cash<0)mk('circle',{cx:sx(i),cy:sy(r.cash),r:3.5,fill:'var(--bad)'});});
+  var cross=mk('line',{y1:T,y2:H-Bm,stroke:'var(--mute)','stroke-width':1,opacity:0}), hit=mk('rect',{x:L,y:T,width:W-L-R,height:H-T-Bm,fill:'transparent'}), tip=$('cfTip');
+  function mv(e){var b=svg.getBoundingClientRect(),x=(e.clientX-b.left)*W/b.width,i=Math.max(0,Math.min(n-1,Math.round((x-L)/((W-L-R)/Math.max(1,n-1)))));cross.setAttribute('x1',sx(i));cross.setAttribute('x2',sx(i));cross.setAttribute('opacity',1);
+    var r=A[i];tip.innerHTML='<b>'+r.lab+'</b><br>With job: '+eur(r.cash,0)+'<br>Without job: '+eur(B[i].cash,0)+'<br>Blocked account left: '+eur(r.ba,0);tip.style.opacity=1;var px=sx(i)*b.width/W;tip.style.left=Math.min(px+12,b.width-tip.offsetWidth)+'px';tip.style.top='10px';}
+  hit.addEventListener('mousemove',mv);hit.addEventListener('mouseleave',function(){cross.setAttribute('opacity',0);tip.style.opacity=0;});
+  // table
+  $('cfTbl').innerHTML='<tr><th>Month</th><th>Payout</th><th>Job (net)</th><th>Costs</th><th>Balance</th><th>Blocked left</th></tr>'+A.map(function(r){return '<tr><td>'+r.lab+'</td><td>'+eur(r.pay,0)+'</td><td>'+eur(r.inc,0)+'</td><td>−'+eur(r.out,0)+'</td><td class="'+(r.cash<0?'neg':'')+'">'+eur(r.cash,0)+'</td><td>'+eur(r.ba,0)+'</td></tr>';}).join('');
+  var keep={start:$('cf-start').value,n:$('cf-n').value,ba:+$('cf-ba').value,pay:+$('cf-pay').value,sav:+$('cf-sav').value,wage:+$('cf-wage').value,jobm:+$('cf-jobm').value,hours:+$('cf-hours').value,extra:+$('cf-extra').value,extram:+$('cf-extram').value,cost:+$('cf-cost').value,once:+$('cf-once').value,costOwn:(S.cf||{}).costOwn,onceOwn:(S.cf||{}).onceOwn};
+  S.cf=keep;save();
+}
+document.getElementById('cfForm').addEventListener('input',function(e){if(e.target.id==='cf-cost'){S.cf=S.cf||{};S.cf.costOwn=true;$('cf-costSrc').textContent='your own figure';}if(e.target.id==='cf-once'){S.cf=S.cf||{};S.cf.onceOwn=true;}cfCalc();});
+document.getElementById('cfForm').addEventListener('change',cfCalc);
+window.addEventListener('resize',function(){if($('v-cash').classList.contains('on')){clearTimeout(cfCalc.t);cfCalc.t=setTimeout(cfCalc,150);}});
+
+/* ================= case study numbers ================= */
+function renderStory(){
+  var n=BLOCKED.length+GKV.length+PKV.length+LIAB.length+BANK.length;
+  $('storyStats').innerHTML=[[Object.keys(SRC).length,'sources, each linked'],[n,'products compared'],[STEPS.reduce(function(a,p){return a+p[1].length;},0),'step arrival checklist'],['€0','commission taken']].map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';}).join('');
+}
+
 /* ================= profile ================= */
 var PF={age:'p-age',kids:'p-kids',cit:'p-cit',prog:'p-prog',city:'p-city',flat:'p-flat',inc:'p-inc'};
 function initProfile(){var p=P();for(var k in PF){$(PF[k]).value=p[k];}profChips();var d=S.dates||{};$('d-visa').value=d.visa||'';$('d-move').value=d.move||'';$('d-ba').value=d.ba||'';$('w-kv').value=S.work&&S.work.kv!=null?S.work.kv:'';['wage','hours','days','months'].forEach(function(k){if(S.work&&S.work[k]!=null)$('w-'+k).value=S.work[k];});}
@@ -924,14 +1125,14 @@ function profChips(){var p=P();var pr={degree:'Degree',lang:'Language course',ph
 Object.keys(PF).forEach(function(k){$(PF[k]).addEventListener('change',function(e){var v=e.target.value;if(k==='age'){v=Math.max(17,Math.min(70,parseInt(v,10)||25));e.target.value=v;}S.profile[k]=(k==='cit'||k==='prog'||k==='city')?v:+v;if(k==='city')S.cost.rent=null;if(k==='age'||k==='kids'||k==='city'||k==='prog'){$('w-kv').value='';delete S.cost.health;}if(k==='age'||k==='inc')delete S.cost.bank;save();profChips();refreshAll();});});
 
 /* ================= routing ================= */
-var VIEWS=['home','compare','check','cost','work','steps','letters','plan','method'];
+var VIEWS=['home','compare','check','cost','cash','work','steps','letters','plan','story','method'];
 function setHash(h){try{history.replaceState(null,'','#'+h);}catch(e){location.hash=h;}}
 function go(r,noScroll){
   var parts=String(r||'home').split('/'),v=VIEWS.indexOf(parts[0])>=0?parts[0]:'home';
   if(v==='compare'&&parts[1]&&CATS[parts[1]]){if(curCat!==parts[1]){sel=[];sortBy=null;}curCat=parts[1];}
   VIEWS.forEach(function(x){$('v-'+x).classList.toggle('on',x===v);});
   [].forEach.call(document.querySelectorAll('nav.main [data-go]'),function(b){if(b.dataset.go===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
-  if(v==='compare')renderCompare();if(v==='check')renderCheck();if(v==='cost'){costSetup();costCalc();}if(v==='work')workCalc();if(v==='steps')renderSteps();if(v==='letters')renderLetters();if(v==='plan')refreshPlan();if(v==='method')renderMethod();
+  if(v==='compare')renderCompare();if(v==='check')renderCheck();if(v==='cost'){costSetup();costCalc();}if(v==='work')workCalc();if(v==='steps')renderSteps();if(v==='letters')renderLetters();if(v==='plan')refreshPlan();if(v==='method')renderMethod();if(v==='cash'){cfSetup();cfCalc();}if(v==='story')renderStory();
   setHash(v==='compare'?'compare/'+curCat:v);
   if(!noScroll)window.scrollTo(0,0);
 }
