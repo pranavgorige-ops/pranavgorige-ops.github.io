@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erstjahr – your first year in Germany, compared honestly</title>
+<meta name="description" content="Neutral comparison of blocked accounts, health insurance, liability insurance and bank accounts for international students in Germany, with a first-year cost calculator, working student calculator, newcomer timeline and letter explainer. No commission, sources on every price.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6f5c'/%3E%3Ctext x='31' y='45' font-family='Arial Black,sans-serif' font-size='34' font-weight='900' text-anchor='middle' fill='%23f6f4ef'%3EE%3C/text%3E%3Ccircle cx='50' cy='42' r='5' fill='%23e8b931'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Archivo';src:url(archivo.woff2) format('woff2-variations'),url(archivo.woff2) format('woff2');font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:url(instrument-serif-italic.woff2) format('woff2');font-style:italic;font-weight:400;font-display:swap}
+:root{
+  --bg:#f6f4ef;--panel:#ffffff;--panel-2:#fbfaf7;--ink:#14201b;--mute:#5d6b64;--line:#e3ded3;
+  --acc:#1f6f5c;--acc-ink:#ffffff;--acc-soft:#dcefe7;--gold:#e8b931;
+  --warn:#8a5300;--warn-bg:#fff4d9;--bad:#a23b2c;--bad-bg:#fde8e4;--ok:#1f6f5c;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--serif:"Instrument Serif",Georgia,serif;
+  --r:14px;--shadow:0 1px 2px rgba(20,32,27,.05),0 10px 30px rgba(20,32,27,.06)
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0e1411;--panel:#151d19;--panel-2:#121916;--ink:#eaf1ed;--mute:#98a9a0;--line:#25312b;
+  --acc:#4fc3a1;--acc-ink:#06120d;--acc-soft:#16352c;--gold:#f0c654;
+  --warn:#f3bd5a;--warn-bg:#2b2312;--bad:#ff8f7d;--bad-bg:#33201c;--ok:#4fc3a1;--shadow:none}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--sans);overflow-x:hidden}
+a{color:var(--acc)}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* header */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:62px}
+.logo{font:800 22px/1 var(--sans);font-stretch:108%;letter-spacing:-.03em;text-decoration:none;color:var(--ink);white-space:nowrap;background:none;border:0;cursor:pointer;padding:0}
+.logo i{font:italic 400 22px var(--serif);letter-spacing:0;color:var(--acc)}
+.logo b{color:var(--gold)}
+nav.main{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+nav.main>:first-child{margin-left:auto}
+@media (max-width:700px){.top .wrap{gap:10px}nav.main{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}}
+nav.main::-webkit-scrollbar{display:none}
+nav.main button{background:none;border:0;padding:8px 11px;border-radius:999px;font-size:14px;font-weight:600;color:var(--mute);cursor:pointer;white-space:nowrap}
+nav.main button:hover{color:var(--ink)}
+nav.main button[aria-current="page"]{background:var(--ink);color:var(--bg)}
+nav.main .plan-btn{border:1px solid var(--line);color:var(--ink)}
+nav.main .plan-btn .n{display:inline-block;min-width:18px;padding:0 5px;margin-left:4px;border-radius:9px;background:var(--acc);color:var(--acc-ink);font-size:12px;line-height:18px}
+/* profile */
+.profile{background:var(--panel-2);border-bottom:1px solid var(--line)}
+.profile details{padding:10px 0}
+.profile summary{cursor:pointer;font-weight:700;font-size:14px;list-style:none;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.profile summary::-webkit-details-marker{display:none}
+.profile summary .chip{font-weight:500}
+.profile summary .edit{margin-left:auto;color:var(--acc);font-weight:700}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;padding:14px 0 6px}
+.pgrid label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+.pgrid input,.pgrid select{padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);font-size:15px;text-transform:none;letter-spacing:0;font-weight:500;color:var(--ink)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:13px;color:var(--ink)}
+/* views */
+main{min-height:70vh}
+.view{display:none;padding:34px 0 70px}
+.view.on{display:block}
+h1,h2,h3{letter-spacing:-.025em;line-height:1.1;margin:0}
+h1{font:800 clamp(36px,5.6vw,68px)/1.02 var(--sans);font-stretch:106%}
+h1 em,h2 em{font:italic 400 1.04em var(--serif);letter-spacing:0;color:var(--acc)}
+h2{font:800 clamp(26px,3.4vw,40px)/1.05 var(--sans);font-stretch:104%;margin-bottom:10px}
+h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--mute);max-width:62ch;margin:14px 0 0}
+.kicker{font:italic 400 20px var(--serif);color:var(--acc);margin:0 0 8px}
+.muted{color:var(--mute)}
+.small{font-size:13px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:999px;border:1px solid var(--ink);background:none;color:var(--ink);font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;line-height:1.1}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.btn.fill:hover{filter:brightness(1.08)}
+.btn.sm{padding:7px 11px;font-size:13px}
+.btn.ghost{border-color:var(--line)}
+.btn[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.note{border-radius:12px;padding:12px 14px;font-size:14px;background:var(--acc-soft)}
+.note.warn{background:var(--warn-bg);color:var(--warn)}
+.note.bad{background:var(--bad-bg);color:var(--bad)}
+.note b{color:inherit}
+/* home */
+.hero{display:grid;grid-template-columns:1.25fr .9fr;gap:36px;align-items:center;padding:10px 0 26px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.usp{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 26px}
+.usp .chip{padding:7px 12px;font-weight:600}
+.usp .chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc)}
+.heroCard{background:var(--ink);color:var(--bg);border-radius:20px;padding:24px;position:relative;overflow:hidden}
+.heroCard .big{font:800 54px/1 var(--sans);font-stretch:108%;letter-spacing:-.03em;margin:6px 0}
+.heroCard .muted{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.heroCard .rows{margin-top:14px;display:grid;gap:7px;font-size:14px}
+.heroCard .rows div{display:flex;justify-content:space-between;border-top:1px solid color-mix(in srgb,var(--bg) 18%,transparent);padding-top:7px}
+.tools .card{cursor:pointer;transition:transform .2s,border-color .2s}
+.tools .card:hover{transform:translateY(-3px);border-color:var(--acc)}
+.tools .card .ico{width:38px;height:38px;border-radius:10px;background:var(--acc-soft);display:grid;place-items:center;margin-bottom:12px;font-weight:800;color:var(--acc)}
+.why{margin-top:40px}
+.why ol{margin:12px 0 0;padding-left:20px;display:grid;gap:8px}
+/* compare */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 18px}
+.tabs button{padding:10px 15px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-weight:700;font-size:14px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cmpHead{display:grid;grid-template-columns:1fr 330px;gap:20px;align-items:start;margin-bottom:16px}
+@media (max-width:980px){.cmpHead{grid-template-columns:1fr}}
+.weights h3{font-size:15px}
+.weights .w{display:grid;grid-template-columns:1fr 46px;gap:8px;align-items:center;font-size:13px;margin-top:8px}
+.weights input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--acc)}
+.weights .w span:last-child{text-align:right;font-weight:700}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;align-items:center}
+.filters label{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:13px;background:var(--panel);cursor:pointer}
+.subtabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--panel)}
+.subtabs button{border:0;background:none;padding:7px 12px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer}
+.subtabs button[aria-pressed="true"]{background:var(--acc);color:var(--acc-ink)}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:14px}
+.tblwrap{overflow-x:auto;border-radius:var(--r)}
+.tbl th{position:sticky;top:0;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute);background:var(--panel-2);padding:11px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl th button{all:unset;cursor:pointer}
+.tbl th button::after{content:" ↕";opacity:.4}
+.tbl td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tr.top1 td{background:color-mix(in srgb,var(--acc-soft) 55%,transparent)}
+.tbl tr.na td{opacity:.5}
+.tbl .name b{display:block;font-size:15px}
+.tbl .name .src{font-size:12px}
+.score{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;white-space:nowrap}
+.score i{display:block;width:54px;height:6px;border-radius:3px;background:var(--line);position:relative;overflow:hidden}
+.score i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--p);background:var(--acc)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px;background:var(--acc-soft);color:var(--acc);margin:2px 2px 0 0}
+.tag.no{background:var(--bad-bg);color:var(--bad)}
+.tag.mid{background:var(--warn-bg);color:var(--warn)}
+.rowAct{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.rowAct label{font-size:12px;display:flex;gap:5px;align-items:center;cursor:pointer;white-space:nowrap}
+.cmpbar{position:sticky;bottom:12px;z-index:5;margin-top:14px;display:none;justify-content:space-between;align-items:center;gap:10px;background:var(--ink);color:var(--bg);padding:10px 12px 10px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.cmpbar.on{display:flex}
+.cmpbar .btn{border-color:var(--bg);color:var(--bg)}
+.cmpbar .btn.fill{background:var(--gold);border-color:var(--gold);color:#1a1405}
+dialog{border:0;border-radius:18px;padding:0;max-width:min(980px,94vw);width:100%;background:var(--panel);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,15,12,.55)}
+.dlgHead{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.dlgBody{padding:16px 20px;overflow-x:auto}
+.side{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:520px}
+.side .r{display:grid;grid-template-columns:170px repeat(var(--n),1fr)}
+.side .r>div{padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px}
+.side .r>div:first-child{font-weight:700;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.04em;background:var(--panel-2)}
+.side .r.h>div{font-weight:800;font-size:16px}
+.side .best{background:var(--acc-soft)}
+/* forms / calculators */
+.calc{display:grid;grid-template-columns:400px 1fr;gap:22px;align-items:start;margin-top:22px}
+@media (max-width:980px){.calc{grid-template-columns:1fr}}
+.form{display:grid;gap:14px}
+.f{display:grid;gap:6px}
+.f>span{font-size:13px;font-weight:700}
+.f small{color:var(--mute);font-size:12px}
+.f input,.f select{padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:var(--panel-2);font-size:15px;width:100%}
+.f input[type=range]{padding:0;accent-color:var(--acc)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:640px){.kpis{grid-template-columns:1fr 1fr}}
+.kpi{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi .l{font-size:12px;color:var(--mute);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.kpi .v{font:800 clamp(22px,2.6vw,30px)/1.1 var(--sans);font-stretch:106%;letter-spacing:-.02em;margin-top:4px;white-space:nowrap}
+.kpi.key{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.kpi.key .l{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.bars{display:grid;gap:9px;margin-top:16px}
+.bar{display:grid;grid-template-columns:150px 1fr 82px;gap:10px;align-items:center;font-size:14px}
+.bar .t{height:12px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--acc);border-radius:6px}
+.bar .t i.est{background:repeating-linear-gradient(45deg,var(--acc) 0 6px,color-mix(in srgb,var(--acc) 55%,transparent) 6px 12px)}
+.bar span:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+@media (max-width:520px){.bar{grid-template-columns:110px 1fr 70px;font-size:13px}}
+.meter{height:12px;border-radius:6px;background:var(--line);overflow:hidden;margin:8px 0}
+.meter i{display:block;height:100%;background:var(--acc)}
+.meter i.over{background:var(--bad)}
+.lines{display:grid;gap:0;margin-top:12px}
+.lines div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.lines div b{font-variant-numeric:tabular-nums}
+.lines div.tot{border-bottom:0;font-size:17px}
+/* timeline */
+.tl{position:relative;margin-top:26px;display:grid;gap:26px}
+.phase h3{display:flex;gap:10px;align-items:baseline}
+.phase h3 span{font:italic 400 18px var(--serif);color:var(--acc);font-weight:400}
+.step{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-top:10px}
+.step input{width:20px;height:20px;accent-color:var(--acc);margin-top:2px}
+.step.done{opacity:.6}
+.step.done b{text-decoration:line-through}
+.step p{margin:4px 0 0;font-size:14px;color:var(--mute)}
+.prog{display:flex;align-items:center;gap:12px;margin-top:14px}
+.prog .meter{flex:1;max-width:340px}
+/* letters */
+.search{width:100%;max-width:520px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:16px;margin-top:18px}
+.letters{display:grid;gap:10px;margin-top:16px}
+.letters details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:0 16px}
+.letters summary{cursor:pointer;padding:14px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap;list-style:none}
+.letters summary::-webkit-details-marker{display:none}
+.letters summary b{font-size:16px}
+.letters summary .de{font:italic 400 18px var(--serif);color:var(--acc)}
+.letters .body{padding:0 0 16px;font-size:15px}
+.letters .body p{margin:6px 0}
+.urg{font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.04em}
+.urg.h{background:var(--bad-bg);color:var(--bad)}.urg.m{background:var(--warn-bg);color:var(--warn)}.urg.l{background:var(--acc-soft);color:var(--acc)}
+/* plan */
+.planGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;margin-top:22px}
+@media (max-width:900px){.planGrid{grid-template-columns:1fr}}
+.pitem{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid var(--line)}
+.pitem:last-child{border-bottom:0}
+.pitem .cat{font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+.src-list{display:grid;gap:8px;margin-top:12px;font-size:14px}
+.src-list a{word-break:break-word}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13px;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,120px);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:999px;font-weight:700;font-size:14px;transition:transform .3s;z-index:50}
+.toast.on{transform:translate(-50%,0)}
+@media print{.top,.profile,footer,.btn,.toast{display:none!important}.view{display:none!important}#v-plan{display:block!important}body{background:#fff;color:#000}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <button class="logo" data-go="home" aria-label="Erstjahr home">Erst<i>jahr</i><b>.</b></button>
+    <nav class="main" aria-label="Main">
+      <button data-go="compare">Compare</button>
+      <button data-go="check">Quick check</button>
+      <button data-go="cost">Cost calculator</button>
+      <button data-go="work">Working student</button>
+      <button data-go="steps">First steps</button>
+      <button data-go="letters">Letters</button>
+      <button data-go="method">Sources</button>
+      <button data-go="plan" class="plan-btn">My plan<span class="n" id="planN">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="profile" aria-label="Your situation">
+  <div class="wrap">
+    <details id="profBox">
+      <summary><span>Your situation:</span><span id="profChips"></span><span class="edit">Edit</span></summary>
+      <div class="pgrid">
+        <label>Age<input type="number" id="p-age" min="17" max="70" value="25"></label>
+        <label>Children<select id="p-kids"><option value="0">No children</option><option value="1">Yes</option></select></label>
+        <label>Citizenship<select id="p-cit"><option value="nonEU">Non-EU</option><option value="EU">EU / EEA / Swiss</option></select></label>
+        <label>Studying<select id="p-prog"><option value="degree">Bachelor / Master degree</option><option value="lang">Language course / Studienkolleg</option><option value="phd">PhD / doctorate</option></select></label>
+        <label>City<select id="p-city"><option value="muc">Munich</option><option value="ber">Berlin</option><option value="ham">Hamburg</option><option value="cgn">Cologne</option><option value="fra">Frankfurt</option><option value="oth">Other city</option></select></label>
+        <label>Flatmates<select id="p-flat"><option value="0">I live alone</option><option value="1">1 flatmate</option><option value="2" selected>2 flatmates</option><option value="3">3 flatmates</option><option value="4">4+ flatmates</option></select></label>
+        <label>Money into bank / month<select id="p-inc"><option value="0">Less than €700</option><option value="700">€700 – €999</option><option value="1000">€1,000 or more</option></select></label>
+      </div>
+      <p class="small muted" style="margin:4px 0 6px">Saved only in this browser on your computer. Every comparison and calculator below adapts to these answers.</p>
+    </details>
+  </div>
+</section>
+
+<main>
+<!-- HOME -->
+<section class="view" id="v-home">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <p class="kicker">For international students in Germany</p>
+        <h1>Your first year in Germany, <em>compared honestly.</em></h1>
+        <p class="lead">Blocked account, health insurance, liability insurance and bank account in one place, plus your full first-year cost. In English, with a source on every price.</p>
+        <div class="usp"><span class="chip">No commission, no paid rankings</span><span class="chip">Source and date on every price</span><span class="chip">You set the ranking weights</span><span class="chip">Works offline</span></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn fill" data-go="check">Start the quick check</button><button class="btn" data-go="compare">Compare providers</button></div>
+      </div>
+      <div class="heroCard" aria-live="polite">
+        <div class="small muted">Your estimated first year in <span id="hCity">Munich</span></div>
+        <div class="big" id="hTotal">–</div>
+        <div class="small muted">including one-time costs, based on your situation</div>
+        <div class="rows" id="hRows"></div>
+        <button class="btn sm" style="margin-top:16px;border-color:var(--bg);color:var(--bg)" data-go="cost">Adjust in the calculator →</button>
+      </div>
+    </div>
+    <div class="grid3 tools" style="margin-top:16px">
+      <div class="card" data-go="compare" role="button" tabindex="0"><div class="ico">⇄</div><h3>Compare 4 product types</h3><p class="muted small">Blocked accounts, public and private health insurance, liability insurance and bank accounts, ranked by a score you control.</p></div>
+      <div class="card" data-go="cost" role="button" tabindex="0"><div class="ico">€</div><h3>First-year cost calculator</h3><p class="muted small">Everything in one number: rent, insurance, fees, transport and the broadcasting fee, compared with your blocked account payout.</p></div>
+      <div class="card" data-go="work" role="button" tabindex="0"><div class="ico">⏱</div><h3>Working student calculator</h3><p class="muted small">Net pay, pension contribution, estimated income tax, the 20-hour rule and the 140-day limit for non-EU students.</p></div>
+      <div class="card" data-go="steps" role="button" tabindex="0"><div class="ico">✓</div><h3>First steps checklist</h3><p class="muted small">What to do before your visa, in week 1 and in your first months, with your progress saved.</p></div>
+      <div class="card" data-go="letters" role="button" tabindex="0"><div class="ico">✉</div><h3>Letter explainer</h3><p class="muted small">Common German letters from insurers and offices explained in plain English, with what to do next.</p></div>
+      <div class="card" data-go="plan" role="button" tabindex="0"><div class="ico">★</div><h3>My plan and reminders</h3><p class="muted small">Save your picks, see your total, and download calendar reminders for deadlines.</p></div>
+    </div>
+    <div class="why card">
+      <h3>Why this exists</h3>
+      <p class="muted" style="margin:6px 0 0">Big comparison portals are useful, but Germany's competition authority (Bundeskartellamt) found problems with how they work:</p>
+      <ol class="muted">
+        <li>Rankings can be influenced by commissions that providers pay.</li>
+        <li>Paid ads are sometimes placed above the real results.</li>
+        <li>Some portals cover less than half of the offers on the market, and you can't see that.</li>
+      </ol>
+      <p class="muted" style="margin:12px 0 0">Erstjahr earns nothing from any provider. It shows how every score is calculated, says exactly which providers it covers, and links each price to its source. <button class="btn sm ghost" data-go="method" style="margin-left:4px">Read the method</button></p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="view" id="v-compare">
+  <div class="wrap">
+    <p class="kicker">Neutral comparison</p>
+    <h2>Compare providers<em>.</em></h2>
+    <p class="lead">Rows are ranked by a score from 0 to 10. You decide what matters with the sliders, so the ranking is yours, not ours.</p>
+    <div class="tabs" role="tablist" aria-label="Product type">
+      <button role="tab" data-cat="blocked" aria-selected="true">Blocked account</button>
+      <button role="tab" data-cat="health" aria-selected="false">Health insurance</button>
+      <button role="tab" data-cat="liability" aria-selected="false">Liability insurance</button>
+      <button role="tab" data-cat="bank" aria-selected="false">Bank account</button>
+    </div>
+    <div id="cmp"></div>
+    <div class="cmpbar" id="cmpbar"><span id="cmpTxt">0 selected</span><span style="display:flex;gap:8px"><button class="btn sm" id="cmpClear">Clear</button><button class="btn sm fill" id="cmpGo">Compare side by side</button></span></div>
+  </div>
+  <dialog id="dlg"><div class="dlgHead"><h3 id="dlgT" style="margin:0">Side by side</h3><button class="btn sm ghost" id="dlgX">Close</button></div><div class="dlgBody" id="dlgB"></div></dialog>
+</section>
+
+<!-- QUICK CHECK -->
+<section class="view" id="v-check">
+  <div class="wrap">
+    <p class="kicker">Quick check</p>
+    <h2>What do you need<em>?</em></h2>
+    <p class="lead">Based on your situation at the top of the page. Change it there and the answers update.</p>
+    <div class="grid2" id="checkOut" style="margin-top:22px"></div>
+  </div>
+</section>
+
+<!-- COST -->
+<section class="view" id="v-cost">
+  <div class="wrap">
+    <p class="kicker">First-year cost calculator</p>
+    <h2>Your first year in one number<em>.</em></h2>
+    <p class="lead">Sourced prices are filled in from your plan, or the top-ranked option if you haven't picked one. Fields marked "your estimate" are yours to set.</p>
+    <div class="calc">
+      <div class="card form" id="costForm">
+        <label class="f"><span>Months</span><input type="number" id="c-months" min="1" max="24" value="12"></label>
+        <label class="f"><span>Rent per month (warm)</span><input type="number" id="c-rent" min="0" step="10"><small id="c-rentSrc"></small></label>
+        <label class="f"><span>Health insurance</span><select id="c-health"></select></label>
+        <label class="f"><span>Blocked account</span><select id="c-blocked"></select></label>
+        <label class="f"><span>Liability insurance</span><select id="c-liab"></select></label>
+        <label class="f"><span>Bank account</span><select id="c-bank"></select></label>
+        <label class="f"><span>Public transport</span><select id="c-trans"><option value="43">Bavarian student Deutschlandticket – €43 / month</option><option value="63">Deutschlandticket – €63 / month</option><option value="0">None / bike</option></select><small>Source: muenchen.de (2026). The €43 ticket is for students in Bavaria.</small></label>
+        <div class="two">
+          <label class="f"><span>Phone &amp; internet</span><input type="number" id="c-phone" min="0" value="15"><small>your estimate / month</small></label>
+          <label class="f"><span>Food &amp; everyday</span><input type="number" id="c-food" min="0" value="300"><small>your estimate / month</small></label>
+        </div>
+        <div class="two">
+          <label class="f"><span>University fees</span><input type="number" id="c-fees" min="0" value="0"><small>per semester, your figure</small></label>
+          <label class="f"><span>Rent deposit</span><select id="c-dep"><option value="0">None</option><option value="1">1 month's rent</option><option value="2">2 months' rent</option><option value="3" selected>3 months' rent</option></select><small>legal maximum: 3 months' net rent</small></label>
+        </div>
+        <label class="f"><span>Broadcasting fee (Rundfunkbeitrag)</span><small id="c-rbb"></small></label>
+      </div>
+      <div>
+        <div class="kpis">
+          <div class="kpi key"><div class="l">First year total</div><div class="v" id="k-total">–</div></div>
+          <div class="kpi"><div class="l">Per month</div><div class="v" id="k-month">–</div></div>
+          <div class="kpi"><div class="l">One-time costs</div><div class="v" id="k-once">–</div></div>
+        </div>
+        <div class="card" style="margin-top:14px">
+          <h3>Where your money goes, per month</h3>
+          <div class="bars" id="costBars"></div>
+          <p class="small muted" style="margin:12px 0 0">Striped bars are your own estimates. Solid bars come from sourced prices.</p>
+        </div>
+        <div class="note" id="gapNote" style="margin-top:14px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="view" id="v-work">
+  <div class="wrap">
+    <p class="kicker">Working student</p>
+    <h2>What you really earn<em>.</em></h2>
+    <p class="lead">As a working student (Werkstudent) you usually pay only pension insurance, not health, care or unemployment insurance, as long as you keep to 20 hours a week during the semester.</p>
+    <div class="calc">
+      <div class="card form">
+        <label class="f"><span>Hourly wage (€)</span><input type="number" id="w-wage" min="0" step="0.5" value="15"><small>Minimum wage 2026: €13.90 / hour</small></label>
+        <label class="f"><span>Hours per week: <b id="w-hv">20</b></span><input type="range" id="w-hours" min="4" max="40" step="1" value="20"></label>
+        <label class="f"><span>Working days per week</span><select id="w-days"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option></select></label>
+        <label class="f"><span>Months worked this year</span><input type="number" id="w-months" min="1" max="12" value="12"></label>
+        <label class="f"><span>Your health insurance per month (for tax deduction)</span><input type="number" id="w-kv" min="0" step="1"><small>Pre-filled from your plan or the cheapest public option for your profile</small></label>
+      </div>
+      <div>
+        <div class="kpis">
+          <div class="kpi key"><div class="l">Net per month (avg.)</div><div class="v" id="w-net">–</div></div>
+          <div class="kpi"><div class="l">Gross per month</div><div class="v" id="w-gross">–</div></div>
+          <div class="kpi"><div class="l">Est. income tax / year</div><div class="v" id="w-tax">–</div></div>
+        </div>
+        <div class="card" style="margin-top:14px">
+          <h3>Your year</h3>
+          <div class="lines" id="w-lines"></div>
+        </div>
+        <div id="w-notes" style="display:grid;gap:10px;margin-top:14px"></div>
+        <div class="card" id="w-daysBox" style="margin-top:14px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="view" id="v-steps">
+  <div class="wrap">
+    <p class="kicker">First steps</p>
+    <h2>Your arrival checklist<em>.</em></h2>
+    <p class="lead">Tick things off as you go. Your progress stays saved in this browser.</p>
+    <div class="prog"><div class="meter"><i id="stepBar" style="width:0"></i></div><b id="stepTxt">0 of 0 done</b></div>
+    <div class="tl" id="tl"></div>
+  </div>
+</section>
+
+<!-- LETTERS -->
+<section class="view" id="v-letters">
+  <div class="wrap">
+    <p class="kicker">Letter explainer</p>
+    <h2>Got a German letter<em>?</em></h2>
+    <p class="lead">Search for a word from the letter (for example "Mahnung" or "Beitrag"). Each entry says what it is, how urgent it is, and what to do.</p>
+    <input class="search" id="lq" type="search" placeholder="Search: Bescheid, Mahnung, Steuer-ID, Krankenkasse…" aria-label="Search letters">
+    <div class="letters" id="letters"></div>
+    <p class="small muted" style="margin-top:16px">General information, not legal advice. If a letter mentions a deadline or a court (Gericht), get help quickly, for example from your university's international office or student union.</p>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="view" id="v-plan">
+  <div class="wrap">
+    <p class="kicker">My plan</p>
+    <h2>Your picks and reminders<em>.</em></h2>
+    <div class="planGrid">
+      <div class="card"><h3>Your picks</h3><div id="planList"></div><div class="lines" id="planTot"></div></div>
+      <div style="display:grid;gap:18px;align-content:start">
+        <div class="card form">
+          <h3>Calendar reminders</h3>
+          <label class="f"><span>Residence permit / visa valid until</span><input type="date" id="d-visa"></label>
+          <label class="f"><span>Moved into your flat on</span><input type="date" id="d-move"></label>
+          <label class="f"><span>Blocked account payouts started</span><input type="date" id="d-ba"></label>
+          <button class="btn fill" id="icsBtn">Download reminders (.ics)</button>
+          <p class="small muted" style="margin:0">Opens in Google Calendar, Outlook or Apple Calendar. Includes only the dates you entered.</p>
+        </div>
+        <div class="card">
+          <h3>Keep your data</h3>
+          <p class="small muted" style="margin:4px 0 12px">Everything is stored only in this browser. Export a backup to move it to another computer.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" id="expBtn">Export backup</button><label class="btn sm">Import backup<input type="file" id="impIn" accept="application/json" class="sr"></label><button class="btn sm" onclick="window.print()">Print plan</button><button class="btn sm ghost" id="rstBtn">Reset all</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="view" id="v-method">
+  <div class="wrap">
+    <p class="kicker">Sources and method</p>
+    <h2>How Erstjahr works<em>.</em></h2>
+    <div class="grid2" style="margin-top:22px">
+      <div class="card">
+        <h3>The score</h3>
+        <p class="muted">For every factor, the best value in the table gets 10 and the worst gets 0, with everything in between scaled in a straight line. Yes/no factors give 10 or 0. The final score is the weighted average, using the weights you set with the sliders.</p>
+        <h3 style="margin-top:16px">What we cover</h3>
+        <p class="muted" id="coverage"></p>
+        <h3 style="margin-top:16px">What we don't do</h3>
+        <ul class="muted">
+          <li>No commission, affiliate links or paid placements.</li>
+          <li>No star ratings or reviews we can't verify.</li>
+          <li>No selling or brokering. Selling insurance in Germany needs a broker licence (§ 34d GewO); Erstjahr is information only.</li>
+        </ul>
+        <div class="note warn"><b>Information, not advice.</b> Prices and rules change. Always confirm with the provider or the authority before you sign anything. All prices were last checked on <b>04.11.2026</b>.</div>
+      </div>
+      <div class="card"><h3>Sources</h3><div class="src-list" id="srcList"></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span><b>Erstjahr</b> · A portfolio project by <a href="portfolio.html">Pranav Gorige</a> · Not a broker, no commission · Information only, not financial or legal advice</span><span><a href="index.html">Home</a> · <a href="portfolio.html">Portfolio</a> · Prices checked 04.11.2026</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+var CHECKED='04.11.2026';
+/* ================= sources ================= */
+var SRC={
+  expatrio:['Expatrio – Blocked Account (official page)','https://www.expatrio.com/blocked-account'],
+  fintiba:['Fintiba – Blocked Account (official page; required amounts)','https://www.fintiba.com/blocked-account/'],
+  sasperr:['study-abroad.org – Sperrkonto comparison 2026 (updated 03.11.2026)','https://www.study-abroad.org/blog/germany-sperrkonto-comparison-2026/'],
+  gkvlist:['krankenkassen.de – Extra contribution (Zusatzbeitrag) 2026 by insurer','https://www.krankenkassen.de/gesetzliche-krankenkassen/krankenkasse-beitrag/zusatzbeitrag/'],
+  gkvstud:['gesetzlichekrankenkassen.de – Student contributions 2026','https://www.gesetzlichekrankenkassen.de/kassenbeitraege/studenten'],
+  aok:['AOK – Cost overview of student health insurance (care insurance 2026)','https://www.aok.de/pp/rechengroessen/kostenueberblick-studentischen-krankenversicherung/'],
+  pkv:['student-insurance.com – Private health insurance for students 2026 (reviewed 04.09.2026)','https://www.student-insurance.com/blog/pkv-comparison-2026-private-health-insurance-students-germany/'],
+  feather:['Feather – Personal liability insurance (official page)','https://feather-insurance.com/personal-liability-insurance'],
+  ffphv:['Finanzfluss – Private liability insurance comparison (as of 14.08.2026)','https://www.finanzfluss.de/vergleich/private-haftpflichtversicherung/'],
+  aabphv:['All About Berlin – How to choose liability insurance (updated 11.09.2026)','https://allaboutberlin.com/guides/haftpflichtversicherung'],
+  bank:['YourWeg – Bank accounts for international students (checked 26.10.2026)','https://www.yourweg.com/resources/best-german-bank-account-international-students'],
+  rbb:['Rundfunkbeitrag – official site (€18.36 per flat per month)','https://www.rundfunkbeitrag.de/'],
+  ticket:['muenchen.de – Deutschlandticket €63, Bavarian student ticket €43 (2026)','https://muenchen.de/verkehr/deutschlandticket-63-euro-seit-januar-2026'],
+  stwm:['Studierendenwerk München – Public transport for students','https://studierendenwerk-muenchen-oberbayern.de/en/about-us/semester-ticket-1/munich'],
+  wgg:['WG-Gesucht & Moses Mendelssohn Institut – Student WG rents, winter semester 2026/27','https://www.wg-gesucht.de/presse/studentische-wohnkosten/wintersemester-2026-2027-wg-zimmer-mieten'],
+  drv:['Deutsche Rentenversicherung – Minijob limit €603 and minimum wage €13.90 (2026)','https://www.deutsche-rentenversicherung.de/BadenWuerttemberg/DE/Presse/Pressemitteilungen/2025/251222_Minijob.html'],
+  whk:['WHK Controlling – Working student rules 2026 (pension 18.6%, 9.3% each side)','https://www.whk-controlling.de/wissen/werkstudent-regelungen'],
+  estg:['§ 32a EStG – Income tax tariff from 2026 (gesetze-im-internet.de)','https://www.gesetze-im-internet.de/estg/__32a.html'],
+  days:['Info sheet – Non-EU students may work 140 full or 280 half days a year (from 01.03.2024)','https://lhm.muenchen.swm.de/dam/jcr:1ddafdf3-6f3d-48d9-ac1d-55296032c728/Beschaeftigungsmoeglichkeiten_Studierende.pdf'],
+  bka:['test.de – Bundeskartellamt criticises comparison portals (2019)','https://www.test.de/Preisvergleich-Bundeskartellamt-kritisiert-Vergleichsportale-5425427-0/'],
+  check24:['CHECK24 – Broker information (§ 34d GewO, commission in the premium)','https://www.check24.de/vp-vers/erstinformation/']
+};
+function srcLink(k){var s=SRC[k];return s?'<a href="'+s[1]+'" target="_blank" rel="noopener">'+esc(s[0].split(' – ')[0])+'</a>':'';}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+/* ================= data ================= */
+var REQ_MONTH=992, REQ_YEAR=11904;
+var BLOCKED=[
+  {id:'expatrio',name:'Expatrio',setup:119,monthly:9,renew:'€119 set-up + €9 / month',refund:10,refundTxt:'Deposit and service fees refunded',speed:'Confirmation within 1 business day',bundle:'Value Package: health insurance + free current account',url:'https://www.expatrio.com/blocked-account',src:'expatrio'},
+  {id:'fintiba',name:'Fintiba',setup:159,monthly:9.90,renew:'€159 set-up + €9.90 / month',refund:5,refundTxt:'Deposit refunded, opening fee kept',speed:'Set-up in under 10 minutes; start 3–4 weeks before your visa appointment',bundle:'Fintiba Plus: health + free travel insurance + current account',url:'https://www.fintiba.com/blocked-account/',src:'sasperr'},
+  {id:'coracle',name:'Coracle',setup:99,monthly:0,renew:'€60 one-time renewal',refund:5,refundTxt:'Deposit refunded, set-up fee kept',speed:'Opened within 2 hours',bundle:'Optional Prime Uni (€59 / year): travel insurance + choice of TK, AOK, Barmer or DAK',url:'https://www.coracle.de/blocked-account',src:'sasperr'}
+];
+var BAFOEG=855, KV_RATE=10.22, PV_KIDS=30.78, PV_NOKIDS=35.91;
+var GKV=[
+  ['tk','TK – Techniker Krankenkasse',2.69,'nat'],['aokby','AOK Bayern',2.69,'by'],['hkk','hkk',2.59,'nat'],['audi','Audi BKK',2.60,'nat'],
+  ['hek','HEK',2.89,'nat'],['dak','DAK-Gesundheit',3.20,'nat'],['barmer','BARMER',3.29,'nat'],['big','BIG direkt gesund',3.69,'nat'],
+  ['kkh','KKH',3.78,'nat'],['sbk','SBK',3.80,'nat'],['ikk','IKK classic',3.85,'nat'],['mobil','Mobil Krankenkasse',3.89,'nat']
+].map(function(a){return {id:a[0],name:a[1],zb:a[2],region:a[3],src:'gkvlist'};});
+var PKV=[
+  {id:'maw-c',name:'MAWISTA Classic',bands:[[29,28],[40,44]],ded:250,dedTxt:'20% per claim, max €250 / year',psy:0,psyTxt:'No',meds:'20% co-pay',note:'Dental: pain relief only'},
+  {id:'maw-cp',name:'MAWISTA Classic Plus',bands:[[29,36],[40,56]],ded:250,dedTxt:'15% per claim, max €250 / year',psy:0,psyTxt:'No',meds:'Outpatient capped at 2.3× GOÄ',note:'Better outpatient cover'},
+  {id:'cc-b',name:'Care College Basic',bands:[[29,27.5],[40,33.5]],ded:120,dedTxt:'€120 / year',psy:0,psyTxt:'No',meds:'Capped at €250 / year',note:'Under 29: €49.50 from month 25. Not valid in USA, Canada, Mexico'},
+  {id:'cc-c',name:'Care College Comfort',bands:[[29,34],[40,50]],ded:0,dedTxt:'None',psy:0,psyTxt:'No',meds:'Capped at €500 / year',note:'Under 29: €57 from month 25'},
+  {id:'edu-s',name:'educare24 S',bands:[[39,34.5],[69,58.5]],ded:0,dedTxt:'None',psy:3,psyTxt:'Acute psychiatric care only (€500 / case)',meds:'Capped at €250 for the whole policy',note:'Up to 39: €52.50 from month 19'},
+  {id:'edu-m',name:'educare24 M',bands:[[39,39],[69,63]],ded:0,dedTxt:'None',psy:3,psyTxt:'Acute psychiatric care only (€500 / case)',meds:'Capped at €250 for the whole policy',note:'Adds accident cover and €1M liability. Up to 39: €57 from month 19'},
+  {id:'provisit',name:'Provisit Student',bands:[[29,79],[45,129],[59,166]],ded:0,dedTxt:'None',psy:10,psyTxt:'Yes, 75% after 8-month wait',meds:'–',note:'Substitutive cover (§ 146 VAG); for over-30s, PhDs, longer stays'}
+].map(function(p){p.src='pkv';return p;});
+var LIAB=[
+  {id:'feather',name:'Feather',yearly:59.28,monthlyTxt:'€4.94 / month',cover:50,ded:0,en:1,cancel:'Monthly',keys:'Replacement keys covered',url:'https://feather-insurance.com/personal-liability-insurance',src:'feather'},
+  {id:'huk24',name:'HUK24 Classic',yearly:34,cover:100,ded:250,en:0,cancel:'Not stated',keys:'Check terms',url:'https://www.huk24.de/',src:'ffphv'},
+  {id:'hfk',name:'HFK1676 Premium',yearly:41,cover:50,ded:150,en:0,cancel:'Not stated',keys:'Check terms',url:'https://www.finanzfluss.de/vergleich/private-haftpflichtversicherung/',src:'ffphv',dedNote:'€150, €300 or €500 (your choice)'},
+  {id:'axa',name:'AXA Komfort',yearly:45,cover:60,ded:300,en:0,cancel:'Not stated',keys:'Check terms',url:'https://www.axa.de/',src:'ffphv'},
+  {id:'adam',name:'Adam Riese Riesig',yearly:46,cover:50,ded:150,en:0,cancel:'Not stated',keys:'Check terms',url:'https://www.adam-riese.de/',src:'ffphv'},
+  {id:'alte',name:'Alte Leipziger comfort 50 Mio.',yearly:46,cover:50,ded:150,en:0,cancel:'Not stated',keys:'Check terms',url:'https://www.alte-leipziger.de/',src:'ffphv',dedNote:'€150 or €300'}
+];
+var BANK=[
+  {id:'n26',name:'N26 Standard',fee:function(){return 0;},feeTxt:'€0',once:10,onceTxt:'Physical card €10',en:10,enTxt:'Yes',giro:0,giroTxt:'No',cash:'No',note:'2 free eurozone ATM withdrawals / month. Citizens of India, China and Vietnam need a residence-permit card, not only a passport.'},
+  {id:'bunq',name:'bunq Free',fee:function(){return 0;},feeTxt:'€0 (Pro €9.99, free for eligible students 18–26)',once:0,en:10,enTxt:'Yes',giro:0,giroTxt:'No',cash:'No',note:'German IBAN if you sign up from Germany. Dutch deposit scheme up to €100,000.'},
+  {id:'revolut',name:'Revolut Standard',fee:function(){return 0;},feeTxt:'€0',once:7.99,onceTxt:'Card delivery €7.99',en:10,enTxt:'Yes',giro:0,giroTxt:'No',cash:'No',note:'Use only if your IBAN starts with DE. 5 ATM withdrawals or €200 / month free. Lithuanian deposit scheme.'},
+  {id:'db',name:'Deutsche Bank Das Junge Konto',fee:function(p){return p.age<=30?0:6.90;},feeTxt:'€0 up to age 30, then €6.90',once:0,en:5,enTxt:'Partly (German-heavy)',giro:10,giroTxt:'Yes',cash:'Branches',note:'Needs a registered address in the EU. Card payments in foreign currency: 1% (min. €1.50).'},
+  {id:'hvb',name:'HVB StartKonto',fee:function(p){return p.age<26?0:4.90;},feeTxt:'€0 until 26, then €4.90',once:0,en:10,enTxt:'App in English',giro:5,giroTxt:'Optional (€12 / year)',cash:'Yes (HVB)',note:'Free Mastercard needs €500 / month incoming.'},
+  {id:'dkb',name:'DKB',fee:function(p){return (p.age<28||p.inc>=700)?0:4.50;},feeTxt:'€0 under 28 or with €700+ / month incoming, else €4.50',once:0,en:5,enTxt:'Partly',giro:5,giroTxt:'Optional',cash:'At shops via app',note:'Free worldwide card use depends on the €700 rule.'},
+  {id:'ing',name:'ING',fee:function(p){return (p.age<28||p.inc>=1000)?0:4.90;},feeTxt:'€0 under 28 or with €1,000+ / month incoming, else €4.90',once:0,en:5,enTxt:'Partly',giro:5,giroTxt:'Optional (€1.49 / month)',cash:'Limited',note:'Terms expect you to live and work in Germany with regular income.'},
+  {id:'c24',name:'C24 Smart',fee:function(){return 0;},feeTxt:'€0, no conditions',once:0,en:0,enTxt:'Mostly German',giro:10,giroTxt:'Yes',cash:'Limited',note:'Opening comes after your Anmeldung (address registration). 4 free ATM withdrawals / month.'},
+  {id:'spk',name:'Sparkasse (your city)',fee:null,feeTxt:'Often €0 for students; set by each city',once:0,en:0,enTxt:'Usually German',giro:10,giroTxt:'Yes',cash:'Yes',note:'Usually needs your enrolment certificate. Not ranked because prices differ by city.',unranked:true}
+].map(function(b){b.src='bank';return b;});
+var RENT={muc:['Munich',850],ber:['Berlin',650],ham:['Hamburg',650],cgn:['Cologne',640],fra:['Frankfurt',630],oth:['Germany (average)',510]};
+var RBB=18.36, MINWAGE=13.90, MINIJOB=603, RV_EMP=9.3;
+
+/* ================= state ================= */
+var KEY='erstjahr_v1';
+var DEF={profile:{age:25,kids:0,cit:'nonEU',prog:'degree',city:'muc',flat:2,inc:0},plan:{},weights:{},checks:{},cost:{},work:{},dates:{},hsub:'public'};
+var S=load();
+function merge(s){s=s&&typeof s==='object'?s:{};var o=JSON.parse(JSON.stringify(DEF));for(var k in s){if(!Object.prototype.hasOwnProperty.call(DEF,k))continue;if(s[k]&&typeof s[k]==='object'&&!Array.isArray(s[k]))o[k]=Object.assign(o[k]||{},s[k]);else o[k]=s[k];}return o;}
+function load(){var s=null;try{s=JSON.parse(localStorage.getItem(KEY));}catch(e){}return merge(s);}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function P(){return S.profile;}
+function $(id){return document.getElementById(id);}
+function eur(v,d){if(v==null||isNaN(v))return '–';d=d==null?(Math.abs(v)%1?2:0):d;return '€'+Number(v).toLocaleString('en-GB',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function toast(t){var e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove('on');},2200);}
+
+/* ================= prices that depend on the profile ================= */
+function pv(){var p=P();return (p.age>=23&&!+p.kids)?PV_NOKIDS:PV_KIDS;}
+function gkvPrice(g){return Math.round(BAFOEG*(KV_RATE+g.zb))/100+pv();}
+function gkvAvail(g){return g.region!=='by'||P().city==='muc';}
+function pkvPrice(x){var a=+P().age;for(var i=0;i<x.bands.length;i++){if(a<=x.bands[i][0])return x.bands[i][1];}return null;}
+function publicEligible(){var p=P();return p.prog==='degree'&&+p.age<30;}
+function bankFee(b){return b.fee?b.fee({age:+P().age,inc:+P().inc}):null;}
+
+/* ================= categories for the comparison ================= */
+var CATS={
+  blocked:{title:'Blocked account (Sperrkonto)',
+    intro:function(){return 'For a student visa in 2026 you must usually prove <b>'+eur(REQ_YEAR)+'</b> for one year ('+eur(REQ_MONTH)+' per month). Language courses that don\'t prepare for university and the Opportunity Card need €1,091 per month. Confirm the amount with your embassy. Sources: '+srcLink('expatrio')+', '+srcLink('fintiba')+'.';},
+    items:function(){return BLOCKED;},
+    factors:[{k:'cost',l:'Low first-year cost',w:70,low:true,v:function(x){return x.setup+12*x.monthly;}},{k:'refund',l:'Refund if visa is rejected',w:30,abs:true,v:function(x){return x.refund;}}],
+    cols:[['First year',function(x){return '<b>'+eur(x.setup+12*x.monthly,x.monthly%1?2:0)+'</b><div class="small muted">'+eur(x.setup)+' set-up + '+eur(x.monthly)+' / month</div>';},function(x){return x.setup+12*x.monthly;}],
+          ['Visa rejected',function(x){return '<span class="tag '+(x.refund===10?'':'mid')+'">'+(x.refund===10?'Full refund':'Partial')+'</span><div class="small">'+x.refundTxt+'</div>';}],
+          ['Speed',function(x){return '<span class="small">'+x.speed+'</span>';}],
+          ['Year 2',function(x){return '<span class="small">'+x.renew+'</span>';}],
+          ['Bundle',function(x){return '<span class="small">'+x.bundle+'</span>';}]],
+    filters:[]},
+  health:{title:'Health insurance',
+    intro:function(){var e=publicEligible();return e?'With a degree programme and age under 30 you can usually join <b>public student insurance</b>. Benefits are almost the same at every public insurer by law, so the price (set by each insurer\'s extra contribution, the Zusatzbeitrag) is the main difference. Your care-insurance part is '+eur(pv(),2)+' / month for your age and children answer. Sources: '+srcLink('gkvlist')+', '+srcLink('gkvstud')+', '+srcLink('aok')+'.':'<b>Based on your situation, the public student rate is probably not available</b> (it is mainly for degree students under 30). Many students in your situation use private student insurance. Ask a public insurer about voluntary membership before deciding. Source: '+srcLink('pkv')+'.';},
+    items:function(){return S.hsub==='private'?PKV:GKV;},
+    factors:function(){return S.hsub==='private'?[{k:'cost',l:'Low monthly price',w:60,low:true,v:function(x){return pkvPrice(x);}},{k:'ded',l:'Low deductible',w:20,low:true,v:function(x){return x.ded;}},{k:'psy',l:'Mental health cover',w:20,abs:true,v:function(x){return x.psy;}}]:[{k:'cost',l:'Low monthly price',w:100,low:true,v:function(x){return gkvPrice(x);}}];},
+    cols:function(){return S.hsub==='private'?[
+          ['Per month',function(x){var v=pkvPrice(x);return v==null?'<span class="tag no">Not for your age</span>':'<b>'+eur(v,2)+'</b><div class="small muted">for age '+P().age+'</div>';},function(x){var v=pkvPrice(x);return v==null?9999:v;}],
+          ['Deductible',function(x){return '<span class="small">'+x.dedTxt+'</span>';},function(x){return x.ded;}],
+          ['Mental health',function(x){return '<span class="tag '+(x.psy===10?'':(x.psy?'mid':'no'))+'">'+(x.psy===10?'Yes':(x.psy?'Limited':'No'))+'</span><div class="small">'+x.psyTxt+'</div>';}],
+          ['Medication',function(x){return '<span class="small">'+x.meds+'</span>';}],
+          ['Note',function(x){return '<span class="small muted">'+x.note+'</span>';}]]
+        :[['Per month',function(x){return '<b>'+eur(gkvPrice(x),2)+'</b><div class="small muted">'+eur(gkvPrice(x)*12,0)+' / year</div>';},function(x){return gkvPrice(x);}],
+          ['Extra contribution',function(x){return x.zb.toFixed(2)+'%';},function(x){return x.zb;}],
+          ['Open to',function(x){return x.region==='by'?(gkvAvail(x)?'<span class="tag">Bavaria</span>':'<span class="tag no">Bavaria only</span>'):'<span class="tag">All of Germany</span>';}]];},
+    filters:function(){return S.hsub==='private'?[['nodedu','No deductible',function(x){return x.ded===0;}],['psy','Mental health cover',function(x){return x.psy>0;}]]:[['avail','Open where I live',function(x){return gkvAvail(x);}]];}},
+  liability:{title:'Personal liability insurance (Privathaftpflicht)',
+    intro:function(){return 'Not mandatory, but strongly recommended: it pays if you damage someone else\'s things, for example your landlord\'s flat. Experts suggest at least €10 million cover (€50 million is better), cover for rented things and for lost keys. Sources: '+srcLink('ffphv')+', '+srcLink('aabphv')+'. Finanzfluss prices are for new customers; age and household are not stated.';},
+    items:function(){return LIAB;},
+    factors:[{k:'cost',l:'Low yearly price',w:50,low:true,v:function(x){return x.yearly;}},{k:'ded',l:'Low deductible',w:25,low:true,v:function(x){return x.ded;}},{k:'en',l:'English contract & support',w:25,abs:true,v:function(x){return x.en?10:0;}}],
+    cols:[['Per year',function(x){return '<b>'+eur(x.yearly,x.yearly%1?2:0)+'</b>'+(x.monthlyTxt?'<div class="small muted">'+x.monthlyTxt+'</div>':'');},function(x){return x.yearly;}],
+          ['Cover',function(x){return '€'+x.cover+'M';},function(x){return -x.cover;}],
+          ['Deductible',function(x){return x.ded?(x.dedNote||eur(x.ded)):'None';},function(x){return x.ded;}],
+          ['English',function(x){return x.en?'<span class="tag">Yes</span>':'<span class="tag mid">Not stated</span>';}],
+          ['Cancel',function(x){return '<span class="small">'+x.cancel+'</span>';}]],
+    filters:[['en','English only',function(x){return x.en;}],['noded','No deductible',function(x){return !x.ded;}]]},
+  bank:{title:'Bank account (Girokonto)',
+    intro:function(){return 'You need a German account (IBAN starting with DE) for rent, salary and your blocked account payouts. Fees below are calculated for your age ('+P().age+') and the money coming in each month. Some landlords and shops only take a Girocard, which is why it counts in the score. Source: '+srcLink('bank')+'.';},
+    items:function(){return BANK;},
+    factors:[{k:'fee',l:'Low monthly fee',w:60,low:true,v:function(x){return bankFee(x);}},{k:'en',l:'English app & support',w:25,abs:true,v:function(x){return x.en;}},{k:'giro',l:'Girocard included',w:15,abs:true,v:function(x){return x.giro;}}],
+    cols:[['Fee for you',function(x){var f=bankFee(x);return '<b>'+(f==null?'Varies':eur(f,f%1?2:0)+' / month')+'</b><div class="small muted">'+x.feeTxt+'</div>';},function(x){var f=bankFee(x);return f==null?99:f;}],
+          ['English',function(x){return '<span class="tag '+(x.en===10?'':(x.en?'mid':'no'))+'">'+x.enTxt+'</span>';}],
+          ['Girocard',function(x){return '<span class="small">'+x.giroTxt+'</span>';}],
+          ['Cash deposit',function(x){return '<span class="small">'+x.cash+'</span>';}],
+          ['Good to know',function(x){return '<span class="small muted">'+x.note+(x.onceTxt?' '+x.onceTxt+'.':'')+'</span>';}]],
+    filters:[['en','Full English',function(x){return x.en===10;}],['giro','Girocard included',function(x){return x.giro===10;}],['free','Free for me',function(x){return bankFee(x)===0;}]]}
+};
+function catFactors(c){var f=CATS[c].factors;return typeof f==='function'?f():f;}
+function catCols(c){var f=CATS[c].cols;return typeof f==='function'?f():f;}
+function catFilters(c){var f=CATS[c].filters;return typeof f==='function'?f():f;}
+function wkey(c){return c==='health'?'health_'+S.hsub:c;}
+function weightsFor(c){var fs=catFactors(c),w=S.weights[wkey(c)]||{};return fs.map(function(f){return w[f.k]!=null?w[f.k]:f.w;});}
+
+/* score: best value in the table = 10, worst = 0 (straight line); yes/no factors are 0–10 already */
+function scored(c){
+  var items=CATS[c].items(), fs=catFactors(c), ws=weightsFor(c);
+  var ranked=items.filter(function(x){if(x.unranked)return false;if(c==='health'&&S.hsub==='private'&&pkvPrice(x)==null)return false;if(c==='health'&&S.hsub==='public'&&!gkvAvail(x))return false;return true;});
+  var ranges=fs.map(function(f){if(f.abs)return null;var vs=ranked.map(f.v).filter(function(v){return v!=null;});return [Math.min.apply(null,vs),Math.max.apply(null,vs)];});
+  var sw=ws.reduce(function(a,b){return a+b;},0)||1;
+  return items.map(function(x){
+    var ok=ranked.indexOf(x)>=0, sc=null;
+    if(ok){sc=0;fs.forEach(function(f,i){var v=f.v(x),s;if(f.abs)s=v;else{var r=ranges[i];s=(r[1]===r[0])?10:10*(r[1]-v)/(r[1]-r[0]);}sc+=s*ws[i];});sc=sc/sw;}
+    return {x:x,score:sc};
+  });
+}
+function topPick(c,sub){var keep=S.hsub;if(sub)S.hsub=sub;var r=scored(c).filter(function(o){return o.score!=null;}).sort(function(a,b){return b.score-a.score;});var out=r[0]?r[0].x:null;S.hsub=keep;return out;}
+
+/* ================= compare view ================= */
+var curCat='blocked', sortBy=null, sel=[], filt={};
+function renderCompare(){
+  var c=curCat, C=CATS[c], fs=catFactors(c), ws=weightsFor(c), cols=catCols(c), fl=catFilters(c);
+  [].forEach.call(document.querySelectorAll('.tabs [data-cat]'),function(b){b.setAttribute('aria-selected',b.dataset.cat===c?'true':'false');});
+  var h='<div class="cmpHead"><div><h3 style="font-size:24px">'+C.title+'</h3><p class="muted" style="margin:6px 0 0">'+C.intro()+'</p>';
+  if(c==='health')h+='<div style="margin-top:12px" class="subtabs" role="group" aria-label="Insurance type"><button data-hsub="public" aria-pressed="'+(S.hsub==='public')+'">Public (statutory)</button><button data-hsub="private" aria-pressed="'+(S.hsub==='private')+'">Private for students</button></div>';
+  h+='</div><div class="card weights"><h3>What matters to you?</h3>';
+  if(fs.length<2)h+='<p class="small muted" style="margin:4px 0 0">Only price is ranked here, because public benefits are set by law and almost identical.</p>';
+  else fs.forEach(function(f,i){h+='<label class="w"><span>'+f.l+'</span><span>'+Math.round(ws[i]/ws.reduce(function(a,b){return a+b;},0)*100)+'%</span><input type="range" min="0" max="100" value="'+ws[i]+'" data-w="'+f.k+'" aria-label="Weight: '+f.l+'"></label>';});
+  if(fs.length>1)h+='<button class="btn sm ghost" style="margin-top:10px" id="wReset">Reset weights</button>';
+  h+='</div></div>';
+  if(fl.length){h+='<div class="filters"><span class="small muted">Filter:</span>';fl.forEach(function(f){var on=filt[c+f[0]];h+='<label><input type="checkbox" data-filt="'+f[0]+'"'+(on?' checked':'')+'> '+f[1]+'</label>';});h+='</div>';}
+  var rows=scored(c);
+  fl.forEach(function(f){if(filt[c+f[0]])rows=rows.filter(function(o){return f[2](o.x);});});
+  if(sortBy&&sortBy.c===c){var col=cols[sortBy.i];rows.sort(function(a,b){var va=col[2]?col[2](a.x):0,vb=col[2]?col[2](b.x):0;return (va-vb)*sortBy.d;});}
+  else rows.sort(function(a,b){return (b.score==null?-1:b.score)-(a.score==null?-1:a.score);});
+  var best=rows.filter(function(o){return o.score!=null;}).reduce(function(m,o){return !m||o.score>m.score?o:m;},null);
+  var planId=planKey(c)&&S.plan[planKey(c)];
+  h+='<div class="tblwrap"><table class="tbl"><thead><tr><th>Provider</th><th><button data-sort="score">Score</button></th>';
+  cols.forEach(function(col,i){h+='<th>'+(col[2]?'<button data-sort="'+i+'">'+col[0]+'</button>':col[0])+'</th>';});
+  h+='<th></th></tr></thead><tbody>';
+  if(!rows.length)h+='<tr><td colspan="'+(cols.length+3)+'" class="muted">Nothing matches these filters.</td></tr>';
+  rows.forEach(function(o){var x=o.x,isPlan=planId===x.id,isSel=sel.indexOf(x.id)>=0;
+    h+='<tr class="'+(best&&o===best?'top1':'')+(o.score==null?' na':'')+'"><td class="name"><b>'+esc(x.name)+'</b>'+(best&&o===best?'<span class="tag">Top for your weights</span><br>':'')+'<span class="src">Source: '+srcLink(x.src)+'</span></td>';
+    h+='<td>'+(o.score==null?'<span class="small muted">Not ranked</span>':'<span class="score" style="--p:'+(o.score*10).toFixed(0)+'%">'+o.score.toFixed(1)+'<i></i></span>')+'</td>';
+    cols.forEach(function(col){h+='<td>'+col[1](x)+'</td>';});
+    h+='<td><div class="rowAct"><button class="btn sm '+(isPlan?'fill':'')+'" data-plan="'+x.id+'">'+(isPlan?'✓ In my plan':'Add to plan')+'</button><label><input type="checkbox" data-sel="'+x.id+'"'+(isSel?' checked':'')+'> Compare</label>'+(x.url?'<a class="small" href="'+x.url+'" target="_blank" rel="noopener">Provider site ↗</a>':'')+'</div></td></tr>';
+  });
+  h+='</tbody></table></div><p class="small muted" style="margin-top:10px">Prices checked '+CHECKED+'. Erstjahr earns no commission from any provider; "Provider site" links are plain links. Coverage: '+coverageLine(c)+'</p>';
+  $('cmp').innerHTML=h; updCmpBar();
+}
+function planKey(c){return c==='health'?'health':c;}
+function coverageLine(c){var n={blocked:BLOCKED.length+' blocked-account providers',health:GKV.length+' public insurers and '+PKV.length+' private student plans',liability:LIAB.length+' liability tariffs',bank:BANK.length+' bank accounts'}[c];return n+'. This is a selection, not the whole market.';}
+function updCmpBar(){$('cmpbar').classList.toggle('on',sel.length>0);$('cmpTxt').textContent=sel.length+' selected'+(sel.length<2?' (pick 2–4)':'');$('cmpGo').disabled=sel.length<2;}
+function openSide(){
+  var c=curCat, cols=catCols(c), all=scored(c), pick=all.filter(function(o){return sel.indexOf(o.x.id)>=0;});
+  if(pick.length<2)return;
+  var bestId=pick.filter(function(o){return o.score!=null;}).sort(function(a,b){return b.score-a.score;})[0];
+  var h='<div class="side" style="--n:'+pick.length+'"><div class="r h"><div>Provider</div>'+pick.map(function(o){return '<div class="'+(o===bestId?'best':'')+'">'+esc(o.x.name)+'</div>';}).join('')+'</div>';
+  h+='<div class="r"><div>Score</div>'+pick.map(function(o){return '<div class="'+(o===bestId?'best':'')+'"><b>'+(o.score==null?'–':o.score.toFixed(1))+'</b></div>';}).join('')+'</div>';
+  cols.forEach(function(col){h+='<div class="r"><div>'+col[0]+'</div>'+pick.map(function(o){return '<div>'+col[1](o.x)+'</div>';}).join('')+'</div>';});
+  h+='</div>';
+  $('dlgT').textContent=CATS[c].title+': side by side';$('dlgB').innerHTML=h;
+  var d=$('dlg');if(d.showModal)d.showModal();else d.setAttribute('open','');
+}
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-cat]');if(t){curCat=t.dataset.cat;sel=[];sortBy=null;renderCompare();setHash('compare/'+curCat);return;}
+  t=e.target.closest('[data-hsub]');if(t){S.hsub=t.dataset.hsub;sel=[];sortBy=null;save();renderCompare();return;}
+  t=e.target.closest('[data-sort]');if(t){var i=t.dataset.sort;if(i==='score'){sortBy=null;}else{i=+i;sortBy=(sortBy&&sortBy.c===curCat&&sortBy.i===i)?{c:curCat,i:i,d:-sortBy.d}:{c:curCat,i:i,d:1};}renderCompare();return;}
+  t=e.target.closest('[data-plan]');if(t){var k=planKey(curCat),id=t.dataset.plan;if(S.plan[k]===id){delete S.plan[k];if(k==='health')delete S.plan.healthType;toast('Removed from your plan');}else{S.plan[k]=id;if(k==='health')S.plan.healthType=S.hsub;toast('Added to your plan');}delete S.cost[{blocked:'blocked',health:'health',liability:'liab',bank:'bank'}[k]];if(k==='health')$('w-kv').value='';save();renderCompare();refreshAll();return;}
+  t=e.target.closest('#wReset');if(t){delete S.weights[wkey(curCat)];save();renderCompare();return;}
+  t=e.target.closest('[data-go]');if(t){go(t.dataset.go);return;}
+});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches('.card[data-go]')){e.preventDefault();go(e.target.dataset.go);}});
+document.addEventListener('change',function(e){
+  var t=e.target;
+  if(t.matches('[data-sel]')){var id=t.dataset.sel;if(t.checked){if(sel.length>=4){t.checked=false;toast('Compare up to 4 at a time');return;}sel.push(id);}else sel=sel.filter(function(s){return s!==id;});updCmpBar();}
+  if(t.matches('[data-filt]')){filt[curCat+t.dataset.filt]=t.checked;renderCompare();}
+});
+document.addEventListener('input',function(e){
+  var t=e.target;
+  if(t.matches('[data-w]')){var k=wkey(curCat);S.weights[k]=S.weights[k]||{};S.weights[k][t.dataset.w]=+t.value;save();clearTimeout(renderCompare.t);renderCompare.t=setTimeout(function(){var a=document.activeElement&&document.activeElement.dataset?document.activeElement.dataset.w:null;renderCompare();if(a){var n=document.querySelector('[data-w="'+a+'"]');if(n)n.focus();}},120);}
+});
+$('cmpClear').onclick=function(){sel=[];renderCompare();};
+$('cmpGo').onclick=openSide;
+$('dlgX').onclick=function(){var d=$('dlg');if(d.close)d.close();else d.removeAttribute('open');};
+
+/* ================= plan helpers ================= */
+function planItem(c){
+  var id=S.plan[c];
+  if(c==='health'){var type=S.plan.healthType||(publicEligible()?'public':'private');var list=type==='private'?PKV:GKV;var x=id&&list.filter(function(i){return i.id===id;})[0];if(!x)x=topPick('health',type);return x?{x:x,type:type,price:type==='private'?pkvPrice(x):gkvPrice(x),picked:!!(id&&S.plan[c]===x.id)}:null;}
+  var arr={blocked:BLOCKED,liability:LIAB,bank:BANK}[c];var x2=id&&arr.filter(function(i){return i.id===id;})[0];var picked=!!x2;if(!x2)x2=topPick(c);return x2?{x:x2,picked:picked}:null;
+}
+
+/* ================= cost calculator ================= */
+function fillSelect(el,opts,val){el.innerHTML=opts.map(function(o){return '<option value="'+o[0]+'"'+(o[0]===val?' selected':'')+'>'+esc(o[1])+'</option>';}).join('');}
+function costSetup(){
+  var p=P(), rentDef=RENT[p.city][1];
+  var c=S.cost;
+  if(c.rentCity!==p.city){c.rent=rentDef;c.rentCity=p.city;}
+  $('c-rent').value=c.rent!=null?c.rent:rentDef;
+  $('c-rentSrc').innerHTML='Average WG room in '+RENT[p.city][0]+': '+eur(rentDef)+' (WS 2026/27). Source: '+srcLink('wgg')+'.';
+  var hi=planItem('health'),hopts=[];
+  GKV.filter(gkvAvail).forEach(function(g){hopts.push(['gkv:'+g.id,'Public · '+g.name+' – '+eur(gkvPrice(g),2)]);});
+  PKV.forEach(function(x){var v=pkvPrice(x);if(v!=null)hopts.push(['pkv:'+x.id,'Private · '+x.name+' – '+eur(v,2)]);});
+  hopts.push(['none','Not needed / already covered – €0']);
+  fillSelect($('c-health'),hopts,c.health||(hi?(hi.type==='private'?'pkv:':'gkv:')+hi.x.id:'none'));
+  var bi=planItem('blocked');fillSelect($('c-blocked'),BLOCKED.map(function(b){return [b.id,b.name+' – '+eur(b.setup)+' + '+eur(b.monthly)+' / month'];}).concat([['none','No blocked account – €0']]),c.blocked||(bi?bi.x.id:'none'));
+  var li=planItem('liability');fillSelect($('c-liab'),LIAB.map(function(l){return [l.id,l.name+' – '+eur(l.yearly,l.yearly%1?2:0)+' / year'];}).concat([['none','None – €0']]),c.liab||(li?li.x.id:'none'));
+  var bk=planItem('bank');fillSelect($('c-bank'),BANK.filter(function(b){return !b.unranked;}).map(function(b){var f=bankFee(b);return [b.id,b.name+' – '+eur(f,f%1?2:0)+' / month'];}),c.bank||(bk?bk.x.id:'n26'));
+  ['c-trans','c-phone','c-food','c-fees','c-dep','c-months'].forEach(function(id){var k=id.slice(2);if(c[k]!=null)$(id).value=c[k];});
+  if(c.trans==null)$('c-trans').value=p.city==='muc'?'43':'63';
+}
+function costCalc(){
+  var p=P(), v=function(id){return +$(id).value||0;};
+  var months=Math.max(1,v('c-months')), rent=v('c-rent');
+  var hs=$('c-health').value, health=0, hName='';
+  if(hs.indexOf('gkv:')===0){var g=GKV.filter(function(x){return 'gkv:'+x.id===hs;})[0];health=gkvPrice(g);hName=g.name;}
+  else if(hs.indexOf('pkv:')===0){var x=PKV.filter(function(y){return 'pkv:'+y.id===hs;})[0];health=pkvPrice(x)||0;hName=x.name;}
+  var b=BLOCKED.filter(function(y){return y.id===$('c-blocked').value;})[0];
+  var l=LIAB.filter(function(y){return y.id===$('c-liab').value;})[0];
+  var bk=BANK.filter(function(y){return y.id===$('c-bank').value;})[0];
+  var rbb=RBB/(1+(+p.flat));
+  var lines=[
+    ['Rent',rent,false,'src'],['Health insurance',health,false],['Food & everyday',v('c-food'),true],['Public transport',+$('c-trans').value,false],
+    ['University fees',v('c-fees')/6,true],['Phone & internet',v('c-phone'),true],['Broadcasting fee',rbb,false],
+    ['Blocked account fee',b?b.monthly:0,false],['Liability insurance',l?l.yearly/12:0,false],['Bank account',bk?(bankFee(bk)||0):0,false]
+  ];
+  var monthly=lines.reduce(function(a,x){return a+x[1];},0);
+  var once=(b?b.setup:0)+(bk?bk.once||0:0)+rent*(+$('c-dep').value);
+  var total=monthly*months+once;
+  $('k-total').textContent=eur(total,0);$('k-month').textContent=eur(monthly,0);$('k-once').textContent=eur(once,0);
+  var mx=Math.max.apply(null,lines.map(function(x){return x[1];}))||1;
+  $('costBars').innerHTML=lines.filter(function(x){return x[1]>0;}).sort(function(a,b){return b[1]-a[1];}).map(function(x){return '<div class="bar"><span>'+x[0]+'</span><span class="t"><i class="'+(x[2]?'est':'')+'" style="width:'+(x[1]/mx*100).toFixed(1)+'%"></i></span><span>'+eur(x[1],x[1]<10?2:0)+'</span></div>';}).join('');
+  $('c-rbb').innerHTML=eur(RBB,2)+' per flat per month, shared by everyone in the flat: '+eur(rbb,2)+' each for you. Source: '+srcLink('rbb')+'.';
+  var gap=monthly-REQ_MONTH;
+  $('gapNote').className='note'+(gap>0?' warn':'');
+  $('gapNote').innerHTML=(p.cit==='nonEU'?'Your blocked account pays out <b>'+eur(REQ_MONTH)+' / month</b>. ':'For comparison, the visa amount for non-EU students is '+eur(REQ_MONTH)+' / month. ')+(gap>0?'Your monthly costs are <b>'+eur(gap,0)+' higher</b>, so you need about <b>'+eur(gap*months,0)+'</b> extra over '+months+' months (or a part-time job: see the Working student calculator).':'Your monthly costs fit within this amount, with about <b>'+eur(-gap,0)+'</b> left each month.');
+  S.cost={rent:rent,rentCity:p.city,health:hs,blocked:$('c-blocked').value,liab:$('c-liab').value,bank:$('c-bank').value,trans:$('c-trans').value,phone:v('c-phone'),food:v('c-food'),fees:v('c-fees'),dep:$('c-dep').value,months:months};save();
+  // home card
+  $('hCity').textContent=RENT[p.city][0];$('hTotal').textContent=eur(total,0);
+  $('hRows').innerHTML=[['Per month',eur(monthly,0)],['One-time costs',eur(once,0)],['Health insurance',hName?hName.split(' – ')[0]+' · '+eur(health,0):'–'],['Rent (WG room)',eur(rent,0)]].map(function(r){return '<div><span>'+r[0]+'</span><b>'+r[1]+'</b></div>';}).join('');
+  return {monthly:monthly,once:once,total:total};
+}
+document.getElementById('costForm').addEventListener('input',costCalc);
+document.getElementById('costForm').addEventListener('change',costCalc);
+
+/* ================= working student ================= */
+function incomeTax2026(zve){ // § 32a EStG, from 2026
+  var x=Math.floor(Math.max(0,zve)),t;
+  if(x<=12348)t=0;
+  else if(x<=17799){var y=(x-12348)/10000;t=(914.51*y+1400)*y;}
+  else if(x<=69878){var z=(x-17799)/10000;t=(173.10*z+2397)*z+1034.87;}
+  else if(x<=277825)t=0.42*x-11135.63;
+  else t=0.45*x-19470.38;
+  return Math.floor(t);
+}
+function workCalc(){
+  var p=P(), w=S.work, wage=+$('w-wage').value||0, hrs=+$('w-hours').value, days=+$('w-days').value, months=Math.min(12,Math.max(1,+$('w-months').value||1));
+  $('w-hv').textContent=hrs;
+  if($('w-kv').value===''){var hi=planItem('health');$('w-kv').value=hi?Math.round(hi.price):0;}
+  var kv=+$('w-kv').value||0;
+  var gross=wage*hrs*52/12, rv=gross*RV_EMP/100, yGross=gross*months, yRv=rv*months;
+  var deduct=1230+36+yRv+kv*12, zve=yGross-deduct, tax=incomeTax2026(zve);
+  var yNet=yGross-yRv-tax, mNet=yNet/months;
+  $('w-net').textContent=eur(mNet,0);$('w-gross').textContent=eur(gross,0);$('w-tax').textContent=eur(tax,0);
+  $('w-lines').innerHTML=[
+    ['Gross pay ('+months+' months)',eur(yGross,0)],
+    ['Pension insurance (your 9.3%)','− '+eur(yRv,0)],
+    ['Estimated income tax','− '+eur(tax,0)],
+    ['<b>Net for the year</b>','<b>'+eur(yNet,0)+'</b>']
+  ].map(function(r,i,a){return '<div class="'+(i===a.length-1?'tot':'')+'"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>';}).join('')+
+  '<p class="small muted" style="margin:10px 0 0">Tax estimate: taxable income = gross − employee allowance (€1,230) − €36 − your pension and health contributions = '+eur(Math.max(0,zve),0)+'. Basic allowance 2026: €12,348 tax-free ('+srcLink('estg')+'). Your employer may withhold wage tax each month; a tax return gets back anything above this estimate. No church tax included. Pension share: '+srcLink('whk')+'.</p>';
+  var n=[];
+  if(wage<MINWAGE)n.push('<div class="note bad"><b>Below minimum wage.</b> From 1 January 2026 the minimum wage is €13.90 per hour ('+srcLink('drv')+').</div>');
+  if(hrs>20)n.push('<div class="note warn"><b>More than 20 hours a week.</b> During lecture periods this usually ends working-student status, and then health, care and unemployment contributions apply too. More hours are fine in semester breaks and on evenings or weekends, for up to 26 weeks in 12 months.</div>');
+  if(gross<=MINIJOB)n.push('<div class="note">At '+eur(gross,0)+' / month this could also be a <b>Minijob</b> (limit 2026: €603 / month, '+srcLink('drv')+'). Minijobs have different contribution rules.</div>');
+  n.push('<div class="note">Working students usually pay only pension insurance (9.3%); the employer pays the other 9.3%. Your student health insurance stays as it is.</div>');
+  $('w-notes').innerHTML=n.join('');
+  var box=$('w-daysBox');
+  if(p.cit==='nonEU'){
+    var perDay=hrs/days, half=perDay<=4, weeks=52*months/12, used=days*weeks, limit=half?280:140, pct=used/limit*100;
+    box.style.display='';
+    box.innerHTML='<h3>Your yearly work limit (non-EU students)</h3><p class="muted small" style="margin:4px 0 0">Non-EU students may work <b>140 full days or 280 half days</b> a year ('+srcLink('days')+'). With '+perDay.toFixed(1)+' hours a day, each day counts as a <b>'+(half?'half':'full')+' day</b> (usually up to 4 hours = half day; confirm with your immigration office).</p><div class="meter"><i class="'+(pct>100?'over':'')+'" style="width:'+Math.min(100,pct).toFixed(0)+'%"></i></div><p style="margin:0"><b>'+Math.round(used)+' of '+limit+' '+(half?'half':'full')+' days</b> used over '+months+' months. '+(pct>100?'<span style="color:var(--bad)">That is over the limit. Spread your hours into shorter days, or ask the immigration office about your options.</span>':'Within the limit.')+'</p><p class="small muted" style="margin:8px 0 0">Jobs as a student assistant at your university (studentische Nebentätigkeit) are counted differently. Ask your immigration office.</p>';
+  } else box.style.display='none';
+  S.work={wage:wage,hours:hrs,days:days,months:months,kv:kv};save();
+}
+['w-wage','w-hours','w-days','w-months','w-kv'].forEach(function(id){$(id).addEventListener('input',workCalc);$(id).addEventListener('change',workCalc);});
+
+/* ================= first steps ================= */
+var STEPS=[
+  ['Before you travel',[
+    ['visa','Book your visa appointment early','Waiting times can be long. Bring your admission letter, proof of money and health insurance proof.'],
+    ['ba','Open and fund your blocked account','Usually '+eur(REQ_YEAR)+' for one year. Start 3–4 weeks before your visa appointment. Compare providers on this site.',{go:'compare/blocked'}],
+    ['travelins','Get insurance for the visa and the first weeks','Embassies usually ask for health insurance from your arrival. If you will join public student insurance, ask the insurer for the right proof.'],
+    ['room','Look for a room','In Munich the average WG room costs about €850 a month (WS 2026/27). Never pay a deposit before you have seen the room or signed a contract.']]],
+  ['Week 1 in Germany',[
+    ['anm','Register your address (Anmeldung)','You must register within 2 weeks of moving in. Bring your passport and the landlord\'s confirmation (Wohnungsgeberbestätigung). You get a registration certificate (Meldebescheinigung).'],
+    ['bank','Open a German bank account','Needed for rent, salary and your blocked account payouts. Some banks need the Anmeldung first.',{go:'compare/bank'}],
+    ['sim','Get a German phone number','Many banks and apps need a German number for verification.'],
+    ['bapay','Activate blocked account payouts','Link your German bank account in your blocked account provider\'s app.']]],
+  ['First month',[
+    ['kv','Confirm your health insurance','Public insurers send your university an electronic confirmation. Private plans give you a certificate.',{go:'compare/health'}],
+    ['enrol','Complete your enrolment','Your university needs your health insurance status and usually the semester fee.'],
+    ['rbb','Register for the broadcasting fee (Rundfunkbeitrag)','One fee per flat: €18.36 a month. If a flatmate already pays, you only need to give their contribution number, and you can share the cost.'],
+    ['ticket','Get your transport ticket','In Bavaria students can get the reduced Deutschlandticket for €43 a month.'],
+    ['liab','Get liability insurance','Not mandatory, but it protects you if you damage your landlord\'s flat or lose keys.',{go:'compare/liability'}],
+    ['taxid','Keep your tax ID letter (Steuer-ID)','It arrives by post a few weeks after your Anmeldung. Your employer needs it.']]],
+  ['First months',[
+    ['permit','Apply for your residence permit','Your entry visa is usually short. Apply at the immigration office (in Munich: Kreisverwaltungsreferat, KVR) well before it ends. Set a reminder in My plan.',{go:'plan'}],
+    ['job','Find a working student job','Check the 20-hour rule and, for non-EU students, the 140-day limit.',{go:'work'}],
+    ['sv','Keep your social security number','After your first job starts, the pension insurance sends your number (Sozialversicherungsnummer). Give it to every employer.'],
+    ['budget','Check your budget','Use the cost calculator to see if your blocked account payout covers your real monthly costs.',{go:'cost'}]]]
+];
+function renderSteps(){
+  var all=0,done=0,h='';
+  STEPS.forEach(function(ph){h+='<div class="phase"><h3>'+ph[0]+' <span>'+ph[1].filter(function(s){return S.checks[s[0]];}).length+' / '+ph[1].length+'</span></h3>';
+    ph[1].forEach(function(s){all++;var d=!!S.checks[s[0]];if(d)done++;
+      h+='<label class="step'+(d?' done':'')+'"><input type="checkbox" data-step="'+s[0]+'"'+(d?' checked':'')+'><div><b>'+s[1]+'</b><p>'+s[2]+'</p>'+(s[3]?'<button class="btn sm ghost" style="margin-top:8px" data-go="'+s[3].go+'">Open →</button>':'')+'</div></label>';});
+    h+='</div>';});
+  $('tl').innerHTML=h;$('stepBar').style.width=(done/all*100)+'%';$('stepTxt').textContent=done+' of '+all+' done';
+}
+document.getElementById('tl').addEventListener('change',function(e){var t=e.target;if(t.matches('[data-step]')){if(t.checked)S.checks[t.dataset.step]=1;else delete S.checks[t.dataset.step];save();renderSteps();refreshPlan();}});
+document.getElementById('tl').addEventListener('click',function(e){if(e.target.closest('[data-go]'))e.preventDefault();});
+
+/* ================= letters ================= */
+var LETTERS=[
+  ['Bescheid','Official decision','m','A formal decision by an authority or insurer, for example a "Beitragsbescheid" (contribution decision) or "Festsetzungsbescheid" (assessment).','Check the amounts and your details. If you disagree, you can usually object (Widerspruch) within <b>one month</b> of receiving it; the letter explains how in the "Rechtsbehelfsbelehrung" section at the end.','decision objection Widerspruch Beitragsbescheid Festsetzungsbescheid'],
+  ['Zahlungserinnerung','Payment reminder','m','A friendly reminder that a payment is overdue. No extra fees yet, usually.','Pay by the new date, or contact the sender if you think it\'s a mistake.','payment reminder overdue'],
+  ['Mahnung','Formal reminder (dunning letter)','h','A formal demand for an overdue payment, often with a fee (Mahngebühr). Ignoring it can lead to debt collection.','Pay or contact the sender quickly. Check that the sender and bank details are real, because scam letters exist.','dunning overdue fee Mahngebühr'],
+  ['Inkasso','Debt collection letter','h','A collection agency is demanding money for someone else. Extra fees are often added.','Don\'t ignore it, but check first that the debt is real and the agency is registered. Ask the original company directly. Free help: consumer advice centres (Verbraucherzentrale).','debt collection agency Inkassobüro'],
+  ['Mahnbescheid','Court payment order','h','An official order from a court (Mahngericht). It has strict deadlines.','You have <b>2 weeks</b> to object (Widerspruch) if you disagree. Get help immediately, for example from your student union or the Verbraucherzentrale.','court order Gericht Mahngericht'],
+  ['Rundfunkbeitrag – Anmeldung / Zahlungsaufforderung','Broadcasting fee','m','The Beitragsservice asks you to register or pay the broadcasting fee: €18.36 per flat per month.','If a flatmate already pays for your flat, reply with their contribution number (Beitragsnummer) so you don\'t pay twice. Students who receive BAföG can apply for an exemption.','GEZ Beitragsservice broadcasting fee ARD ZDF Beitragsnummer'],
+  ['Mitgliedsbescheinigung','Membership confirmation (health insurance)','l','Confirms that you are insured with a health insurer.','Keep it. Your university and employer may need it. Public insurers usually also report it to your university electronically.','health insurance membership Krankenkasse proof'],
+  ['Beitragsrückstand','Contribution arrears (health insurance)','h','You owe your health insurer contributions, for example because a direct debit failed.','Pay or call the insurer quickly. Health insurance debt grows with late fees and can affect your student status and visa.','health insurance debt Krankenkasse arrears Säumniszuschlag'],
+  ['Steuer-Identifikationsnummer','Tax ID letter','l','From the Federal Central Tax Office (Bundeszentralamt für Steuern), a few weeks after your Anmeldung. The 11-digit number stays the same for life.','Keep it safe. Give the number to your employer before your first payslip.','tax ID Steuer-ID Finanzamt Bundeszentralamt'],
+  ['Sozialversicherungsausweis','Social security number letter','l','From the pension insurance (Deutsche Rentenversicherung) after your first job starts.','Keep it and give the number to every employer.','social security Rentenversicherung SV-Nummer'],
+  ['Kündigungsbestätigung','Cancellation confirmation','l','Confirms that a contract (gym, phone, insurance) has been cancelled, with the end date.','Check the end date. Keep the letter until the last payment has gone through.','cancel contract Kündigung confirmation'],
+  ['Nebenkostenabrechnung','Utility cost statement','m','Your landlord\'s yearly statement of heating, water and other costs. It may ask for an extra payment (Nachzahlung) or give you money back (Guthaben).','Check the period, your flat size and the costs. You can ask to see the receipts. An extra payment is usually due within about 30 days.','landlord utilities heating Nachzahlung Guthaben rent'],
+  ['Einladung / Termin – Ausländerbehörde','Immigration office appointment','h','An appointment for your residence permit, sometimes with a list of documents to bring.','Go on time with every document on the list. If you can\'t attend, rebook before the date. If your permit is about to expire, ask about a "Fiktionsbescheinigung" (temporary certificate).','immigration residence permit KVR Aufenthaltstitel Fiktionsbescheinigung'],
+  ['Exmatrikulation / Rückmeldung','University re-registration or de-registration','h','"Rückmeldung" means you must re-register (usually by paying the semester fee). "Exmatrikulation" means de-registration.','Pay the semester fee by the deadline. De-registration ends your student status, which affects your visa and health insurance. Contact your university immediately if it\'s a mistake.','university semester fee enrolment Rückmeldung Exmatrikulation']
+];
+function renderLetters(){
+  var q=($('lq').value||'').toLowerCase().trim();
+  var list=LETTERS.filter(function(l){return !q||(l[0]+' '+l[1]+' '+l[3]+' '+l[5]).toLowerCase().indexOf(q)>=0;});
+  var U={h:['h','Act now'],m:['m','Act soon'],l:['l','Keep / info']};
+  $('letters').innerHTML=list.length?list.map(function(l){return '<details><summary><span class="de">'+l[0]+'</span><b>'+l[1]+'</b><span class="urg '+U[l[2]][0]+'">'+U[l[2]][1]+'</span></summary><div class="body"><p><b>What it is:</b> '+l[3]+'</p><p><b>What to do:</b> '+l[4]+'</p></div></details>';}).join(''):'<p class="muted">No letter matches "'+esc(q)+'". Try a shorter word.</p>';
+}
+$('lq').addEventListener('input',renderLetters);
+
+/* ================= quick check ================= */
+function renderCheck(){
+  var p=P(), out=[];
+  var bPick=topPick('blocked'), gPick=topPick('health','public'), pPick=topPick('health','private'), lPick=topPick('liability'), kPick=topPick('bank');
+  if(p.cit==='nonEU')out.push(['Blocked account','<b>Probably needed.</b> For a student visa you usually prove '+eur(REQ_YEAR)+' a year. A blocked account is the most common proof; a scholarship or a formal obligation letter (Verpflichtungserklärung) can also work.'+(bPick?' Top-ranked for your weights: <b>'+bPick.name+'</b>.':''),'compare/blocked']);
+  else out.push(['Blocked account','<b>Not needed</b> as an EU / EEA / Swiss citizen.','compare/blocked']);
+  if(publicEligible())out.push(['Health insurance','<b>Public student insurance</b> fits your situation. Cheapest open to you: <b>'+gPick.name+'</b> at '+eur(gkvPrice(gPick),2)+' / month.','compare/health','public']);
+  else out.push(['Health insurance','<b>Private student insurance</b> is likely ('+(p.prog!=='degree'?'language course, Studienkolleg and many PhD students usually can\'t use the public student rate':'the public student rate usually ends around age 30')+'). Top-ranked for your weights: <b>'+(pPick?pPick.name:'–')+'</b>'+(pPick?' at '+eur(pkvPrice(pPick),2)+' / month':'')+'. Ask a public insurer about voluntary membership too.','compare/health','private']);
+  out.push(['Liability insurance','<b>Recommended</b>, not mandatory. Top-ranked for your weights: <b>'+(lPick?lPick.name:'–')+'</b>.','compare/liability']);
+  out.push(['Bank account','<b>Needed</b> for rent, salary and blocked account payouts. Top for your age and income: <b>'+(kPick?kPick.name:'–')+'</b>.','compare/bank']);
+  out.push(['Broadcasting fee','One fee per flat: €18.36 / month. With '+p.flat+' flatmate'+(+p.flat===1?'':'s')+', your share is '+eur(RBB/(1+(+p.flat)),2)+'.','steps']);
+  out.push(['Working',p.cit==='nonEU'?'You may work <b>140 full or 280 half days</b> a year. As a working student keep to <b>20 hours a week</b> in the semester.':'As a working student keep to <b>20 hours a week</b> in the semester to pay only pension insurance.','work']);
+  $('checkOut').innerHTML=out.map(function(o){return '<div class="card"><h3>'+o[0]+'</h3><p class="muted" style="margin:6px 0 12px">'+o[1]+'</p><button class="btn sm" data-go="'+o[2]+'"'+(o[3]?' data-hs="'+o[3]+'"':'')+'>Open →</button></div>';}).join('');
+}
+document.getElementById('checkOut').addEventListener('click',function(e){var b=e.target.closest('[data-hs]');if(b){S.hsub=b.dataset.hs;save();}},true);
+
+/* ================= my plan ================= */
+function refreshPlan(){
+  var cats=[['blocked','Blocked account'],['health','Health insurance'],['liability','Liability insurance'],['bank','Bank account']], n=0, h='';
+  cats.forEach(function(c){var it=planItem(c[0]);var picked=!!S.plan[c[0]];if(picked)n++;
+    var price='';if(it){var x=it.x;if(c[0]==='blocked')price=eur(x.setup)+' + '+eur(x.monthly)+' / month';else if(c[0]==='health')price=eur(it.price,2)+' / month';else if(c[0]==='liability')price=eur(x.yearly,x.yearly%1?2:0)+' / year';else{var f=bankFee(x);price=f==null?'Varies':eur(f,f%1?2:0)+' / month';}}
+    h+='<div class="pitem"><div><div class="cat">'+c[1]+'</div><b>'+(it?esc(it.x.name):'–')+'</b> <span class="muted small">'+price+'</span><div class="small muted">'+(picked?'Your pick':'Not picked yet; showing the top-ranked option')+'</div></div><div><button class="btn sm ghost" data-go="compare/'+c[0]+'">'+(picked?'Change':'Choose')+'</button></div></div>';});
+  $('planList').innerHTML=h;$('planN').textContent=n;
+  var r=costCalc(),done=Object.keys(S.checks).length,all=STEPS.reduce(function(a,p){return a+p[1].length;},0);
+  $('planTot').innerHTML='<div><span>First-year cost estimate</span><b>'+eur(r.total,0)+'</b></div><div><span>Per month</span><b>'+eur(r.monthly,0)+'</b></div><div class="tot"><span>Checklist</span><b>'+done+' of '+all+' done</b></div>';
+}
+function icsDate(d){return d.toISOString().slice(0,10).replace(/-/g,'');}
+function addDays(d,n){var x=new Date(d.getTime());x.setDate(x.getDate()+n);return x;}
+function addMonths(d,n){var x=new Date(d.getTime());x.setMonth(x.getMonth()+n);return x;}
+$('icsBtn').onclick=function(){
+  var ev=[], v=$('d-visa').value, m=$('d-move').value, b=$('d-ba').value;
+  S.dates={visa:v,move:m,ba:b};save();
+  if(v){var dv=new Date(v+'T12:00:00');ev.push([addDays(dv,-70),'Apply to extend your residence permit','Your permit ends on '+v+'. Book the immigration office appointment now (in Munich: KVR).']);ev.push([addDays(dv,-21),'Residence permit ends in 3 weeks','Check your appointment and documents.']);}
+  if(m){var dm=new Date(m+'T12:00:00');ev.push([addDays(dm,10),'Anmeldung deadline in 4 days','Register your address within 2 weeks of moving in.']);ev.push([addDays(dm,30),'Register for the broadcasting fee','One fee per flat, €18.36 / month. Share it with your flatmates.']);ev.push([addMonths(dm,11),'Liability insurance: check your renewal','Compare prices before your contract renews.']);}
+  if(b){var db=new Date(b+'T12:00:00');ev.push([addMonths(db,10),'Blocked account: plan year 2','Your payouts end after 12 months. Check whether you need to extend for your residence permit.']);}
+  var now=new Date();ev.push([new Date(now.getFullYear(),11,1,12),'Health insurance: check next year\'s price','Insurers can change their extra contribution (Zusatzbeitrag) on 1 January.']);
+  if(!v&&!m&&!b){toast('Add at least one date first');return;}
+  var stamp=new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';
+  var lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Erstjahr//Reminders//EN','CALSCALE:GREGORIAN'];
+  ev.forEach(function(e,i){lines.push('BEGIN:VEVENT','UID:erstjahr-'+i+'-'+icsDate(e[0])+'@local','DTSTAMP:'+stamp,'DTSTART;VALUE=DATE:'+icsDate(e[0]),'DTEND;VALUE=DATE:'+icsDate(addDays(e[0],1)),'SUMMARY:'+e[1],'DESCRIPTION:'+e[2].replace(/,/g,'\\,'),'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+e[1],'TRIGGER:-PT9H','END:VALARM','END:VEVENT');});
+  lines.push('END:VCALENDAR');
+  download('erstjahr-reminders.ics',lines.join('\r\n'),'text/calendar');toast(ev.length+' reminders downloaded');
+};
+function download(name,text,type){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);}
+$('expBtn').onclick=function(){download('erstjahr-backup.json',JSON.stringify(S,null,2),'application/json');toast('Backup downloaded');};
+$('impIn').onchange=function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var d=JSON.parse(r.result);if(!d||typeof d!=='object'||!d.profile)throw 0;S=merge(d);save();initProfile();refreshAll();toast('Backup imported');}catch(x){toast('That file is not an Erstjahr backup');}};r.readAsText(f);};
+$('rstBtn').onclick=function(){if(!window.confirm('Delete all your saved answers, picks and progress in this browser?'))return;try{localStorage.removeItem(KEY);}catch(e){}S=JSON.parse(JSON.stringify(DEF));initProfile();refreshAll();toast('Everything reset');};
+
+/* ================= sources view ================= */
+function renderMethod(){
+  $('srcList').innerHTML=Object.keys(SRC).map(function(k){return '<div>· <a href="'+SRC[k][1]+'" target="_blank" rel="noopener">'+esc(SRC[k][0])+'</a></div>';}).join('')+'<p class="small muted" style="margin:10px 0 0">All checked on '+CHECKED+'. Fintiba and Coracle prices come from the study-abroad.org comparison because their own pages don\'t show prices without JavaScript.</p>';
+  $('coverage').innerHTML=['blocked','health','liability','bank'].map(coverageLine).join('<br>');
+}
+
+/* ================= profile ================= */
+var PF={age:'p-age',kids:'p-kids',cit:'p-cit',prog:'p-prog',city:'p-city',flat:'p-flat',inc:'p-inc'};
+function initProfile(){var p=P();for(var k in PF){$(PF[k]).value=p[k];}profChips();var d=S.dates||{};$('d-visa').value=d.visa||'';$('d-move').value=d.move||'';$('d-ba').value=d.ba||'';$('w-kv').value=S.work&&S.work.kv!=null?S.work.kv:'';['wage','hours','days','months'].forEach(function(k){if(S.work&&S.work[k]!=null)$('w-'+k).value=S.work[k];});}
+function profChips(){var p=P();var pr={degree:'Degree',lang:'Language course',phd:'PhD'}[p.prog];$('profChips').innerHTML=['Age '+p.age,(p.cit==='nonEU'?'Non-EU':'EU'),pr,RENT[p.city][0],(+p.flat?p.flat+' flatmate'+(+p.flat===1?'':'s'):'Alone')].map(function(t){return '<span class="chip">'+esc(t)+'</span>';}).join(' ');}
+Object.keys(PF).forEach(function(k){$(PF[k]).addEventListener('change',function(e){var v=e.target.value;if(k==='age'){v=Math.max(17,Math.min(70,parseInt(v,10)||25));e.target.value=v;}S.profile[k]=(k==='cit'||k==='prog'||k==='city')?v:+v;if(k==='city')S.cost.rent=null;if(k==='age'||k==='kids'||k==='city'||k==='prog'){$('w-kv').value='';delete S.cost.health;}if(k==='age'||k==='inc')delete S.cost.bank;save();profChips();refreshAll();});});
+
+/* ================= routing ================= */
+var VIEWS=['home','compare','check','cost','work','steps','letters','plan','method'];
+function setHash(h){try{history.replaceState(null,'','#'+h);}catch(e){location.hash=h;}}
+function go(r,noScroll){
+  var parts=String(r||'home').split('/'),v=VIEWS.indexOf(parts[0])>=0?parts[0]:'home';
+  if(v==='compare'&&parts[1]&&CATS[parts[1]]){if(curCat!==parts[1]){sel=[];sortBy=null;}curCat=parts[1];}
+  VIEWS.forEach(function(x){$('v-'+x).classList.toggle('on',x===v);});
+  [].forEach.call(document.querySelectorAll('nav.main [data-go]'),function(b){if(b.dataset.go===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
+  if(v==='compare')renderCompare();if(v==='check')renderCheck();if(v==='cost'){costSetup();costCalc();}if(v==='work')workCalc();if(v==='steps')renderSteps();if(v==='letters')renderLetters();if(v==='plan')refreshPlan();if(v==='method')renderMethod();
+  setHash(v==='compare'?'compare/'+curCat:v);
+  if(!noScroll)window.scrollTo(0,0);
+}
+function refreshAll(){costSetup();costCalc();refreshPlan();var on=document.querySelector('.view.on');if(on){var v=on.id.slice(2);if(v==='compare')renderCompare();if(v==='check')renderCheck();if(v==='work')workCalc();if(v==='steps')renderSteps();}}
+window.addEventListener('hashchange',function(){go(location.hash.slice(1),true);});
+
+initProfile();costSetup();costCalc();refreshPlan();
+go(location.hash.slice(1)||'home',true);
+window.__erstjahr={state:function(){return S;},score:scored,tax:incomeTax2026,gkvPrice:gkvPrice};
+})();
+</script>
+</body>
+</html>
