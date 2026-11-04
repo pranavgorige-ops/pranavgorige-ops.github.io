@@ -113,7 +113,7 @@ a{color:inherit}
     <div class="mock2" aria-hidden="true"><small>Blocked account · first year</small><b>€99</b><span class="sc">Score 8.5 / 10</span></div>
     <p class="num" style="color:#1f6f5c">02 · Live project</p>
     <h2>Erst<i>jahr</i><b>.</b></h2>
-    <p id="ejP">My comparison website for international students in Germany: blocked accounts, insurance, bank accounts and the full first-year cost. Real 2026 prices with sources, no commission.</p>
+    <p id="ejP">My comparison website for international students in Germany: blocked accounts, insurance, bank accounts, the full first-year cost and taxes for Bavaria. Real 2026 prices with sources, no commission.</p>
     <div class="tags"><span>Comparison</span><span>Cost calculator</span><span>Real data</span></div>
     <span class="go" id="ejGo">Open Erstjahr <span aria-hidden="true">→</span></span>
   </a>
@@ -123,10 +123,10 @@ a{color:inherit}
   var q=(location.search.match(/[?&]lang=(en|de)\b/)||[])[1],l=null;
   try{l=localStorage.getItem('pg_lang');}catch(e){}
   var de=(q||l)==='de';
-  if(q){var pf=document.getElementById('toPf');pf.href='portfolio.html?lang='+q;}
+  var lq=q||(de?'de':null);if(lq){document.getElementById('toPf').href='portfolio.html?lang='+lq;document.getElementById('toEj').href='erstjahr.html?lang='+lq;}
   if(de){
     document.documentElement.lang='de';
-    var T={hello:'Hallo, ich bin Pranav. Womit möchten Sie starten?',pfP:'MSc-Finance-Student in München. Meine Erfahrung, Projekte, ein Live-DCF-Bewertungsmodell und ein KPI-Dashboard.',pfGo:'Zum Portfolio <span aria-hidden="true">→</span>',ejP:'Meine Vergleichsseite für internationale Studierende in Deutschland: Sperrkonten, Versicherungen, Girokonten und die Gesamtkosten des ersten Jahres. Echte Preise 2026 mit Quellen, ohne Provision. (Auf Englisch.)',ejGo:'Erstjahr öffnen <span aria-hidden="true">→</span>',cvL:'CV herunterladen'};
+    var T={hello:'Hallo, ich bin Pranav. Womit möchten Sie starten?',pfP:'MSc-Finance-Student in München. Meine Erfahrung, Projekte, ein Live-DCF-Bewertungsmodell und ein KPI-Dashboard.',pfGo:'Zum Portfolio <span aria-hidden="true">→</span>',ejP:'Meine Vergleichsseite für internationale Studierende in Deutschland: Sperrkonten, Versicherungen, Girokonten, die Gesamtkosten des ersten Jahres und Steuern für Bayern. Echte Preise 2026 mit Quellen, ohne Provision. Jetzt mit Steuern für Bayern.',ejGo:'Erstjahr öffnen <span aria-hidden="true">→</span>',cvL:'CV herunterladen'};
     for(var k in T){var e=document.getElementById(k);if(e)e.innerHTML=T[k];}
   }
 })();
